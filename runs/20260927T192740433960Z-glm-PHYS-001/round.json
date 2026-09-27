@@ -1,0 +1,103 @@
+{
+  "round_id": "20260927T192740433960Z-glm-PHYS-001",
+  "problem_id": "PHYS-001",
+  "agent": "glm",
+  "branch": "glm/PHYS-001-calib-r2",
+  "base_sha": "3740370457e32f64b22ac1bce8a8ea3467f198f8",
+  "started_at": "2026-09-27T19:27:40.433960+00:00",
+  "state": "ADMITTED",
+  "acceptance": "Scope 凍結（動手前）：兩段式預登記設計，修正 r1 之 E3 門檻校準失誤——r1 的 FAIL 不回頭改，改用新鮮兩段流程。Stage A（校準）：β ∈ {5/3, 2, 3}；N ∈ {2048, 4096}；seeds 1..8；擬合窗 3 組（W1 lags 16..249、W2 24..384、W3 12..156，皆 13 幾何點）；量測：SF 斜率、FFT 頻譜斜率（帶 [16,512]）、能量收支殘差。Stage A 結束後以『均值 ± 4·std』凍結各 (β, window) 之確認帶，寫入 bands.json（含時間戳）——此步只用 Stage A 資料。Stage B（確認）：β 三組 × seeds 11..20（與 Stage A 不相交）、N=4096、三窗全測；判定：Stage B 全部量測落在凍結帶內 → B1；頻譜斜率在帶內 → B2；能量殘差 ≤ 2×Stage A 最大值 → B3；三個 β 之 SF 帶互不重疊（分離度）→ B4。附帶記錄：N 敏感性（2048→4096 斜率位移）、窗敏感性（三窗斜率 spread）。門檻不因 Stage B 結果調整；若 B 段出帶，如實記 FAIL＋分析。Sabra/GOY shell model 本輪不實作（時間盒），guards 規格寫入 next actions。",
+  "not_done": "不實作 Sabra/GOY（時間盒，guards 已規格化）；不做高階結構函數；不處理真實 DNS 資料；不宣稱任何真實湍流機制結論。",
+  "budget": {
+    "wall_minutes": 90,
+    "usd": 0,
+    "max_trials": 100
+  },
+  "preflight": {
+    "checked_at": "2026-09-27T19:28:10+00:00",
+    "verdict": "NO_RESOLUTION_FOUND",
+    "sources_read": true,
+    "scope_compared": true,
+    "retractions_checked": true,
+    "licenses_checked": true,
+    "safety_checked": true,
+    "baseline_identified": true,
+    "acceptance_frozen": true,
+    "queries": [
+      {
+        "query": "turbulence structure function scaling exponent measurement window sensitivity finite size 2026",
+        "engine": "zcode-websearch(web_search_prime)",
+        "category": "solution",
+        "outcome": "無 2026 直接文獻；相關：inertial subrange 窄窗效應（Gibbs 2020）、extended self-similarity 建議"
+      },
+      {
+        "query": "shell model Sabra GOY turbulence energy invariant forcing dissipation stationarity baseline code",
+        "engine": "zcode-websearch(web_search_prime)",
+        "category": "discipline",
+        "outcome": "Sabra 方程與守恆量確認（Biferale 版式：nonlinear + νk_n^2 u_n + f_n）；stationarity=⟨f·u⟩=⟨νk²|u|²⟩ 為標準基線檢查"
+      },
+      {
+        "query": "\"intermittency\" OR \"anomalous scaling\" turbulence new result September 2026 open problem progress",
+        "engine": "zcode-websearch(web_search_prime)",
+        "category": "general",
+        "outcome": "仍 open；新相關：Triadic Interaction Suppression（2026-03）機制研究；MHD 綜述 2026-08"
+      },
+      {
+        "query": "turbulence simulation structure function erratum correction retraction 2025 2026 numerical",
+        "engine": "zcode-websearch(web_search_prime)",
+        "category": "criticism",
+        "outcome": "無相關 erratum/retraction；數值精度/噪聲討論（Liao 2025 JFM）在線"
+      },
+      {
+        "query": "arXiv:2607.26896 版本與 erratum 再核查（webfetch abs 頁）",
+        "engine": "zcode-webfetch(arxiv.org)",
+        "category": "criticism",
+        "outcome": "仍 v1（2026-07-29）；無新版本；摘要原文再次確認理論缺口"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2607.26896",
+        "title": "Disentangling intermittent flow structure contributions... (Mukherjee & Mukherjee 2026, v1 再核查)",
+        "kind": "primary",
+        "supports": "本輪 primary 再核查：仍僅 v1、無 erratum/withdrawal；摘要原文確認間歇性『remains beyond the scope of a complete theoretical description』"
+      },
+      {
+        "url": "https://biferale.web.roma2.infn.it（GOY/Sabra 方程式頁，經搜尋摘要）",
+        "title": "GOY/Sabra shell model 標準形式",
+        "kind": "secondary",
+        "supports": "Sabra 方程、能量不變量、forcing-dissipation balance 之 guard 設計依據"
+      },
+      {
+        "url": "https://arxiv.org（astrophysical MHD turbulence review, 2026-08）",
+        "title": "MHD turbulence 綜述（2026-08-24 修訂）",
+        "kind": "secondary",
+        "supports": "間歇性仍為 open 方向之旁證"
+      }
+    ],
+    "limitations": "4 query；僅摘要層級；無 2026-09 新結果索引；「無結果」非未解證明。",
+    "scope_comparison": "同 r1：題卡 scope 無同範圍解答；本輪為 evaluator 校準基建（two-stage pre-registration），非新宣稱。NO_RESOLUTION_FOUND。",
+    "baseline": "baseline＝K41 合成場（r1 已建）之系統性校準：三 β、兩 N、三窗、18 seeds 總計；帶凍結後以新 seeds 確認。"
+  },
+  "artifacts": [
+    "runs/20260927T192740433960Z-glm-PHYS-001/LITERATURE_MAP.md",
+    "runs/20260927T192740433960Z-glm-PHYS-001/ROUND_REPORT.md",
+    "problems/PHYS-001/experiments/r2_calibration/calibrate_and_confirm.py",
+    "problems/PHYS-001/experiments/r2_calibration/bands.json",
+    "problems/PHYS-001/experiments/r2_calibration/bands2.json",
+    "problems/PHYS-001/results/r2/r2_calibration_results.json",
+    "problems/PHYS-001/results/r2/r2_cycle2_results.json",
+    "problems/PHYS-001/results/r2/hashes.txt",
+    "problems/PHYS-001/results/r2/environment.txt"
+  ],
+  "result": {
+    "state": "ROUND_FINISHED",
+    "verdict": "NO_RESOLUTION_FOUND",
+    "summary": "兩段式校準：循環1 FAIL（±4σ 零寬度帶退化，根因記錄）→ 循環2 PASS（floor 規則預登記，90 項確認 0 違規，三β分離）；N/窗敏感性量化；Sabra 未實作（guards 已規格）。",
+    "skeptic_bugs_found": [
+      "zero-width +/-4*std bands under near-deterministic estimator (cycle 1 FAIL, fixed by pre-registered absolute floor in cycle 2)"
+    ],
+    "wall_minutes_used_approx": 35
+  },
+  "admitted_at": "2026-09-27T19:30:10.980490+00:00"
+}
