@@ -1,0 +1,13 @@
+{
+"id":"PHYS-003","domain":"physics","title":"受限模型中符號問題的無偏取樣效率","status":"OPEN","priority":"A","checked_on":"2026-09-27",
+"statement":"對預先指定的一類受挫量子自旋 Hamiltonian，能否以基底選擇或取樣方法，在不引入未控制偏差的前提下改善可驗證的成本—誤差尺度關係？不宣稱解決一般符號問題。",
+"known_result":"Herz 等2026的 sign-optimized QMC 透過局部基底調整改善特定受挫模型的平均符號；適用範圍與整體取樣成本仍需逐模型判定。",
+"open_gap":"跨尺寸、溫度與參數的效率提升及無偏性保證，而非只讓單一平均符號變好。",
+"first_task":"選一個能精確對角化的小 Hamiltonian，對照原基底與候選基底的能量、方差、自相關和總運行時間。",
+"evaluator":"與精確對角化比較誤差及統計覆蓋，計入基底最佳化成本、自相關時間與樣本數。",
+"validation_limits":"平均符號提高不必然代表有效樣本成本降低；有限測試不證明多項式複雜度。",
+"completion_criterion":"固定模型族的無偏性和尺度優勢經独立验证；一般符號問題不能因此標完成。",
+"screening_note":"初始搜尋及2026原始摘要核對；題目為本庫限定的研究缺口。",
+"screening_queries":["site.arxiv.org sign optimized Quantum Monte Carlo 2026"],
+"sources":[{"title":"Sign-optimized Quantum Monte Carlo (2026)","url":"https://arxiv.org/abs/2607.24679","kind":"primary","supports":"局部基底最佳化與特定模型的符號問題改善。"}]
+}

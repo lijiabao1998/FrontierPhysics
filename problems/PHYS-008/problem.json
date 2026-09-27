@@ -1,0 +1,13 @@
+{
+"id":"PHYS-008","domain":"physics","title":"暗物質身分及直接探測訊號的可靠識別","status":"OPEN","priority":"C","checked_on":"2026-09-27",
+"statement":"以公開直接探測資訊，分開背景不確定性、罕見事件與暗物質候選模型，建立可獨立驗證的區分方式；不將單一異常事件視為粒子身分已確定。",
+"known_result":"LZ團隊2026年9月公開一個值得後續查證的稀有事件，研究者仍要求更多資料；暗物質身分未因此確認。",
+"open_gap":"訊號可重現性、背景解釋與不同暗物質模型之間的可識別性。",
+"first_task":"核查合作組原始論文及公開資料範圍，先用 Poisson／背景合成實驗驗證檢定覆蓋，保存盲分析假設。",
+"evaluator":"背景及偵測效率校準、coverage、look-elsewhere 修正、不同資料期與探測器交叉比較。",
+"validation_limits":"異常、hint、排除界與 discovery 是不同 claim；模擬不能創造新的探測數據。",
+"completion_criterion":"同範圍粒子識別須正式證據與獨立確認；任何單次重分析只完成自己的子任務。",
+"screening_note":"已查2026年9月研究團隊公開說明；尚未重做探測器事件分析。",
+"screening_queries":["site.newscenter.lbl.gov LZ 2026 September"],
+"sources":[{"title":"LZ experiment sees surprising result in search for dark matter (Brown/LZ team, 2026-09-01)","url":"https://www.brown.edu/news/2026-09-01/lz-dark-matter-results","kind":"primary","supports":"合作研究團隊將事件表述為尚待更多資料確認的線索。"}]
+}

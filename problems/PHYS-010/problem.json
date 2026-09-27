@@ -1,0 +1,13 @@
+{
+"id":"PHYS-010","domain":"physics","title":"暗能量是宇宙常數還是隨時間演化","status":"OPEN","priority":"B","checked_on":"2026-09-27",
+"statement":"在明列的宇宙學模型及凍結探針資料下，檢驗暗能量狀態方程是否需要偏離 w=-1，並區分模型彈性、先驗與系統誤差。",
+"known_result":"DESI2026年7月 DR2 Ly-alpha full-shape 結果較前結果更靠近 LambdaCDM；這與部分較低紅移線索的關係仍需整體核查，不能只取一邊作結論。",
+"open_gap":"不同紅移與探針的共同解釋，以及動態暗能量主張的稳健性。",
+"first_task":"鎖定官方 DR2 論文／資料版本與公開 chains，重現一個 LambdaCDM 對 w0waCDM 的模型比較，事前凍結使用哪些探針。",
+"evaluator":"協方差及似然重現、先驗敏感性、不同探針留出驗證、模型比較與posterior predictive。",
+"validation_limits":"survey 採樣完成不等於暗能量問題完成；顯著度依模型及資料組合而定。",
+"completion_criterion":"同範圍結論經獨立資料與方法確認；單組最佳擬合不得當普遍完成。",
+"screening_note":"已讀研究團隊最新公開說明及官方 DR2 文獻頁，未下載完整 chains。",
+"screening_queries":["site.desi.lbl.gov 2026 Lyman DR2"],
+"sources":[{"title":"New DESI DR2 Lyman-alpha Results Shed Light on Dark Energy (2026-07-30)","url":"https://www.desi.lbl.gov/2026/07/30/new-desi-dr2-lyman-alpha-results-shed-light-on-dark-energy/","kind":"primary","supports":"最新探針結果與 evolving dark energy 解釋仍未收束。"},{"title":"DESI DR2 Publications","url":"https://data.desi.lbl.gov/doc/papers/dr2/","kind":"official","supports":"原始論文及公開資料版本入口。"}]
+}

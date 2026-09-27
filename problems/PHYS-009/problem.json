@@ -1,0 +1,13 @@
+{
+"id":"PHYS-009","domain":"physics","title":"黑洞資訊編碼：模型機制與物理時空的連結","status":"OPEN","priority":"C","checked_on":"2026-09-27",
+"statement":"釐清黑洞資訊問題中可觀測代數、Hilbert-space factorization 與 bath 假設，研究已受控模型的編碼機制能否外推到指定物理時空，而不把模型限定的 Page curve 當一般解答。",
+"known_result":"Geng2026提出 island encoding 機制並詳論 Karch–Randall 模型；另一篇2026論文討論不同可觀測限制下 Page curves 的解釋差異。",
+"open_gap":"不同模型假設及操作上可取得資訊的統一、可驗證映射。",
+"first_task":"選一個來源模型重建假設表及推導，明列是否有非重力 bath、哪些 observables 被排除，再檢查兩篇論述是否其實處理不同命題。",
+"evaluator":"推導逐步核查、已知極限、假設依賴圖、兩種形式化／模型表示對照；需要時僅對定理子部分使用 Lean。",
+"validation_limits":"同一 toy model 的 entropy curve 不等於一般四維蒸發黑洞的完整微觀機制。",
+"completion_criterion":"凍結範圍內的機制與可觀測意義經獨立核實；模型特例完成不關閉更廣問題。",
+"screening_note":"本次讀原始摘要及2026評論式論證，未宣稱已裁定不同作者全部爭論。",
+"screening_queries":["site.arxiv.org islands Geng 2026 information encoding"],
+"sources":[{"title":"The mechanism behind the information encoding for islands (2026)","url":"https://doi.org/10.1007/JHEP03%282026%29037","kind":"primary","supports":"特定模型的編碼機制與假設。"},{"title":"Seeing Page Curves and Islands with Blinders On (2026)","url":"https://arxiv.org/abs/2602.06543","kind":"primary","supports":"observable algebra 與 Page curve 解釋的範圍區別。"}]
+}

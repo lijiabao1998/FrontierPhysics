@@ -1,0 +1,13 @@
+{
+"id":"PHYS-007","domain":"physics","title":"Hubble tension：系統誤差還是模型缺口","status":"OPEN","priority":"B","checked_on":"2026-09-27",
+"statement":"對凍結的早期與晚期宇宙資料組合，評估 H0 推論差異能否由可驗證系統誤差或具獨立預測的新模型解釋，而非只放大不確定性消除顯著度。",
+"known_result":"2026 information-geometric wCDM 研究提供參數幾何與 tension 的模型分析；這不是對所有資料及系統誤差的最終裁決。",
+"open_gap":"跨探針、一致誤差模型與可外部檢驗預測，避免挑選資料與先驗。",
+"first_task":"先重查各量測的最新版本／勘誤，凍結一個公開似然或合成對照，重現 H0 後驗與共享 nuisance parameters 的影響。",
+"evaluator":"似然重現、單位與協方差、coverage、prior sensitivity、留出探針預測。",
+"validation_limits":"降低 tension 統計量不等於找到真因；不能忽略資料關聯或事後挑選資料集。",
+"completion_criterion":"同範圍資料下機制經獨立核查並有可區分預測支持；單次擬合只記部分進展。",
+"screening_note":"近期搜尋及原始摘要核對，未聲稱今日全部 H0 資料已全面重分析。",
+"screening_queries":["Hubble tension 2026 information geometric wCDM"],
+"sources":[{"title":"Information-Geometric Perspective on the Hubble Tension: Eigenmode Rotation and Curvature Suppression in wCDM (2026)","url":"https://arxiv.org/abs/2604.04422","kind":"primary","supports":"特定模型框架的近期分析，不代表問題完成。"}]
+}

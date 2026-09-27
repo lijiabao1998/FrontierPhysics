@@ -1,0 +1,13 @@
+{
+"id":"PHYS-005","domain":"physics","title":"有限維理想玻璃轉變與鬆弛機制","status":"OPEN","priority":"C","checked_on":"2026-09-27",
+"statement":"對明列的三維玻璃形成模型，區分理想熱力學轉變與有限時間動力學交叉，並說明高維理論的 hopping／局部缺陷修正能否受控延伸到有限維。",
+"known_result":"Ikeda–Zamponi 2026重新檢視高維 replica 液體理論的 hopping 和局部缺陷；高維結果不能直接裁定三維理想轉變。",
+"open_gap":"高維平均場、有限維稀有重排與可觀測鬆弛之間的可檢驗連結。",
+"first_task":"整理同一模型下不同理論的可區分預測，重現一個簡化相關函數／狀態方程基線，明列亞穩態與平衡假設。",
+"evaluator":"熱力學一致性、長短時間極限、參數敏感性及不同尺寸／觀測窗比較。",
+"validation_limits":"狀態方程擬合或理想模型奇點不等於有限維真實轉變的證明。",
+"completion_criterion":"指定有限維模型的同範圍理論與獨立核實證據；簡化模型成功只完成子題。",
+"screening_note":"本次搜尋并讀2026原始摘要；未作模型重現，題目範圍由本庫明確限定。",
+"screening_queries":["site.arxiv.org glass ideal 2026 transition"],
+"sources":[{"title":"High-dimensional theory of the glass transition revisited: hopping and local defects (2026)","url":"https://arxiv.org/abs/2607.26793","kind":"primary","supports":"高維機制與理論修正，非有限維通解。"},{"title":"A parameterised equation of state, glass transition and jamming of the hard sphere system (2026)","url":"https://arxiv.org/abs/2602.09218","kind":"primary","supports":"參數化模型進展與區分模型奇點／普遍完成的重要性。"}]
+}

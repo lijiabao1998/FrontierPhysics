@@ -1,0 +1,13 @@
+{
+"id":"PHYS-001","domain":"physics","title":"三維湍流間歇性與異常尺度律","status":"OPEN","priority":"A","checked_on":"2026-09-27",
+"statement":"對高 Reynolds 數、近均勻各向同性的不可壓縮三維湍流，建立可受資料與理論檢驗的間歇性機制及結構函數異常指數描述，並量化其適用與失效範圍。",
+"known_result":"Mukherjee 等2026研究將間歇流結構與異常尺度律分解，提供具體機制分析；摘要仍明示缺乏完整理論描述。",
+"open_gap":"有限 Reynolds 數、過濾方法及數值解析度之外，可外推且可驗證的機制與尺度預測。",
+"first_task":"重新檢索後凍結一個小型模型／公開資料子集；先驗證能量收支、結構函數估計與合成尺度律正負控制，再重現一個已知結果。",
+"evaluator":"能量平衡殘差、網格／時間步收斂、結構函數信賴區間、不同估計方法及解析度敏感性。",
+"validation_limits":"shell model 或合成場不等同 Navier–Stokes 三維湍流；有限範圍冪律擬合不是普遍證明。",
+"completion_criterion":"同範圍理論與可獨立重現的預測支持；一組指數擬合成功僅完成該子任務。",
+"screening_note":"初始有界搜尋並閱讀2026原始摘要；未下載 DNS 或重現計算，每輪重查新解答及評論。",
+"screening_queries":["site.arxiv.org turbulence intermittency anomalous scaling 2026"],
+"sources":[{"title":"Disentangling intermittent flow structure contributions to anomalous scaling and multifractality in turbulence (2026)","url":"https://arxiv.org/abs/2607.26896","kind":"primary","supports":"間歇性與尺度律的近期研究及一般理論缺口；本次讀到摘要。"}]
+}

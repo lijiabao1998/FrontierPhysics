@@ -1,0 +1,13 @@
+{
+"id":"PHYS-006","domain":"physics","title":"中子星高密度物態方程的可識別性","status":"OPEN","priority":"B","checked_on":"2026-09-27",
+"statement":"在質量—半徑、潮汐形變等觀測限制下，何種高密度 EOS 特徵可由資料識別，何種主要由參數化及先驗決定？先固定冷、平衡物質模型與觀測集合。",
+"known_result":"Sun、Zhao、Lattimer 2026提出 natural-prior Bayesian EOS 框架；新的推論框架不代表高密度微觀組成已唯一決定。",
+"open_gap":"不同 EOS 參數化／先驗造成的退化、相變特徵與觀測資訊不足。",
+"first_task":"驗證 TOV 求解器的單位、邊界與多項式 EOS 基線，用合成資料測已知 EOS 能否被回復，再比較先驗。",
+"evaluator":"積分收斂、物理穩定性／因果條件、模擬校準、posterior predictive 與先驗敏感性。",
+"validation_limits":"精確擬合質量半徑不必然唯一決定微觀物質；EOS 模型假設需逐項保留。",
+"completion_criterion":"在凍結觀測與模型範圍給出可識別／不可識別結論及獨立重現；不將特定後驗當普遍EOS解答。",
+"screening_note":"初始摘要核對；沒有取得未公開觀測資料或執行擬合。",
+"screening_queries":["neutron star equation of state natural priors 2026"],
+"sources":[{"title":"A New Bayesian Framework with Natural Priors to Constrain the Neutron Star Equation of State (2026)","url":"https://arxiv.org/abs/2601.04294","kind":"primary","supports":"先驗與EOS推論框架的近期工作。"}]
+}

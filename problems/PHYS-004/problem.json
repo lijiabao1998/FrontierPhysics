@@ -1,0 +1,13 @@
+{
+"id":"PHYS-004","domain":"physics","title":"多體局域化對熱雪崩的熱力學穩定性","status":"OPEN","priority":"B","checked_on":"2026-09-27",
+"statement":"在明列的短程無序一維自旋模型下，區分真正穩定的多體局域相與有限尺寸／有限時間的長暫態，尤其考慮稀有熱區與 avalanche。",
+"known_result":"Sajid 等以孤立局域系統研究 thermal avalanches；這類結果要求小心區分受控模型、有限尺寸與無限系統推論。",
+"open_gap":"稀有事件、時間及尺寸極限的可靠外推與相穩定性判準。",
+"first_task":"固定小自旋鏈及無序分布，重現能級與動力學基線，再掃少量尺寸和 seed；預先記熱化時間及誤差策略。",
+"evaluator":"精確對角化、能量守恆、無序平均與分布、有限時間及尺寸敏感性、已知可解極限。",
+"validation_limits":"小系統中未見熱化不是無限時間不熱化；不同模型不能混成一條普遍結論。",
+"completion_criterion":"同一模型與指定極限的受控理論或證據鏈；有限數值支持只記部分進展。",
+"screening_note":"已篩查2025–2026相關研究並讀原始摘要，未執行大規模稀有事件搜尋。",
+"screening_queries":["many body localization thermal avalanche stability 2026 2025"],
+"sources":[{"title":"Thermal avalanches in isolated many-body localized systems","url":"https://journals.aps.org/prb/abstract/10.1103/fvgj-byp7","kind":"primary","supports":"avalanche 機制研究與有限系統分析。"}]
+}

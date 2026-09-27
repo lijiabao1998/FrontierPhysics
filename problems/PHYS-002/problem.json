@@ -1,0 +1,13 @@
+{
+"id":"PHYS-002","domain":"physics","title":"摻雜二維 Hubbard 模型的熱力學相圖","status":"OPEN","priority":"B","checked_on":"2026-09-27",
+"statement":"在正方晶格單帶排斥 Hubbard 模型下，辨識近零溫摻雜區的競爭相與邊界，明列 U/t、t'/t、密度和熱力學極限；第一個子任務固定一個參數區間。",
+"known_result":"Pelz 等2026以 DCA 與 NRG 研究特定參數的正常態量子臨界性；這不等於所有競爭相與所有參數的相圖已完成。",
+"open_gap":"有限 cluster、正常態限制與多種近似以外的相競爭及極限一致性。",
+"first_task":"建2×2小晶格精確對角化基線，驗證 U=0 與原子極限、粒子數守恆；在凍結邊界條件下對拍獨立實作。",
+"evaluator":"Hermiticity、能譜與對稱性、已知極限、有限尺寸／cluster 外推及誤差預算。",
+"validation_limits":"小系統能譜不是熱力學相變；某近似的相界不是普遍定論。",
+"completion_criterion":"對明列參數範圍及相集合達成受控且獨立核實的結果；局部成果不關閉一般父題。",
+"screening_note":"本次讀原始摘要並區分正常態研究與完整相圖；未重跑作者演算法。",
+"screening_queries":["site.arxiv.org two dimensional Hubbard quantum criticality 2026"],
+"sources":[{"title":"Quantum criticality in the two-dimensional Hubbard model (2026)","url":"https://arxiv.org/abs/2605.15059","kind":"primary","supports":"特定模型参数與方法下的近期結果，不代表完整相圖。"}]
+}
