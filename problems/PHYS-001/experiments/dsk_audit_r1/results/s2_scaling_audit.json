@@ -1,0 +1,386 @@
+{
+  "beta3_log_constant_C0": 0.46133619229693856,
+  "cases": [
+    {
+      "N": 4096,
+      "beta": 1.6666666666666667,
+      "case": "glm_band",
+      "j": [
+        3,
+        900
+      ],
+      "predicted_asymptotic_slope": 0.6666666666666667,
+      "r_window": [
+        16,
+        249
+      ],
+      "s2_at_window_ends": [
+        14983.426550157765,
+        84480.38098359675
+      ],
+      "slope_first_half": 0.6608490979077155,
+      "slope_second_half": 0.5041517857718361,
+      "slope_window": 0.6169001787892862
+    },
+    {
+      "N": 4096,
+      "beta": 2.0,
+      "case": "glm_band",
+      "j": [
+        3,
+        900
+      ],
+      "predicted_asymptotic_slope": 1.0,
+      "r_window": [
+        16,
+        249
+      ],
+      "s2_at_window_ends": [
+        31185.1067136633,
+        357715.69560095604
+      ],
+      "slope_first_half": 0.9318105539231318,
+      "slope_second_half": 0.7201627772765317,
+      "slope_window": 0.8725276471180642
+    },
+    {
+      "N": 4096,
+      "beta": 3.0,
+      "case": "glm_band",
+      "j": [
+        3,
+        900
+      ],
+      "predicted_asymptotic_slope": 2.0,
+      "r_window": [
+        16,
+        249
+      ],
+      "s2_at_window_ends": [
+        618380.2316387261,
+        40393630.50444522
+      ],
+      "slope_first_half": 1.590552614929043,
+      "slope_second_half": 1.2468354100445982,
+      "slope_window": 1.4911338935522638
+    },
+    {
+      "N": 4096,
+      "beta": 3.0,
+      "case": "vary_jmin",
+      "j": [
+        3,
+        900
+      ],
+      "k_lo": 0.0046019423636569235,
+      "k_lo_times_window": [
+        0.07363107781851078,
+        1.145883648550574
+      ],
+      "r_star": 217.29954896813445,
+      "r_window": [
+        16,
+        249
+      ],
+      "s2_at_window_ends": [
+        618380.2316387261,
+        40393630.50444522
+      ],
+      "slope_first_half": 1.590552614929043,
+      "slope_second_half": 1.2468354100445982,
+      "slope_window": 1.4911338935522638
+    },
+    {
+      "N": 4096,
+      "beta": 3.0,
+      "case": "vary_jmin",
+      "j": [
+        8,
+        900
+      ],
+      "k_lo": 0.01227184630308513,
+      "k_lo_times_window": [
+        0.19634954084936207,
+        3.055689729468197
+      ],
+      "r_star": 81.48733086305042,
+      "r_window": [
+        16,
+        249
+      ],
+      "s2_at_window_ends": [
+        436206.9251027978,
+        6823944.1529316995
+      ],
+      "slope_first_half": 1.272103932642949,
+      "slope_second_half": -0.0024260067877229083,
+      "slope_window": 0.9295452033921354
+    },
+    {
+      "N": 4096,
+      "beta": 3.0,
+      "case": "vary_jmin",
+      "j": [
+        20,
+        900
+      ],
+      "k_lo": 0.030679615757712823,
+      "k_lo_times_window": [
+        0.4908738521234052,
+        7.639224323670493
+      ],
+      "r_star": 32.594932345220165,
+      "r_window": [
+        16,
+        249
+      ],
+      "s2_at_window_ends": [
+        278201.5942531847,
+        857531.803951892
+      ],
+      "slope_first_half": 0.32887820864166145,
+      "slope_second_half": 0.7476236072910672,
+      "slope_window": -0.05553667523710949
+    },
+    {
+      "N": 4096,
+      "beta": 3.0,
+      "case": "vary_jmin",
+      "j": [
+        50,
+        900
+      ],
+      "k_lo": 0.07669903939428206,
+      "k_lo_times_window": [
+        1.227184630308513,
+        19.098060809176232
+      ],
+      "r_star": 13.037972938088066,
+      "r_window": [
+        16,
+        249
+      ],
+      "s2_at_window_ends": [
+        131181.76003822044,
+        111597.25224660969
+      ],
+      "slope_first_half": -0.1628701903961571,
+      "slope_second_half": 0.1263062136020195,
+      "slope_window": -0.10203753831843085
+    },
+    {
+      "N": 4096,
+      "beta": 3.0,
+      "case": "vary_jmin",
+      "j": [
+        100,
+        900
+      ],
+      "k_lo": 0.15339807878856412,
+      "k_lo_times_window": [
+        2.454369260617026,
+        38.196121618352464
+      ],
+      "r_star": 6.518986469044033,
+      "r_window": [
+        16,
+        249
+      ],
+      "s2_at_window_ends": [
+        42277.88434449058,
+        27976.71721165864
+      ],
+      "slope_first_half": -0.013676360739396607,
+      "slope_second_half": -0.050356283886226226,
+      "slope_window": 0.0002868613358128622
+    },
+    {
+      "N": 4096,
+      "beta": 3.0,
+      "case": "vary_jmin",
+      "j": [
+        200,
+        900
+      ],
+      "k_lo": 0.30679615757712825,
+      "k_lo_times_window": [
+        4.908738521234052,
+        76.39224323670493
+      ],
+      "r_star": 3.2594932345220164,
+      "r_window": [
+        16,
+        249
+      ],
+      "s2_at_window_ends": [
+        4365.337815547497,
+        6748.059757135767
+      ],
+      "slope_first_half": 0.044307328262517584,
+      "slope_second_half": 0.010644921732902237,
+      "slope_window": 0.019707992898212758
+    },
+    {
+      "N": 4096,
+      "beta": 3.0,
+      "case": "wide_band",
+      "j": [
+        1,
+        2048
+      ],
+      "k_lo": 0.0015339807878856412,
+      "k_lo_times_window": [
+        0.02454369260617026,
+        0.38196121618352463
+      ],
+      "r_star": 651.8986469044033,
+      "r_window": [
+        16,
+        249
+      ],
+      "s2_at_window_ends": [
+        868960.6126668177,
+        99568556.71801752
+      ],
+      "slope_first_half": 1.7473367784759273,
+      "slope_second_half": 1.637697635563197,
+      "slope_window": 1.7136939981883907
+    },
+    {
+      "N": 16384,
+      "beta": 3.0,
+      "case": "wide_band",
+      "j": [
+        1,
+        4096
+      ],
+      "k_lo": 0.0003834951969714103,
+      "k_lo_times_window": [
+        0.006135923151542565,
+        0.09549030404588116
+      ],
+      "r_star": 2607.5945876176133,
+      "r_window": [
+        16,
+        249
+      ],
+      "s2_at_window_ends": [
+        4400469.11648309,
+        622246809.2068348
+      ],
+      "slope_first_half": 1.8134022277690818,
+      "slope_second_half": 1.758769761665935,
+      "slope_window": 1.7961447687023402
+    },
+    {
+      "N": 65536,
+      "beta": 3.0,
+      "case": "wide_band",
+      "j": [
+        1,
+        8192
+      ],
+      "k_lo": 9.587379924285257e-05,
+      "k_lo_times_window": [
+        0.0015339807878856412,
+        0.02387257601147029
+      ],
+      "r_star": 10430.378350470453,
+      "r_window": [
+        16,
+        249
+      ],
+      "s2_at_window_ends": [
+        21291382.73826115,
+        3385444154.32842
+      ],
+      "slope_first_half": 1.852124316071014,
+      "slope_second_half": 1.8192665046268146,
+      "slope_window": 1.8415575779338957
+    },
+    {
+      "N": 4096,
+      "beta": 2.0,
+      "case": "beta2_control",
+      "j": [
+        3,
+        900
+      ],
+      "predicted_asymptotic_slope": 1.0,
+      "r_window": [
+        16,
+        249
+      ],
+      "s2_at_window_ends": [
+        31185.1067136633,
+        357715.69560095604
+      ],
+      "slope_first_half": 0.9318105539231318,
+      "slope_second_half": 0.7201627772765317,
+      "slope_window": 0.8725276471180642
+    },
+    {
+      "N": 4096,
+      "beta": 2.0,
+      "case": "beta2_control",
+      "j": [
+        20,
+        900
+      ],
+      "predicted_asymptotic_slope": 1.0,
+      "r_window": [
+        16,
+        249
+      ],
+      "s2_at_window_ends": [
+        26864.639778545516,
+        47072.79261830482
+      ],
+      "slope_first_half": 0.09947894654686133,
+      "slope_second_half": 0.47190270447175037,
+      "slope_window": -0.07261734654398133
+    }
+  ],
+  "conclusion": {
+    "beta3_glm_band_measured_exponent": 1.4911338935522638,
+    "beta3_local_exponent": "2 - 1/(ln(1/(k_lo r)) + 0.922781)",
+    "beta3_log_corrected_form": "S2(r) = 2C r^2 [ 0.5*ln(1/(k_lo r)) + 0.461390... ] for k_lo r << 1",
+    "glm_reported_1_54_matches_independent_computation": true,
+    "saturation_cross_over_r_star": 217.29954896813445,
+    "verdict": "GLM's implementation is CORRECT and GLM's 'r^2 log' diagnosis is CORRECT (the beta=3 integral diverges logarithmically at the infrared end; verified analytically above). The measurement is not a wrong exponent and not an implementation bug. What failed is the FROZEN THRESHOLD: 1.7 is close to the log-corrected LOCAL exponent at the smallest lag (2-1/(ln(1/0.0736)+0.9228) = 1.717), but no WINDOW AVERAGE over [16,249] can reach it, because the window's upper lags are at or past the saturation cross-over r_* = 1/k_lo = 217, where the local exponent has already dropped to 0. Answer: D (finite-window effect), with A as the proximate cause of the recorded FAIL; NOT B, and C only in the sense that the log argument omits the second (saturation) edge. The deeper design flaw is that beta=3 has NO clean scaling exponent in a finite band at all: the local exponent is r-dependent, so the control was never a power law to begin with."
+  },
+  "definition": "S2(r) = 2 * sum_k k^-beta (1 - cos(k r)); direct summation, no FFT",
+  "glm_r1_threshold_on_beta3_slope": 1.7,
+  "glm_reported_beta3_slope": 1.54,
+  "glm_window": [
+    16,
+    249
+  ],
+  "log_formula_local_exponent": [
+    {
+      "k_lo_r": 0.07363107781851078,
+      "log_formula_local_exponent": 1.7168230183908615,
+      "r": 16
+    },
+    {
+      "k_lo_r": 0.14726215563702155,
+      "log_formula_local_exponent": 1.6476656626502635,
+      "r": 32
+    },
+    {
+      "k_lo_r": 0.2945243112740431,
+      "log_formula_local_exponent": 1.5338139025192072,
+      "r": 64
+    },
+    {
+      "k_lo_r": 0.5890486225480862,
+      "log_formula_local_exponent": 1.3112563120829568,
+      "r": 128
+    },
+    {
+      "k_lo_r": 0.9572040116406401,
+      "log_formula_local_exponent": 0.9652436909190345,
+      "r": 208
+    }
+  ]
+}
