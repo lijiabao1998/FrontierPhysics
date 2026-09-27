@@ -1,0 +1,108 @@
+{
+  "round_id": "20260927T183904247351Z-glm-PHYS-001",
+  "problem_id": "PHYS-001",
+  "agent": "glm",
+  "branch": "glm/PHYS-001-baseline-r1",
+  "base_sha": "bca6b6c16efc5d2e04ff95cdfda5bea522160371",
+  "started_at": "2026-09-27T18:39:04.247351+00:00",
+  "state": "ADMITTED",
+  "acceptance": "Scope 凍結（動手前）：r1 只做『可負擔小模型＋基線與 evaluator』，不宣稱解決湍流問題。(1) 合成 1D 速度訊號：隨機相位模態疊加，1D 功率譜 S(k)∝k^-β，β=5/3（K41 正控）與 β=3（負控），波數帶 [3,900]、N=4095+1 樣本、seed 1..5（random.Random(seed)，確定性）。(2) evaluator：E1 能量收支 ⟨u²⟩ vs Σ A_k²/2（相對殘差 ≤10%）；E2 結構函數 S2(r) 斜率於凍結擬合窗 lags 16..249（幾何 13 點）OLS on log-log；正控通過條件：5-seed 平均斜率 ∈ [2/3−0.05, 2/3+0.05] 且 std ≤0.03；E3 負控通過條件：β=3 之 5-seed 平均斜率 ≥1.7（明顯異於 2/3 帶）；E4 頻譜斜率（stdlib radix-2 FFT periodogram，帶 [16,512] 擬合）≈ β ± 0.1；E5 交叉一致性 |(β̂_k −1) − β̂_r| ≤ 0.1；E6 評估器防護：正弦訊號與振幅膨脹 1.5x 之篡改輸入必須 FAIL。(7) 驗收窗與容差於執行前凍結；若實測超出容差，記為失敗並分析，不得事後改窗改容差。物理限制聲明：toy 訊號非 Navier-Stokes 解；本輪不產生任何對真實湍流之宣稱。",
+  "not_done": "不解決三維湍流間歇性；不做 DNS/大渦模擬；不下載大型資料集；不宣稱 toy model 等價自然界；不擬合高階結構函數（後續輪次）；不做 K62 修正模型比較（後續輪次）。",
+  "budget": {
+    "wall_minutes": 120,
+    "usd": 0,
+    "max_trials": 100
+  },
+  "preflight": {
+    "checked_at": "2026-09-27T18:42:30+00:00",
+    "verdict": "NO_RESOLUTION_FOUND",
+    "sources_read": true,
+    "scope_compared": true,
+    "retractions_checked": true,
+    "licenses_checked": true,
+    "safety_checked": true,
+    "baseline_identified": true,
+    "acceptance_frozen": true,
+    "queries": [
+      {
+        "query": "turbulence intermittency anomalous scaling structure functions 2026 arXiv",
+        "engine": "zcode-websearch(web_search_prime)",
+        "category": "general",
+        "outcome": "無同範圍解答；相關：stochastic closures 論文（arXiv 2026）"
+      },
+      {
+        "query": "Mukherjee turbulence intermittent flow structures anomalous scaling multifractality 2026",
+        "engine": "zcode-websearch(web_search_prime)",
+        "category": "general",
+        "outcome": "定位題卡 primary arXiv:2607.26896（v1, 2026-07-29）及 PRL 132,184002 (2024) 前作"
+      },
+      {
+        "query": "Kolmogorov 1941 K41 theory structure function 2/3 law verification synthetic signal energy spectrum k^-5/3 baseline",
+        "engine": "zcode-websearch(web_search_prime)",
+        "category": "solution",
+        "outcome": "確認基線方法學：k^-5/3 ↔ S2~r^(2/3)、ξ2=2H；K41 為理想化非間歇參照"
+      },
+      {
+        "query": "Mukherjee multifractal turbulence intermittency structure functions erratum \"comment on\" 2025",
+        "engine": "zcode-websearch(web_search_prime)",
+        "category": "criticism",
+        "outcome": "無 erratum/retraction/comment；PRL 2024 正常被引；發現後續 arXiv:2511.06439 (Geometric Intermittency)"
+      },
+      {
+        "query": "\"anomalous scaling\" turbulence \"complete theory\" OR \"solved\" closure 2025 2026 Navier-Stokes intermittency open problem",
+        "engine": "zcode-websearch(web_search_prime)",
+        "category": "solution",
+        "outcome": "Sreenivasan 2025 ARCMP 綜述結論：問題未解；無公認完整理論；loop-space 提案未經社群驗證"
+      },
+      {
+        "query": "site:arxiv.org abs 2607.26896",
+        "engine": "zcode-webfetch(arxiv.org/abs/2607.26896)",
+        "category": "discipline",
+        "outcome": "primary 原文頁：v1 only；摘要明言間歇性『so far remains beyond the scope of a complete theoretical description』；無 data/code 聲明；CC BY-NC-ND 4.0"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2607.26896",
+        "title": "Disentangling intermittent flow structure contributions to anomalous scaling and multifractality in turbulence (R. Mukherjee & S. Mukherjee 2026, v1)",
+        "kind": "primary",
+        "supports": "題卡 primary；確認一般理論缺口仍在（摘要原文）；無完整理論宣稱"
+      },
+      {
+        "url": "https://link.aps.org/doi/10.1103/PhysRevLett.132.184002",
+        "title": "Turbulent Flows Are Not Uniformly Multifractal (PRL 132, 184002, 2024)",
+        "kind": "secondary",
+        "supports": "同一研究線之前作（摘要層級閱讀，經搜尋結果確認存在與被引狀態）"
+      },
+      {
+        "url": "https://www.cambridge.org",
+        "title": "de Silva et al. 2015（K41 檢驗方法學，經搜尋摘要）",
+        "kind": "secondary",
+        "supports": "ξ2=2/3 與 E(k)∝k^-5/3 之標準聯合檢驗方法學"
+      }
+    ],
+    "limitations": "6 query 有界檢索；Mukherjee 2607.26896 僅讀 abs 頁未讀全文/補充；PRL 2024 僅摘要層級；『無搜尋結果』非未解證明；未覆蓋付費牆全文。",
+    "scope_comparison": "題卡 scope＝三維湍流間歇性與異常尺度律之可檢驗機制描述。primary 摘要明示『remains beyond the scope of a complete theoretical description』且無同範圍解答 → NO_RESOLUTION_FOUND；2026 新文獻為方法進展（structure filtering），不構成同範圍解答，題卡 known_result 無需更新。",
+    "baseline": "baseline＝K41 理想參照之合成重現：S(k)∝k^-5/3 模態疊加訊號，檢驗 (a) 能量收支、(b) S2~r^(2/3)、(c) FFT 頻譜斜率、(d) β=3 負控、(e) 評估器防護。evaluator 由頻譜法與結構函數法雙路交叉。"
+  },
+  "artifacts": [
+    "runs/20260927T183904247351Z-glm-PHYS-001/LITERATURE_MAP.md",
+    "runs/20260927T183904247351Z-glm-PHYS-001/ROUND_REPORT.md",
+    "problems/PHYS-001/experiments/baseline_r1/k41_baseline.py",
+    "problems/PHYS-001/results/r1/k41_baseline_results.json",
+    "problems/PHYS-001/results/r1/hashes.txt",
+    "problems/PHYS-001/results/r1/environment.txt"
+  ],
+  "result": {
+    "state": "ROUND_FINISHED",
+    "verdict": "NO_RESOLUTION_FOUND",
+    "summary": "K41 合成基線：S2 凍結窗斜率 0.6384（2/3 帶內）、頻譜斜率 1.667/3.0008（5/3 與 3）、能量收支 4e-14、交叉一致性成立、evaluator 防護通過；E3 負控門檻（先驗 1.7）未達（實測 1.54），依凍結規則記 FAIL 並分析——總體 BASELINE_FAIL_DO_NOT_PROCEED_TO_NOVELTY（8/9）。",
+    "skeptic_bugs_found": [
+      "spectral_slope regressed log P vs linear k instead of log-log (fixed; spec slopes now 1.667/3.0008)",
+      "results output path parents[3] off by one (fixed to parents[2])",
+      "round.json checked_at written in the future (gate rejected; corrected)"
+    ],
+    "wall_minutes_used_approx": 25
+  },
+  "admitted_at": "2026-09-27T18:43:37.994259+00:00"
+}
