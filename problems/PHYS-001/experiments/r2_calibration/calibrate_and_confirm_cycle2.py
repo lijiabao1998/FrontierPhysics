@@ -64,6 +64,7 @@ def main() -> int:
     (HERE / "bands2.json").write_text(
         json.dumps(bdoc, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
+    stage_a_rows_full = stage_a  # persisted wholesale below (Codex P2)
     stage_b, viol = [], []
     for name, beta in c.BETAS.items():
         k.N = 4096
@@ -91,6 +92,9 @@ def main() -> int:
                       and bands[f"K2_2|{wname}|sf"][1] < bands[f"K3_3|{wname}|sf"][0])
     checks = {"B1_in_bands": not viol, "B4_separation_all_windows": all(sep.values())}
     out = {"cycle": 2, "executable": "calibrate_and_confirm_cycle2.py",
+           "W3_note": "true 13-point geometric grid on [12,156] per admitted rule (round(12*13^(k/12)))",
+           "stage_a_raw_rows": stage_a_rows_full,
+           "stage_b_raw_rows": stage_b,
            "semantics": "deterministic numerical reproducibility check "
                         "(seeds vary phases only; not a statistical confirmation)",
            "stage_a_seeds": A_SEEDS, "stage_b_seeds": B_SEEDS,

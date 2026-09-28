@@ -29,7 +29,10 @@ from k41_baseline import (make_field, s2, ols, fft, spectral_slope,  # noqa: E40
 BETAS = {"K41_5_3": 5.0 / 3.0, "K2_2": 2.0, "K3_3": 3.0}
 WINDOWS = {"W1": [16, 20, 25, 31, 39, 49, 62, 78, 98, 124, 156, 197, 249],
            "W2": [24, 30, 38, 48, 60, 76, 96, 121, 152, 192, 242, 305, 384],
-           "W3": [12, 15, 19, 24, 30, 38, 48, 60, 76, 96, 121, 152, 156]}
+           # W3 corrected (Codex P2): the admitted rule froze a 13-point
+           # GEOMETRIC grid on [12, 156]; the previous list was not geometric
+           # (final step 152->156). Rebuilt as round(12 * 13^(k/12)), k=0..12.
+           "W3": [round(12 * 13 ** (k / 12)) for k in range(13)]}
 SPEC_BAND = (16, 512)
 STAGE_A_SEEDS = [1, 2, 3, 4, 5, 6, 7, 8]
 STAGE_B_SEEDS = [11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
