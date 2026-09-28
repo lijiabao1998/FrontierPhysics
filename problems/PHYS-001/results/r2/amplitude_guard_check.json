@@ -1,0 +1,7 @@
+{
+  "reference_residual": 4.090885079679787e-14,
+  "reference_pass": true,
+  "inflated_residual": 1.250000000000092,
+  "inflated_fail": true,
+  "note": "guard now uses the actual make_field amplitudes (Codex P2): unmodified -> PASS, 1.5x -> FAIL"
+}

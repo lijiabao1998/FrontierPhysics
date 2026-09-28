@@ -1,6 +1,6 @@
 {
-  "frozen_at": "cycle2",
-  "rule": "mean +/- max(4*std, 0.01); Stage A seeds 21-28",
+  "frozen_at": "2026-09-28T07:15:17+00:00",
+  "rule": "mean +/- max(4*std, 0.01); Stage A seeds 21-28, N=4096",
   "floor": 0.01,
   "bands": {
     "K41_5_3|W1|sf": [

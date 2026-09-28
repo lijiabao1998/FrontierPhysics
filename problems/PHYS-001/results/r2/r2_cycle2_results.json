@@ -1,17 +1,46 @@
 {
   "cycle": 2,
+  "executable": "calibrate_and_confirm_cycle2.py",
+  "semantics": "deterministic numerical reproducibility check (seeds vary phases only; not a statistical confirmation)",
+  "stage_a_seeds": [
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28
+  ],
+  "stage_b_seeds": [
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40
+  ],
   "stage_a_n": 72,
   "stage_b_n": 90,
   "n_violations": 0,
   "violations": [],
+  "B4_separation_by_window": {
+    "W1": true,
+    "W2": true,
+    "W3": true
+  },
   "checks": {
     "B1_in_bands": true,
-    "B4_separation": true
+    "B4_separation_all_windows": true
   },
   "verdict": "CALIBRATED_BASELINE_PASS",
   "bands_doc": {
-    "frozen_at": "cycle2",
-    "rule": "mean +/- max(4*std, 0.01); Stage A seeds 21-28",
+    "frozen_at": "2026-09-28T07:15:17+00:00",
+    "rule": "mean +/- max(4*std, 0.01); Stage A seeds 21-28, N=4096",
     "floor": 0.01,
     "bands": {
       "K41_5_3|W1|sf": [
@@ -87,5 +116,6 @@
         3.0108
       ]
     }
-  }
+  },
+  "generated": "2026-09-28T07:15:25+00:00"
 }

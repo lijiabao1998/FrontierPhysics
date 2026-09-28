@@ -97,7 +97,15 @@
     "skeptic_bugs_found": [
       "zero-width +/-4*std bands under near-deterministic estimator (cycle 1 FAIL, fixed by pre-registered absolute floor in cycle 2)"
     ],
-    "wall_minutes_used_approx": 35
+    "wall_minutes_used_approx": 35,
+    "remediation_v2": {
+      "cycle2_executable": "problems/PHYS-001/experiments/r2_calibration/calibrate_and_confirm_cycle2.py (committed; re-run reproduces bands2.json + r2_cycle2_results.json: 0/90 violations, B4 all windows)",
+      "semantics_downgrade": "Stage A/B = deterministic numerical reproducibility check (seeds vary phases only); NOT statistical confirmation; true generalization needs amplitude/spectral variation (deferred)",
+      "b4_all_windows": "separation now asserted in W1/W2/W3 (all true)",
+      "amplitude_guard": "k41_baseline E6 now uses real make_field amplitudes; results/r2/amplitude_guard_check.json: reference 4.1e-14 PASS, 1.5x 1.25 FAIL",
+      "beta3_window_property": "beta=3 measured slope 1.54 is a WINDOW-DEPENDENT STATISTIC (marginal log correction), not a clean exponent — per dsk independent audit (PR #3); 1.54 must not be quoted as a universal exponent",
+      "hashes": "verify_manifest.py; regenerated after final edits"
+    }
   },
   "admitted_at": "2026-09-27T19:30:10.980490+00:00"
 }

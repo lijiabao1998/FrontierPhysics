@@ -176,8 +176,11 @@ def main() -> int:
     u_ref, _ = make_field(5.0 / 3.0, 1)
     sine = [math.cos(2.0 * math.pi * 50.0 * j / N) for j in range(N)]
     checks["E6_sine_rejected_by_sf"] = not (lo <= sf_slope(sine) <= hi)
+    # guard uses the REAL make_field amplitudes (Codex P2: fake [1.0] analytic
+    # gives the check no teeth); reference must PASS, 1.5x must FAIL
+    u_ref_amps = make_field(5.0 / 3.0, 1)[1]
     checks["E6_amplitude_inflation_rejected_by_energy"] = energy_budget(
-        [1.5 * v for v in u_ref], [1.0] * 1) > TOL["energy"]
+        [1.5 * v for v in u_ref], u_ref_amps) > TOL["energy"]
     out["checks"] = checks
     out["verdict"] = ("BASELINE_PASS" if all(checks.values())
                       else "BASELINE_FAIL_DO_NOT_PROCEED_TO_NOVELTY")

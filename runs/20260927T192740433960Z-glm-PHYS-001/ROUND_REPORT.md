@@ -26,3 +26,11 @@
 ## 下一輪最小下一步
 1. 以循環 2 凍結帶為固定驗收，實作 Sabra（stdlib RK4，N殼=22，f 於 n=4-6）——三 guards 全綠才收數據。
 2. 把帶規則（±max(4σ, floor)）寫入未來所有兩段式流程的模板。
+
+## Remediation v2（Convergence Wave，Codex 二審回應）
+- **P1 cycle-2 executable**：`calibrate_and_confirm_cycle2.py` 已入庫並實際重跑——重現 bands2.json＋r2_cycle2_results.json（Stage A seeds 21-28、Stage B 31-40、floor 規則、0/90 違規）。
+- **P1 語義降級（Codex P1，採方案 B）**：整週期整數 Fourier 模態場之 seed 只變 phase，能量/頻譜/全域 S2 對 phase 不敏感（交叉項相消）——Stage A/B 是**確定性數值重現檢查**，不是統計確認；真統計泛化需變幅/譜擾動/獨立有限子窗（延後）。
+- **P1 hashes**：verify_manifest.py，最後生成。
+- **P2 B4**：三個凍結窗全部檢查分離（W1/W2/W3 全 true）。
+- **P2 amplitude guard**：改用 make_field 真正返回之 amplitudes——unmodified 4.1e-14 PASS、1.5× 1.25 FAIL（results/r2/amplitude_guard_check.json）。
+- **dsk verifier 歸因**：β=3 之 1.54 是**窗依賴統計量**（marginal log 修正），非 clean exponent、非 universal exponent——依 dsk 獨立審計（PR #3）記錄；其「finite-window saturation」結論僅部分吸收（β=3 log 修正保留），不宣稱 dsk 已排除 implementation error（其自身 review 未收斂）。
