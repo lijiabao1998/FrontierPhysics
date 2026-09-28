@@ -1,0 +1,394 @@
+{
+  "P1B_local_exponent_table": {
+    "k41_5_3": [
+      {
+        "k_lo_r": 0.07363107781851078,
+        "local_exponent": 0.7993256541317217,
+        "r": 16
+      },
+      {
+        "k_lo_r": 0.14726215563702155,
+        "local_exponent": 0.6527779073393747,
+        "r": 32
+      },
+      {
+        "k_lo_r": 0.2945243112740431,
+        "local_exponent": 0.6316309224363936,
+        "r": 64
+      },
+      {
+        "k_lo_r": 0.5890486225480862,
+        "local_exponent": 0.5737691497723962,
+        "r": 128
+      },
+      {
+        "k_lo_r": 0.9986214929135524,
+        "local_exponent": 0.46153219584052496,
+        "r": 217
+      },
+      {
+        "k_lo_r": 1.145883648550574,
+        "local_exponent": 0.41289402507323353,
+        "r": 249
+      }
+    ],
+    "three": [
+      {
+        "k_lo_r": 0.07363107781851078,
+        "local_exponent": 1.7324012732651717,
+        "r": 16
+      },
+      {
+        "k_lo_r": 0.14726215563702155,
+        "local_exponent": 1.6686714996136054,
+        "r": 32
+      },
+      {
+        "k_lo_r": 0.2945243112740431,
+        "local_exponent": 1.5717355782908893,
+        "r": 64
+      },
+      {
+        "k_lo_r": 0.5890486225480862,
+        "local_exponent": 1.4014126049093356,
+        "r": 128
+      },
+      {
+        "k_lo_r": 0.9986214929135524,
+        "local_exponent": 1.1629962144861228,
+        "r": 217
+      },
+      {
+        "k_lo_r": 1.145883648550574,
+        "local_exponent": 1.0723107391436226,
+        "r": 249
+      }
+    ],
+    "two": [
+      {
+        "k_lo_r": 0.07363107781851078,
+        "local_exponent": 1.0395903637895998,
+        "r": 16
+      },
+      {
+        "k_lo_r": 0.14726215563702155,
+        "local_exponent": 0.9596230854637344,
+        "r": 32
+      },
+      {
+        "k_lo_r": 0.2945243112740431,
+        "local_exponent": 0.9166453554910969,
+        "r": 64
+      },
+      {
+        "k_lo_r": 0.5890486225480862,
+        "local_exponent": 0.8205536102697253,
+        "r": 128
+      },
+      {
+        "k_lo_r": 0.9986214929135524,
+        "local_exponent": 0.6633755572964417,
+        "r": 217
+      },
+      {
+        "k_lo_r": 1.145883648550574,
+        "local_exponent": 0.6000648848586976,
+        "r": 249
+      }
+    ]
+  },
+  "P1B_plateau_question": {
+    "asymptotic_saturation_established": false,
+    "correction": "Asymptotic saturation requires k_lo*r >> 1; the window reaches k_lo*r = 1.146 at its largest lag. The local exponent of the exact discrete mode sum at r=217 is 1.1630 and at r=249 is 1.0723 -- decreasing, but far from the 0 of a saturated plateau. The first audit's 'saturated plateau' and 'second saturation mechanism' language is RETRACTED and replaced by: the window extends past the onset of the finite-band turnover (k_lo*r ~ 1), so the local exponent is falling through the window. That is what truncates the log growth; no asymptotic plateau is claimed.",
+    "k_lo_r_at_217": 0.9986214929135524,
+    "k_lo_r_at_249": 1.145883648550574,
+    "local_exponent_at_217_beta3": 1.1629962144861228,
+    "local_exponent_at_249_beta3": 1.0723107391436226
+  },
+  "P2A_chord_slope_scan": [
+    {
+      "k41_5_3": 0.6169001787892866,
+      "n_lags_all_integers": 234,
+      "three": 1.4911338935522638,
+      "two": 0.872527647118064,
+      "window": [
+        16,
+        249
+      ]
+    },
+    {
+      "k41_5_3": 0.7284571058642199,
+      "n_lags_all_integers": 7,
+      "three": 1.723288864469213,
+      "two": 1.0064328570862195,
+      "window": [
+        15,
+        21
+      ]
+    },
+    {
+      "k41_5_3": 0.6897377103036875,
+      "n_lags_all_integers": 49,
+      "three": 1.6590478412327407,
+      "two": 0.9689725738057442,
+      "window": [
+        16,
+        64
+      ]
+    },
+    {
+      "k41_5_3": 0.6623909341488817,
+      "n_lags_all_integers": 113,
+      "three": 1.5942129045007418,
+      "two": 0.9338711770921009,
+      "window": [
+        16,
+        128
+      ]
+    },
+    {
+      "k41_5_3": 0.5953296590732925,
+      "n_lags_all_integers": 218,
+      "three": 1.441824151754447,
+      "two": 0.8437724775726607,
+      "window": [
+        32,
+        249
+      ]
+    },
+    {
+      "k41_5_3": 0.56271199206382,
+      "n_lags_all_integers": 186,
+      "three": 1.3688088122650899,
+      "two": 0.7992843248874086,
+      "window": [
+        64,
+        249
+      ]
+    },
+    {
+      "k41_5_3": 0.5088649157517321,
+      "n_lags_all_integers": 497,
+      "three": 1.2749975728146477,
+      "two": 0.7294708634427934,
+      "window": [
+        16,
+        512
+      ]
+    },
+    {
+      "k41_5_3": 0.5308049879127434,
+      "n_lags_all_integers": 505,
+      "three": 1.3201942228708425,
+      "two": 0.7579343148889114,
+      "window": [
+        8,
+        512
+      ]
+    },
+    {
+      "k41_5_3": 0.26632334024087617,
+      "n_lags_all_integers": 1009,
+      "three": 0.7794448032398759,
+      "two": 0.403750024050635,
+      "window": [
+        16,
+        1024
+      ]
+    }
+  ],
+  "P2A_window_gate": {
+    "candidate_integer_lags": [
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21
+    ],
+    "evaluations": [
+      {
+        "beta": 1.6666666666666667,
+        "beta_name": "k41_5_3",
+        "gap_to_theory": 0.061790439197553115,
+        "n_lags": 7,
+        "slope_over_candidate_window": 0.7284571058642199,
+        "theory_beta_minus_1": 0.6666666666666667,
+        "window_perturbation_slopes": [
+          0.7308050884218129,
+          0.7285592521523506,
+          0.7304785133661608
+        ],
+        "window_perturbation_spread": 0.002245836269462287
+      },
+      {
+        "beta": 2.0,
+        "beta_name": "two",
+        "gap_to_theory": 0.0064328570862195456,
+        "n_lags": 7,
+        "slope_over_candidate_window": 1.0064328570862195,
+        "theory_beta_minus_1": 1.0,
+        "window_perturbation_slopes": [
+          1.0082538919251505,
+          1.0057576386204696,
+          1.0074219355754437
+        ],
+        "window_perturbation_spread": 0.00249625330468084
+      },
+      {
+        "beta": 3.0,
+        "beta_name": "three",
+        "gap_to_theory": -0.27671113553078697,
+        "n_lags": 7,
+        "slope_over_candidate_window": 1.723288864469213,
+        "theory_beta_minus_1": 2.0,
+        "window_perturbation_slopes": [
+          1.7258401009670767,
+          1.7213732950886107,
+          1.7239308394239845
+        ],
+        "window_perturbation_spread": 0.00446680587846604
+      }
+    ],
+    "gate_assessment": {
+      "beta_2_close_to_theory": true,
+      "beta_2_gap_to_theory": 0.0064328570862195456,
+      "beta_3_can_ever_reach_2_in_a_finite_window": false,
+      "beta_3_gap_to_theory": -0.27671113553078697,
+      "beta_3_slope_in_window": 1.723288864469213,
+      "beta_5_3_close_to_theory": false,
+      "beta_5_3_gap_to_theory": 0.061790439197553115,
+      "reason": "For beta = 3 the approach to the asymptotic exponent 2 is only logarithmic: the local exponent is 2 - 1/(ln(1/(k_lo r)) + 2 C0), which reaches 1.9 only when ln(1/(k_lo r)) >~ 8.1, i.e. k_lo r <~ 3e-4, i.e. r >~ 3300 -- far outside any usable window at this N and band. So no window makes beta = 3 a power-law test.",
+      "satisfiable": true,
+      "therefore": "Criterion (a) (narrow the window) is satisfiable and DOES bring beta = 2 to within 0.007 of theory, but it does NOT fix beta = 5/3: it gives 0.7285, i.e. +0.062, which is a LARGER error than GLM's window (-0.028). So the proposed gate is retracted as a recommendation -- see P2A_window_property_conclusion. It also cannot fix beta = 3 at any window. The correct handling of beta = 3 is (b): label it a reproducibility control and quote the closed form; and for beta = 5/3 the exponent must be reported together with its window and the local-exponent profile, never as a single window-free number."
+    },
+    "n_candidate_lags": 7,
+    "r_a_min_exact": 14.486636597875629,
+    "r_b_max_exact": 21.729954896813446
+  },
+  "P2A_window_property_conclusion": {
+    "beta_5_3_range_across_windows": [
+      0.26632334024087617,
+      0.7284571058642199
+    ],
+    "beta_5_3_spread": 0.4621337656233437,
+    "conclusion": "The measured slope moves smoothly with the window over a range far larger than any tolerance used for it, so the number is a property of the (band, window) pair and not of the spectrum alone. CONSEQUENCE FOR THE PROPOSED GATE: it is retracted as a recommendation. The interval [15,21] satisfies k_hi*r_a >= 20 and k_lo*r_b <= 0.1 but gives beta=5/3 -> 0.7285, a LARGER deviation from 2/3 than GLM's window (-0.028) gives, because the local exponent is ABOVE 2/3 at small r and below it at large r, so which side a window errs on depends on where it sits, not on how well resolved the band is. A 'resolved-band' condition alone therefore does not make a slope equal the asymptotic exponent."
+  },
+  "P2B_log_constant": {
+    "C0_high_precision": "0.4613932125491026360188104",
+    "convergence_sweep": [
+      {
+        "F_minus_half_log": "0.4616015111643470005679049",
+        "x": "1e-1"
+      },
+      {
+        "F_minus_half_log": "0.4613952958789637512635159",
+        "x": "1e-2"
+      },
+      {
+        "F_minus_half_log": "0.4613932333824356221299256",
+        "x": "1e-3"
+      },
+      {
+        "F_minus_half_log": "0.4613932127574359693174215",
+        "x": "1e-4"
+      },
+      {
+        "F_minus_half_log": "0.4613932125511859693521403",
+        "x": "1e-5"
+      },
+      {
+        "F_minus_half_log": "0.4613932125491234693521437",
+        "x": "1e-6"
+      },
+      {
+        "F_minus_half_log": "0.4613932125491028443521437",
+        "x": "1e-7"
+      },
+      {
+        "F_minus_half_log": "0.4613932125491026381021437",
+        "x": "1e-8"
+      },
+      {
+        "F_minus_half_log": "0.4613932125491026360396437",
+        "x": "1e-9"
+      },
+      {
+        "F_minus_half_log": "0.4613932125491026360190187",
+        "x": "1e-10"
+      },
+      {
+        "F_minus_half_log": "0.4613932125491026360188125",
+        "x": "1e-11"
+      },
+      {
+        "F_minus_half_log": "0.4613932125491026360188107",
+        "x": "1e-12"
+      },
+      {
+        "F_minus_half_log": "0.4613932125491026360188377",
+        "x": "1e-13"
+      },
+      {
+        "F_minus_half_log": "0.4613932125491026360241623",
+        "x": "1e-14"
+      },
+      {
+        "F_minus_half_log": "0.4613932125491026363075819",
+        "x": "1e-15"
+      },
+      {
+        "F_minus_half_log": "0.4613932125491026581337357",
+        "x": "1e-16"
+      },
+      {
+        "F_minus_half_log": "0.4613932125491002300400578",
+        "x": "1e-17"
+      },
+      {
+        "F_minus_half_log": "0.4613932125491567084422406",
+        "x": "1e-18"
+      },
+      {
+        "F_minus_half_log": "0.4613932125147419987139604",
+        "x": "1e-19"
+      },
+      {
+        "F_minus_half_log": "0.4613932077974767900420987",
+        "x": "1e-20"
+      }
+    ],
+    "first_value": "0.4616015111643470005679049",
+    "last_value": "0.4613932077974767900420987",
+    "precision_claim": "C0 = 0.46139321254910263602 is supported to the sweep's observed spread (0.000208 over x = 1e-1..1e-20), not to 5e-7. The first version printed 0.461336 from a partially converged quadrature while the report used 0.461390, a discrepancy of 5.4e-5 that its 'stable to 5e-7' claim contradicted. This value replaces both, and the sweep it advertises is the sweep performed.",
+    "stable_to": "0.000208",
+    "sweep_max_minus_min": "0.00020830337",
+    "sweep_points": 20
+  },
+  "config": {
+    "N": 4096,
+    "dps": 40,
+    "glm_lags": [
+      16,
+      20,
+      25,
+      31,
+      39,
+      49,
+      62,
+      78,
+      98,
+      124,
+      156,
+      197,
+      249
+    ],
+    "k_band": [
+      3,
+      900
+    ],
+    "k_hi": 1.380582709097077,
+    "k_lo": 0.0046019423636569235
+  }
+}

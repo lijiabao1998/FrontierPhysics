@@ -1,0 +1,20 @@
+{
+  "sf_mean_slope_pos": 0.6384,
+  "sf_std_pos": 0.0,
+  "sf_mean_slope_neg": 1.54,
+  "spec_mean_slope_pos": 1.667,
+  "spec_mean_slope_neg": 3.0008,
+  "energy_max_rel_residual_pos": 4.090885079679787e-14,
+  "checks": {
+    "E1_energy_budget_pos": true,
+    "E1_energy_budget_neg": true,
+    "E2_sf_2_3_band": true,
+    "E3_negative_control_steep": false,
+    "E4_spectrum_slope_pos": true,
+    "E4_spectrum_slope_neg": true,
+    "E5_cross_consistency_pos": true,
+    "E6_sine_rejected_by_sf": true,
+    "E6_amplitude_inflation_rejected_by_energy": true
+  },
+  "verdict": "BASELINE_FAIL_DO_NOT_PROCEED_TO_NOVELTY"
+}
