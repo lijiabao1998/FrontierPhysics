@@ -59,7 +59,8 @@ def main() -> int:
     bdoc = {"frozen_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
             "rule": "mean +/- max(4*std, 0.01); Stage A seeds 21-28, N=4096",
             "floor": FLOOR,
-            "bands": {k2: [round(x, 4) for x in v] for k2, v in bands.items()}}
+            "energy_max": bands["energy_max"],
+            "bands": {k2: [round(x, 4) for x in v] for k2, v in bands.items() if k2 != "energy_max"}}}
     (HERE / "bands2.json").write_text(
         json.dumps(bdoc, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
