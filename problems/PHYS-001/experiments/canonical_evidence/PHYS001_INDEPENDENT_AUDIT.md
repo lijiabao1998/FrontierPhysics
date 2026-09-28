@@ -149,9 +149,13 @@ integration of the series for `1−cos q`,
 C0 = F_tail + Σ_{n≥2} (−1)^(n+1) / ((2n)!·(2n−2)),   F_tail = ∫_1^∞ q^-3 (1−cos q) dq
 ```
 
-computed with `mpmath` at 40 digits (tanh-sinh quadrature for `F_tail`).
+computed with the **standard library only** — an earlier revision of this section said "mpmath at
+40 digits", which was false: the committed script imports no `mpmath`, performs ordinary
+double-precision Simpson integration, and ignores its `--dps` argument. The multiprecision check
+was run interactively during development and is **not** reproduced by any committed command, so
+the section no longer attributes the result to it.
 
-- **C₀ = 0.4613921675492818** — standard library only (no third-party module).
+- **C₀ = 0.4613921675492818** — standard library only (no third-party module, double precision).
   Computed as `F_tail` plus the rapidly converging series, where `F_tail` is a composite
   Simpson on `[1, 1000]` plus its analytic remainder `1/(2Q²) + Q⁻³sinQ − 3Q⁻⁴cosQ`.
   **`F_tail = 0.481882378019`**, validated to ~1e-12 by two independent routes: Simpson plus

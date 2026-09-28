@@ -96,10 +96,39 @@ all integers in each window:
 tolerance used for it. The **lag set matters too**: over the same span, GLM's 13 geometric lags
 give 0.6384 while all 234 integers give 0.6169. Both are legitimate; neither is "the" exponent.
 
-**β = 3 can never be a power-law test at this `N` and band.** Its local exponent is
-`2 − 1/(ln(1/(k_lo·r)) + 2C₀)`, which exceeds 1.9 only for `k_lo·r < 1.14e-4`, i.e.
-**`r < 0.0248`** — the required regime is at *small* `r`, **below one sample**. (An earlier
-revision had this inequality reversed, claiming `r ≳ 3300`; corrected.)
+**β = 3 cannot be read as a marginal inertial-range exponent at this `N` and band — and the
+reason has TWO cutoffs, not one.** Both conditions must hold for the log-corrected form
+`2 − 1/(ln(1/(k_lo·r)) + 2C₀)` to describe the data: `k_lo·r ≪ 1` (no infrared cutoff) **and**
+`k_hi·r ≫ 1` (no ultraviolet cutoff). At this `N = 4096`, band `[3,900]`, `k_lo = 0.004602` and
+`k_hi = 1.3806`, and the second condition is the binding one.
+
+Measured exact local exponent, β = 3:
+
+| r | k_lo·r | k_hi·r | exact local exponent | which regime |
+|---|---|---|---|---|
+| 1 | 0.005 | 1.38 | **1.9743** | UV analytic `r²` (k_hi·r not ≫ 1) |
+| 2 | 0.009 | 2.76 | **1.9117** | UV analytic `r²` |
+| 4 | 0.018 | 5.52 | 1.8063 | transition |
+| 8 | 0.037 | 11.0 | 1.7759 | log/marginal |
+| 16 | 0.074 | 22.1 | 1.7324 | log/marginal |
+| 249 | 1.146 | 344 | 1.0723 | past the turnover onset |
+
+**CORRECTION to the previous revision of this document.** It said "within `r ≥ 1` the local
+exponent never reaches 1.9". **That is false**, as a reviewer showed and as the table above
+confirms: the exponent is **1.9743 at `r = 1`** and **1.9117 at `r = 2`**, and an OLS fit over
+integer lags `[1,4]` gives **1.9060** — all above 1.9. The cause is *ultraviolet*, not marginal:
+at `r = 1`, `k_hi·r = 1.38`, so the mode sum is in its analytic Taylor regime where `S₂ ∝ r²` and
+the exponent tends to 2. That is a cutoff artefact of the *upper* edge and has nothing to do with
+the `k⁻³` marginal scaling.
+
+So the correct statement is: the log-corrected marginal form applies only where the window is
+inside **both** cutoffs, and no usable lag at this `N` and band is — `r ≳ 15` violates the UV
+condition and `r ≲ 0.025` violates the IR one, so the marginal regime is squeezed out entirely.
+The earlier "`r < 0.0248`" statement described only the IR condition and was used to draw a
+conclusion about `r ≥ 1` that the UV side falsifies. What survives is the conclusion the data
+supports: **at this `N` and band there is no window in which β = 3 exhibits a clean marginal
+exponent**, and an OLS slope over any window mixes the UV `r²` approach, the log regime and the
+IR turnover.
 
 ## P4 — The β = 3 log constant, with a supported precision
 
