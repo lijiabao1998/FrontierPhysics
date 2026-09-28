@@ -6,6 +6,11 @@
     "comparison_bound_reason": "floating-point error budget: both sides evaluate the same double-precision sum and OLS, so 1e-12 leaves ~3 orders of headroom over accumulated rounding while admitting no real discrepancy. An earlier 5e-5 bound rested on a false four-decimal rounding premise and is retracted.",
     "gap_k41_vs_published": 1.099120794378905e-14,
     "gap_steep_vs_published": 1.3100631690576847e-14,
+    "gaps": {
+      "bound": 1e-12,
+      "k41": 1.099120794378905e-14,
+      "steep": 1.3100631690576847e-14
+    },
     "glm_reported_k41": 0.6383646079612384,
     "glm_reported_k41_std": 7.113575885558479e-15,
     "glm_reported_steep": 1.5400285073651272,
@@ -28,10 +33,10 @@
     "own_steep_spread": 1.3322676295501878e-15,
     "realisation_noise_is_zero": true,
     "realisation_noise_note": "per-seed slopes agree to ~1e-15, i.e. floating-point summation order. The estimator carries no seed-dependent signal, so no 0.049 gap can be attributed to noise.",
-    "reproduced_within_published_precision_k41": true,
-    "reproduced_within_published_precision_steep": true,
+    "reproduced_within_float_bound_k41": true,
+    "reproduced_within_float_bound_steep": true,
     "spread_zero_band": 1e-12,
-    "verdict": "GLM's structure-function slope is reproduced by an independent implementation of GLM's own specification, on GLM's own 13 geometric lags, to within GLM's published precision (4 decimals; gaps 3.5e-5 and 2.9e-5), and my own generator agrees with the closed form to ~5e-15. The estimator is seed-independent: the per-seed spread is exactly 0.0, as GLM's own sf_std reports, because the j-average of the squared increment is phase-independent. Implementation error (B) is therefore excluded ON GLM'S OWN TERMS, by exact reproduction rather than by a tolerance. CORRECTION TO THE FIRST AUDIT: its 1.4911 was the slope of the same function over all 234 integers in [16,249] instead of GLM's 13 geometric lags, so the 0.0489 gap it reported was a LAG-SET (sampling) difference, not realisation noise -- and it could not have been noise, because the spread is exactly zero. The first audit's comparison was therefore between two different quantities, and its '3% apart, consistent with realisation noise' wording is retracted."
+    "verdict": "GLM's structure-function slope is reproduced by an independent implementation of GLM's own specification, on GLM's own 13 geometric lags, to a gap of 1.1e-14 (beta=5/3) and 1.3e-14 (beta=3) against GLM's FULL-PRECISION stored values -- i.e. ordinary double-precision rounding, not a tolerance. My own generator agrees with the closed form to ~5e-15. The estimator is seed-independent: the per-seed spread is exactly 0.0, as GLM's own sf_std reports, because the j-average of the squared increment is phase-independent. Implementation error (B) is therefore excluded ON GLM'S OWN TERMS, by exact reproduction rather than by a tolerance. CORRECTION TO THE FIRST AUDIT: its 1.4911 was the slope of the same function over all 234 integers in [16,249] instead of GLM's 13 geometric lags, so the 0.0489 gap it reported was a LAG-SET (sampling) difference, not realisation noise -- and it could not have been noise, because the spread is exactly zero. The first audit's comparison was therefore between two different quantities, and its '3% apart, consistent with realisation noise' wording is retracted."
   },
   "config": {
     "N": 4096,
@@ -66,7 +71,7 @@
     "hash_verified_against_pinned_value": true,
     "results_fresh": true,
     "results_path": "C:\\Users\\Leon1\\OneDrive\\Desktop\\\u524d\u6cbfRP\\_dsk\\FrontierPhysics\\problems\\PHYS-001\\experiments\\results\\r1\\k41_baseline_results.json",
-    "seconds": 3.41,
+    "seconds": 3.25,
     "sha256": "b1070ea49ec142addeda3be51092eaa92624199bcf788c78013cad0c172d5a70",
     "sha256_normalisation": "LF (CRLF-normalised, so the value is checkout-independent)",
     "sha256_raw_bytes": "5244be1dd4632bc8d06317abef287e17cc5b8768dfca815ad4653fb1b6e4d7db",

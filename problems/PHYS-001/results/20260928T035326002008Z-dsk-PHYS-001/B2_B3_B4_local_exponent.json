@@ -280,14 +280,15 @@
     "C0_value": 0.4613921675492818,
     "F_tail_validated_by": "Two independent routes agree to ~1e-12: (i) Simpson on [1,Q] + analytic tail for Q = 1000, 2000, 5000 (stable to ~1e-12), and (ii) F_tail = 1/2 - A_3(1) with A_3(1) = int_1^inf cos q / q^3 dq evaluated on a different grid to 2*pi*400 plus its own analytic remainder.",
     "F_tail_validation_executed": {
+      "acceptance_bound": 1e-11,
       "route_a_by_Q": {
         "1000": 0.4818823780193526,
         "2000": 0.48188237801925576,
         "5000": 0.4818823780182286
       },
       "route_b_via_A3_of_1": 0.48188237801937406,
-      "routes_agree_within": 1.1454726056570053e-12,
-      "spread": 1.1454726056570053e-12
+      "spread": 1.1454726056570053e-12,
+      "validation_passed": true
     },
     "F_tail_value": 0.48188237801944256,
     "convergence_sweep": [

@@ -151,10 +151,16 @@ def f_tail_routes(Q_extra=(2000.0, 5000.0)) -> dict:
     route_b = 0.5 - a3
 
     vals = list(route_a.values()) + [route_b]
+    spread = max(vals) - min(vals)
+    # An acceptance bound, so a regression that makes the routes disagree FAILS rather than
+    # being reported alongside a hard-coded "they agree" claim. The bound is the spread the two
+    # routes are expected to achieve in double precision; exceeding it is a validation failure.
+    ACCEPT = 1e-11
     return {"route_a_by_Q": {str(int(q)): v for q, v in route_a.items()},
             "route_b_via_A3_of_1": route_b,
-            "spread": max(vals) - min(vals),
-            "routes_agree_within": max(vals) - min(vals)}
+            "spread": spread,
+            "acceptance_bound": ACCEPT,
+            "validation_passed": bool(spread <= ACCEPT)}
 
 
 def c0_series_tail(_dps_unused: int = 0) -> float:
@@ -413,12 +419,17 @@ def main(argv: Sequence[str] | None = None) -> int:
     }
     print("   " + out["P2B_log_constant"]["precision_claim"])
 
+    ftv = out["P2B_log_constant"].get("F_tail_validation_executed") or {}
+    if ftv and not ftv.get("validation_passed", False):
+        print(f"   VALIDATION FAILED: quadrature routes disagree by {ftv.get('spread')} "
+              f"> bound {ftv.get('acceptance_bound')}")
     if args.json:
         os.makedirs(os.path.dirname(os.path.abspath(args.json)), exist_ok=True)
         with open(args.json, "w", encoding="utf-8") as fh:
             json.dump(out, fh, indent=2, sort_keys=True, default=str)
         print(f"[written] {args.json}")
-    return 0
+    # non-zero when the numerical validation the constant rests on did not hold
+    return 0 if (not ftv or ftv.get("validation_passed", True)) else 1
 
 
 def ols_slope(lags: Sequence[int], beta: float) -> float:

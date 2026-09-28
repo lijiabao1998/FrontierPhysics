@@ -83,14 +83,14 @@
     {
       "path": "problems/PHYS-001/results/20260928T035326002008Z-dsk-PHYS-001/B1_glm_reproduction.json",
       "bytes": 7415,
-      "sha256": "3287e89bc68d7ba60c5bdf6f07b573be1a2149dadcfbf2e049af16e4fc11be80",
+      "sha256": "998397a2af6b64a6270aab0bd5658b5bf1082e99a9500652e8a933e3182f7bbf",
       "hash_of": "git_blob",
       "kind": "round output (in-round, regenerated)"
     },
     {
       "path": "problems/PHYS-001/results/20260928T035326002008Z-dsk-PHYS-001/B1_glm_reproduction.log",
       "bytes": 2901,
-      "sha256": "a2f727e4d23181ef6d210f090ef9b833775bee93a6e24ff6df826ef2b19cf506",
+      "sha256": "09e2c807e664d0ea3997773ed6b0f27f6bde452eb200da68b3ff2b5361f7f6e0",
       "hash_of": "git_blob",
       "kind": "round output (in-round, regenerated)"
     },
@@ -117,8 +117,8 @@
     },
     {
       "path": "problems/PHYS-001/results/20260928T035326002008Z-dsk-PHYS-001/B2_B3_B4_local_exponent.json",
-      "bytes": 13167,
-      "sha256": "1da2de53de666180b7d89feb2c10d2e445858a0f9f2a29cd8d0ccbdd3bece0af",
+      "bytes": 13493,
+      "sha256": "479813a846c13e2c69022cd0a5f3c56da68b0e31177f0412201269710fee1d5e",
       "hash_of": "git_blob",
       "kind": "round output (in-round, regenerated)"
     },
@@ -138,8 +138,8 @@
     },
     {
       "path": "problems/PHYS-001/experiments/dsk_audit_r1/s2_local_exponent.py",
-      "bytes": 19815,
-      "sha256": "82bd52abbddc23b7429e76013ce5b437e1ff376698b143e31fd01d494a00d365",
+      "bytes": 21662,
+      "sha256": "dc923fef8c20a7aef7f937674ca57848e0a0532c5a0028d6e4832dd60a06c21a",
       "hash_of": "git_blob",
       "kind": "program / document"
     },
@@ -288,7 +288,7 @@
           "beta_3_slope_in_window": 1.723288864469213,
           "beta_5_3_close_to_theory": false,
           "beta_5_3_gap_to_theory": 0.061790439197553115,
-          "reason": "For beta = 3 the approach to the asymptotic exponent 2 is only logarithmic: the local exponent is 2 - 1/(ln(1/(k_lo r)) + 2 C0), which reaches 1.9 only when ln(1/(k_lo r)) >~ 8.1, i.e. k_lo r <~ 3e-4, i.e. r >~ 3300 -- far outside any usable window at this N and band. So no window makes beta = 3 a power-law test.",
+          "reason": "[SUPERSEDED by beta_3_uv_ir_correction: the r >~ 3300 direction was reversed; the required regime is r < 0.0248]",
           "satisfiable": true,
           "therefore": "Criterion (a) (narrow the window) is satisfiable and DOES bring beta = 2 to within 0.007 of theory, but it does NOT fix beta = 5/3: it gives 0.7285, i.e. +0.062, which is a LARGER error than GLM's window (-0.028). So the proposed gate is retracted as a recommendation -- see P2A_window_property_conclusion. It also cannot fix beta = 3 at any window. The correct handling of beta = 3 is (b): label it a reproducibility control and quote the closed form; and for beta = 5/3 the exponent must be reported together with its window and the local-exponent profile, never as a single window-free number."
         },
@@ -298,7 +298,8 @@
         ],
         "beta_5_3_spread": 0.4621337656233437,
         "passed": true,
-        "action": "The proposed gate is RETRACTED. The interval [15,21] satisfies both conditions but gives beta=5/3 -> 0.7285, a LARGER deviation from 2/3 than GLM's window, because the local exponent is above 2/3 at small r and below it at large r. A resolved-band condition alone does not make an OLS slope equal the asymptotic exponent."
+        "action": "The proposed gate is RETRACTED. The interval [15,21] satisfies both conditions but gives beta=5/3 -> 0.7285, a LARGER deviation from 2/3 than GLM's window, because the local exponent is above 2/3 at small r and below it at large r. A resolved-band condition alone does not make an OLS slope equal the asymptotic exponent.",
+        "beta_3_uv_ir_correction": "[SUPERSEDED by beta_3_uv_ir_correction: the r >~ 3300 direction was reversed; the required regime is r < 0.0248]"
       },
       "B4_log_constant_precision_supported": {
         "C0_high_precision": 0.4613921675492818,
@@ -342,7 +343,7 @@
     "wall_minutes_used_approx": 75,
     "wall_minutes_note": "Declared budget was the schema maximum of 120; the session overall was longer because it also covered the review and remediation work."
   },
-  "admitted_at": "2026-09-28T06:39:15.693325+00:00",
+  "admitted_at": "2026-09-28T06:57:51.977360+00:00",
   "executed_commands": [
     {
       "cmd": "python reproduce_and_compare.py --json ../../results/<round-id>/B1_glm_reproduction.json",

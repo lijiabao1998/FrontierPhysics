@@ -3,14 +3,14 @@
     {
       "path": "problems/PHYS-001/results/20260928T035326002008Z-dsk-PHYS-001/B1_glm_reproduction.json",
       "bytes": 7415,
-      "sha256": "3287e89bc68d7ba60c5bdf6f07b573be1a2149dadcfbf2e049af16e4fc11be80",
+      "sha256": "998397a2af6b64a6270aab0bd5658b5bf1082e99a9500652e8a933e3182f7bbf",
       "hash_of": "git_blob",
       "kind": "round output (in-round, regenerated)"
     },
     {
       "path": "problems/PHYS-001/results/20260928T035326002008Z-dsk-PHYS-001/B1_glm_reproduction.log",
       "bytes": 2901,
-      "sha256": "a2f727e4d23181ef6d210f090ef9b833775bee93a6e24ff6df826ef2b19cf506",
+      "sha256": "09e2c807e664d0ea3997773ed6b0f27f6bde452eb200da68b3ff2b5361f7f6e0",
       "hash_of": "git_blob",
       "kind": "round output (in-round, regenerated)"
     },
@@ -37,8 +37,8 @@
     },
     {
       "path": "problems/PHYS-001/results/20260928T035326002008Z-dsk-PHYS-001/B2_B3_B4_local_exponent.json",
-      "bytes": 13167,
-      "sha256": "1da2de53de666180b7d89feb2c10d2e445858a0f9f2a29cd8d0ccbdd3bece0af",
+      "bytes": 13493,
+      "sha256": "479813a846c13e2c69022cd0a5f3c56da68b0e31177f0412201269710fee1d5e",
       "hash_of": "git_blob",
       "kind": "round output (in-round, regenerated)"
     },
@@ -58,8 +58,8 @@
     },
     {
       "path": "problems/PHYS-001/experiments/dsk_audit_r1/s2_local_exponent.py",
-      "bytes": 19815,
-      "sha256": "82bd52abbddc23b7429e76013ce5b437e1ff376698b143e31fd01d494a00d365",
+      "bytes": 21662,
+      "sha256": "dc923fef8c20a7aef7f937674ca57848e0a0532c5a0028d6e4832dd60a06c21a",
       "hash_of": "git_blob",
       "kind": "program / document"
     },
