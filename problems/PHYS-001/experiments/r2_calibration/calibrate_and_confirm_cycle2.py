@@ -98,9 +98,9 @@ def main() -> int:
            "n_violations": len(viol), "violations": viol[:10],
            "B4_separation_by_window": sep,
            "checks": checks,
-           "verdict": ("CALIBRATED_BASELINE_PASS" if all(out_reg["checks"].values())
+           "verdict": ("CALIBRATED_BASELINE_PASS" if all(checks.values())
                        else "CALIBRATED_BASELINE_FAIL"),
-           "registration_status": out_reg["registration_status"],
+           "registration_status": "POST_HOC (rule adopted after cycle-1 failure; formal re-admission with pre-frozen thresholds deferred to owner decision)",
            "bands_doc": bdoc,
            "generated": datetime.now(timezone.utc).isoformat(timespec="seconds")}
     dest = HERE.parent.parent / "results" / "r2"

@@ -38,10 +38,12 @@
     "B4_separation_all_windows": true
   },
   "verdict": "CALIBRATED_BASELINE_PASS",
+  "registration_status": "POST_HOC (rule adopted after cycle-1 failure; formal re-admission with pre-frozen thresholds deferred to owner decision)",
   "bands_doc": {
-    "frozen_at": "2026-09-28T07:15:17+00:00",
+    "frozen_at": "2026-09-28T07:41:36+00:00",
     "rule": "mean +/- max(4*std, 0.01); Stage A seeds 21-28, N=4096",
     "floor": 0.01,
+    "energy_max": 1.3075213455140918e-13,
     "bands": {
       "K41_5_3|W1|sf": [
         0.6284,
@@ -117,5 +119,5 @@
       ]
     }
   },
-  "generated": "2026-09-28T07:15:25+00:00"
+  "generated": "2026-09-28T07:41:53+00:00"
 }
