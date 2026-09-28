@@ -82,74 +82,79 @@
   "artifacts": [
     {
       "path": "problems/PHYS-001/results/20260928T035326002008Z-dsk-PHYS-001/B1_glm_reproduction.json",
-      "bytes": 7594,
-      "sha256": "4d08c8dfbcec4b8636fccf01ef58642c905353804f2685839017509207d38b63",
+      "bytes": 7415,
+      "sha256": "3287e89bc68d7ba60c5bdf6f07b573be1a2149dadcfbf2e049af16e4fc11be80",
+      "hash_of": "git_blob",
       "kind": "round output (in-round, regenerated)"
     },
     {
       "path": "problems/PHYS-001/results/20260928T035326002008Z-dsk-PHYS-001/B1_glm_reproduction.log",
-      "bytes": 2924,
-      "sha256": "afbc4417eb91c0284e6e8789a016ae7852d111ebda9729ac82e259a773edafda",
+      "bytes": 2901,
+      "sha256": "a2f727e4d23181ef6d210f090ef9b833775bee93a6e24ff6df826ef2b19cf506",
+      "hash_of": "git_blob",
       "kind": "round output (in-round, regenerated)"
     },
     {
       "path": "problems/PHYS-001/results/20260928T035326002008Z-dsk-PHYS-001/B1_glm_reproduction_exploratory_copy.json",
-      "bytes": 7410,
-      "sha256": "5ada68382cde3c680451746617fb3f3a47738321ddd48e58b8513015fc9c33ef",
+      "bytes": 7236,
+      "sha256": "cdc9af36064f5069d60a468b731f28023e97fe565cd1a8aa89371ef1f5e9759f",
+      "hash_of": "git_blob",
       "kind": "round output (in-round, regenerated)"
     },
     {
       "path": "problems/PHYS-001/results/20260928T035326002008Z-dsk-PHYS-001/B1_glm_verbatim_raw_output.json",
-      "bytes": 4297,
-      "sha256": "7ec173eeab6de33462002e81eb68ad5d199c86d0de7ae7ec6f97a8042c309bf3",
+      "bytes": 4153,
+      "sha256": "2f6275210a4929620d4ce3c797f152633d19bee53f52267748e92ddff83a98a5",
+      "hash_of": "git_blob",
       "kind": "round output (in-round, regenerated)"
     },
     {
       "path": "problems/PHYS-001/results/20260928T035326002008Z-dsk-PHYS-001/B2_B3_B4_exploratory_copy.json",
-      "bytes": 13564,
-      "sha256": "3296bd12ed5834efdedd329828806607b7c44457626e1213b2d402c90d8233b1",
+      "bytes": 13167,
+      "sha256": "1da2de53de666180b7d89feb2c10d2e445858a0f9f2a29cd8d0ccbdd3bece0af",
+      "hash_of": "git_blob",
       "kind": "round output (in-round, regenerated)"
     },
     {
       "path": "problems/PHYS-001/results/20260928T035326002008Z-dsk-PHYS-001/B2_B3_B4_local_exponent.json",
-      "bytes": 13564,
-      "sha256": "3296bd12ed5834efdedd329828806607b7c44457626e1213b2d402c90d8233b1",
+      "bytes": 13167,
+      "sha256": "1da2de53de666180b7d89feb2c10d2e445858a0f9f2a29cd8d0ccbdd3bece0af",
+      "hash_of": "git_blob",
       "kind": "round output (in-round, regenerated)"
     },
     {
       "path": "problems/PHYS-001/results/20260928T035326002008Z-dsk-PHYS-001/B2_B3_B4_local_exponent.log",
-      "bytes": 4638,
-      "sha256": "aa449934792d38005f4a3eeec67cfb9d26db5292450d84b28a8b2c9dc24708dd",
-      "kind": "round output (in-round, regenerated)"
-    },
-    {
-      "path": "problems/PHYS-001/results/20260928T035326002008Z-dsk-PHYS-001/artifact_hashes.json",
-      "bytes": 3618,
-      "sha256": "4f9dfeb9de7a0b9ba67ade667ffa36df0788dbeb0a339c1497d4547c209c5e17",
+      "bytes": 4607,
+      "sha256": "34be595c6127fd9d821643cd5113115426077f6411b0c23c7903a1b886c9b6c1",
+      "hash_of": "git_blob",
       "kind": "round output (in-round, regenerated)"
     },
     {
       "path": "problems/PHYS-001/experiments/dsk_audit_r1/reproduce_and_compare.py",
-      "bytes": 19780,
-      "sha256": "8835cc1b26de193a247c4a98831ad52eb4d5c9d08b357ff2b11c235567286ab6",
+      "bytes": 19403,
+      "sha256": "d1d18b67fa4aafd88a5cec774031bda7cd878eec2a927777018fc41fac86fc1e",
+      "hash_of": "git_blob",
       "kind": "program / document"
     },
     {
       "path": "problems/PHYS-001/experiments/dsk_audit_r1/s2_local_exponent.py",
-      "bytes": 20207,
-      "sha256": "83b5d6b40be6268b6b995d560e2fd06ae69386ac8f633d984c95f3b529b95620",
+      "bytes": 19815,
+      "sha256": "82bd52abbddc23b7429e76013ce5b437e1ff376698b143e31fd01d494a00d365",
+      "hash_of": "git_blob",
       "kind": "program / document"
     },
     {
       "path": "problems/PHYS-001/experiments/dsk_audit_r1/reference/glm_k41_baseline_VERBATIM.py",
-      "bytes": 8907,
-      "sha256": "5244be1dd4632bc8d06317abef287e17cc5b8768dfca815ad4653fb1b6e4d7db",
+      "bytes": 8706,
+      "sha256": "b1070ea49ec142addeda3be51092eaa92624199bcf788c78013cad0c172d5a70",
+      "hash_of": "git_blob",
       "kind": "program / document"
     },
     {
       "path": "problems/PHYS-001/experiments/dsk_audit_r1/PHYS001_INDEPENDENT_AUDIT.md",
-      "bytes": 12670,
-      "sha256": "3f6b09762e220b58c481fbcab32907877418f4dcd4de19ff20391bb37b58f7cb",
+      "bytes": 12472,
+      "sha256": "5eecab4cc72caa986fab70ada510bbebaaa5d1be24040f6c0b1d751ca5e80450",
+      "hash_of": "git_blob",
       "kind": "program / document"
     }
   ],
@@ -298,17 +303,27 @@
       "B4_log_constant_precision_supported": {
         "C0_high_precision": 0.4613921675492818,
         "sweep_points": 20,
-        "sweep_max_minus_min": "0.00020830337",
-        "first_value": "0.4616015111643470005679049",
-        "last_value": "0.4613932077974767900420987",
-        "precision_claim": "C0 = 0.46139321254910263602 is supported to the sweep's observed spread (0.000208 over x = 1e-1..1e-20), not to 5e-7. The first version printed 0.461336 from a partially converged quadrature while the report used 0.461390, a discrepancy of 5.4e-5 that its 'stable to 5e-7' claim contradicted. This value replaces both, and the sweep it advertises is the sweep performed.",
+        "sweep_max_minus_min": 0.00020829861524435112,
+        "first_value": "0.46160046616452616",
+        "last_value": "0.4613921675492818",
+        "precision_claim": "C0 = 0.4613921675492818 is supported to the sweep's observed spread (0.000208 over x = 1e-1..1e-20), not to 5e-7. The first version printed 0.461336 from a partially converged quadrature while the report used 0.461390, a discrepancy of 5.4e-5 that its 'stable to 5e-7' claim contradicted. Both are replaced by this value, and the sweep it advertises is the sweep performed. The computation is standard-library only, so the advertised reproduction command runs on a clean checkout.",
         "convergence_table_present": true,
         "passed": true,
-        "retraction": "'stable to 5e-7' is retracted; the script printed 0.461336 while the report used 0.461390. The supported value is 0.4613932125491026 with a sweep spread of 2.1e-4 over x = 1e-1..1e-20.",
+        "retraction": "three earlier values are retracted: 0.461336 (partially converged quadrature in the script), 0.461390 (the report), and 0.4613932125491026 (an mpmath quad that mishandled the oscillatory integral and was wrong in the 6th decimal). The supported value is 0.4613921675492818 with a sweep spread of 2.1e-4 over x = 1e-1..1e-20.",
         "C0_method": "standard library only: composite Simpson on [1,1000] plus the analytic tail 1/(2Q^2) + Q^-3 sinQ - 3Q^-4 cosQ, plus the rapidly converging series sum_{n>=2} (-1)^(n+1)/((2n)!(2n-2)). No third-party dependency.",
         "correction_to_the_previous_value": "The value reported before this revision, 0.4613932125491026, was WRONG in its 6th decimal. It came from mpmath's quad(f, [1, inf]), which mishandles the oscillatory integral and returned F_tail = 0.481883428 where the two validated routes give 0.481882378 -- an error of 1.05e-6 in F_tail, and hence in C0. Reporting it to 16 digits was an unsupported precision claim on top of an undeclared dependency. The current value, 0.4613921675492818, is validated by the two routes above and uses no third-party module.",
         "F_tail_value": 0.48188237801944256,
-        "F_tail_validated_by": "Two independent routes agree to ~1e-12: (i) Simpson on [1,Q] + analytic tail for Q = 1000, 2000, 5000 (stable to ~1e-12), and (ii) F_tail = 1/2 - A_3(1) with A_3(1) = int_1^inf cos q / q^3 dq evaluated on a different grid to 2*pi*400 plus its own analytic remainder."
+        "F_tail_validated_by": "Two independent routes agree to ~1e-12: (i) Simpson on [1,Q] + analytic tail for Q = 1000, 2000, 5000 (stable to ~1e-12), and (ii) F_tail = 1/2 - A_3(1) with A_3(1) = int_1^inf cos q / q^3 dq evaluated on a different grid to 2*pi*400 plus its own analytic remainder.",
+        "F_tail_validation_executed": {
+          "route_a_by_Q": {
+            "1000": 0.4818823780193526,
+            "2000": 0.48188237801925576,
+            "5000": 0.4818823780182286
+          },
+          "route_b_via_A3_of_1": 0.48188237801937406,
+          "routes_agree_within": 1.1454726056570053e-12,
+          "spread": 1.1454726056570053e-12
+        }
       },
       "B5_verdict_on_the_E3_fail": {
         "frozen_threshold": 1.7,
@@ -327,7 +342,7 @@
     "wall_minutes_used_approx": 75,
     "wall_minutes_note": "Declared budget was the schema maximum of 120; the session overall was longer because it also covered the review and remediation work."
   },
-  "admitted_at": "2026-09-28T06:27:49.136822+00:00",
+  "admitted_at": "2026-09-28T06:39:15.693325+00:00",
   "executed_commands": [
     {
       "cmd": "python reproduce_and_compare.py --json ../../results/<round-id>/B1_glm_reproduction.json",
@@ -344,6 +359,6 @@
       "note": "standard library only; no third-party dependency."
     }
   ],
-  "artifact_hashes_note": "Hashes are of the committed files as checked out. The reference script's hash in artifacts[] is the RAW-BYTE hash of the Windows working tree and is therefore checkout-dependent; the reproducible, LF-normalised hash used by the gate is pinned in reproduce_and_compare.py as EXPECTED_REFERENCE_SHA256_LF = b1070ea49ec142addeda3be51092eaa92624199bcf788c78013cad0c172d5a70, which equals both the blob committed here and the file on glm/PHYS-001-baseline-r1.",
+  "artifact_hashes_note": "Each hash is of the GIT BLOB bytes (git show HEAD:<path>) so it identifies the committed artifact on any checkout. An earlier manifest hashed the CRLF working tree, so none of its values matched the repository on Linux, and it attempted to hash itself. The manifest now excludes itself; where a path is not yet committed the hash is over LF-normalised worktree bytes and hash_of says so.",
   "artifact_regeneration_note": "Every output listed here was regenerated by the remediated scripts in the same commit, so the hashes describe the artifacts the recorded commands actually produce. A reviewer correctly noted that an earlier revision hashed PRE-remediation outputs while presenting them as results of the remediated commands."
 }

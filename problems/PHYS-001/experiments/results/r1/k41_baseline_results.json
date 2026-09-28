@@ -43,7 +43,7 @@
       "cross": 0.1
     }
   },
-  "generated": "2026-09-28T06:26:43+00:00",
+  "generated": "2026-09-28T06:38:57+00:00",
   "cases": [
     {
       "beta_name": "K41_positive",
@@ -138,5 +138,5 @@
     "E6_amplitude_inflation_rejected_by_energy": true
   },
   "verdict": "BASELINE_FAIL_DO_NOT_PROCEED_TO_NOVELTY",
-  "completed": "2026-09-28T06:26:47+00:00"
+  "completed": "2026-09-28T06:39:00+00:00"
 }

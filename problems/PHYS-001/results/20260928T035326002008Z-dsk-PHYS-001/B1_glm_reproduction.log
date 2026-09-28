@@ -1,7 +1,7 @@
 == 1) GLM's script run verbatim, gated on a PINNED content hash ==
    sha256(LF-normalised)=b1070ea49ec142addeda3be51092eaa92624199bcf788c78013cad0c172d5a70
    pinned expected        =b1070ea49ec142addeda3be51092eaa92624199bcf788c78013cad0c172d5a70  -> MATCH, executing
-   exit=1  3.48s
+   exit=1  3.53s
    K41_positive: sf_mean=0.6383646079612384 sf_std=7.113575885558479e-15 spec_mean=1.6669528360082442
    steep_negative: sf_mean=1.5400285073651272 sf_std=4.9888437096909465e-15 spec_mean=3.0007710469540463
 == 2) independent reimplementation, per seed, over GLM's exact 13 lags ==
