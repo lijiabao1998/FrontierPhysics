@@ -1,6 +1,42 @@
 #!/usr/bin/env python3
 """PHYS-001 independent audit (DeepSeek r1): where does the beta=3 S2 slope come from?
 
+=============================================================================
+SUPERSEDED -- REVISION 1 OF THE AUDIT. THREE CLAIMS MADE HERE ARE RETRACTED.
+
+This file is kept as the record of what revision 1 computed and got wrong. It is NOT
+the current audit. The corrected work lives in:
+
+    reproduce_and_compare.py   -- GLM's estimator reproduced exactly (gap ~1e-14)
+    s2_local_exponent.py       -- exact local exponent, window analysis, C0 precision
+    PHYS001_INDEPENDENT_AUDIT.md (revision 2) -- what changed and why
+
+Retractions, with the reason, so no reader of this file inherits a wrong claim:
+
+  (1) "implementation error excluded" was argued from a 0.05 tolerance on a 0.0489 gap.
+      RETRACTED. The estimator has ZERO realisation noise (GLM's own std is 7.1e-15), so
+      no gap can be attributed to noise; and 0.0489 was a LAG-SET difference (GLM's 13
+      geometric lags vs all 234 integers in [16,249]). The exclusion now rests on exact
+      reproduction to ~1e-14, in reproduce_and_compare.py.
+
+  (2) "the window's upper lags are at or past the saturation cross-over ... the local
+      exponent has already dropped to 0" -- RETRACTED. Saturation needs k_lo*r >> 1, and
+      the window only reaches k_lo*r = 1.146. The exact local exponent at r=217 is 1.1630
+      and at r=249 is 1.0723, nowhere near 0. What actually happens is that the window
+      crosses the ONSET of finite-band turnover and the local exponent falls through it.
+
+  (3) "fitted C0 ... constant to 5e-7" -- RETRACTED. This file printed 0.461336 while its
+      own report used 0.461390, and it evaluated a single x rather than sweeping the
+      advertised 1e-1..1e-20 range. The supported value is 0.4613932125491026 with a
+      sweep spread of 2.1e-4, in s2_local_exponent.py.
+
+The verdict this file reached -- (D) finite-window effect with (A) as the proximate
+cause, NOT (B) -- survives revision 2, because revision 2 re-derives it on correct
+grounds. The diagnosis "the r^2 log marginal form is real" also survives and is now
+literature-corroborated. Everything above is left in place, with the retractions
+inline below, rather than deleted.
+=============================================================================
+
 Question under test: GLM's r1 round froze "beta=3 negative control: mean S2 slope
 >= 1.7" and measured 1.54, recording a FAIL. Its r2 round recalibrated the band to
 mean +/- max(4 sigma, 0.01) and reported 0 violations over 90 measurements, i.e. it
@@ -215,7 +251,11 @@ def main(argv: Sequence[str] | None = None) -> int:
 
     print("== E) verify the beta=3 log form F(x) = 0.5*ln(1/x) + C0 ==")
     c0 = beta3_log_constant()
-    print(f"   fitted C0 = {c0:.6f} over x = 1e-1 .. 1e-20  (constant to 5e-7)")
+    # RETRACTED (3): the original line read "(constant to 5e-7)" and evaluated a single x.
+    # That overstates the accuracy by two orders of magnitude and does not test the
+    # advertised range. The supported value is 0.4613932125491026 with a sweep spread of
+    # 2.1e-4; see s2_local_exponent.py for the 20-point convergence table.
+    print(f"   fitted C0 = {c0:.6f}  [RETRACTED precision claim; see s2_local_exponent.py]")
     out["beta3_log_constant_C0"] = c0
     ks_glm_l = modes(GLM_N, GLM_JMIN, GLM_JMAX)
     pred: list[dict] = []
@@ -236,7 +276,14 @@ def main(argv: Sequence[str] | None = None) -> int:
         "beta3_log_corrected_form": "S2(r) = 2C r^2 [ 0.5*ln(1/(k_lo r)) + 0.461390... ] for k_lo r << 1",
         "beta3_local_exponent": "2 - 1/(ln(1/(k_lo r)) + 0.922781)",
         "beta3_glm_band_measured_exponent": glm_case["slope_window"],
-        "glm_reported_1_54_matches_independent_computation": abs(glm_case["slope_window"] - GLM_SEED_SLOPE_BETA3) < 0.05,
+        # RETRACTED (1): this boolean used an unexplained 0.05 tolerance. It is kept only
+        # to make the retraction visible; it is NOT the basis for any exclusion. The
+        # exclusion rests on reproduce_and_compare.py reproducing GLM's own estimator to
+        # ~1e-14 on GLM's own 13 lags.
+        "glm_reported_1_54_matches_independent_computation_RETRACTED_TOLERANCE_ARGUMENT":
+            abs(glm_case["slope_window"] - GLM_SEED_SLOPE_BETA3) < 0.05,
+        "retraction_1": ("the 0.05-tolerance argument is withdrawn: the estimator has zero "
+                         "realisation noise and the 0.0489 gap was a lag-set difference"),
         "saturation_cross_over_r_star": r_star,
         "verdict": (
             "GLM's implementation is CORRECT and GLM's 'r^2 log' diagnosis is CORRECT "
@@ -244,11 +291,15 @@ def main(argv: Sequence[str] | None = None) -> int:
             "analytically above). The measurement is not a wrong exponent and not an "
             "implementation bug. What failed is the FROZEN THRESHOLD: 1.7 is close to the "
             "log-corrected LOCAL exponent at the smallest lag (2-1/(ln(1/0.0736)+0.9228) = "
-            "1.717), but no WINDOW AVERAGE over [16,249] can reach it, because the window's "
-            "upper lags are at or past the saturation cross-over r_* = 1/k_lo = 217, where the "
-            "local exponent has already dropped to 0. Answer: D (finite-window effect), with A "
-            "as the proximate cause of the recorded FAIL; NOT B, and C only in the sense that "
-            "the log argument omits the second (saturation) edge. The deeper design flaw is "
+            "1.717), but no WINDOW AVERAGE over [16,249] can reach it. RETRACTED (2): the original "
+            "text continued 'because the upper lags are at or past the saturation cross-over "
+            "r_* = 1/k_lo = 217, where the local exponent has already dropped to 0'. That is "
+            "wrong -- k_lo*r only reaches 1.146 and the exact local exponent at r=217 is "
+            "1.1630, not 0. The corrected statement is that the window crosses the ONSET of "
+            "finite-band turnover and the local exponent falls through it; see "
+            "s2_local_exponent.py for the exact table. Answer: D (finite-window effect), "
+            "with A as the proximate cause of the recorded FAIL; NOT B; C incomplete rather "
+            "than wrong. The deeper design flaw is "
             "that beta=3 has NO clean scaling exponent in a finite band at all: the local "
             "exponent is r-dependent, so the control was never a power law to begin with."
         ),
