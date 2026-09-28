@@ -56,7 +56,22 @@ LAGS = [16, 20, 25, 31, 39, 49, 62, 78, 98, 124, 156, 197, 249]
 BETA_K41 = 5.0 / 3.0
 BETA_NEG = 3.0
 SEEDS = [1, 2, 3, 4, 5]
-REFERENCE_SCRIPT = os.path.join(HERE, "reference", "glm_k41_baseline_VERBATIM.py")
+def _find_reference() -> str:
+    """Locate the verbatim reference copy without assuming a directory layout.
+
+    An earlier version hardcoded HERE/reference, which broke as soon as the script was placed in
+    a different tree (the canonical evidence branch keeps it under scripts/ with the reference
+    beside it). Both layouts are now tried.
+    """
+    for cand in (os.path.join(HERE, "reference", "glm_k41_baseline_VERBATIM.py"),
+                 os.path.join(HERE, "..", "reference", "glm_k41_baseline_VERBATIM.py"),
+                 os.path.join(HERE, "glm_k41_baseline_VERBATIM.py")):
+        if os.path.exists(cand):
+            return os.path.abspath(cand)
+    return os.path.join(HERE, "reference", "glm_k41_baseline_VERBATIM.py")
+
+
+REFERENCE_SCRIPT = _find_reference()
 
 # The expected content hash of the reference copy, PINNED and CHECKED.
 #
