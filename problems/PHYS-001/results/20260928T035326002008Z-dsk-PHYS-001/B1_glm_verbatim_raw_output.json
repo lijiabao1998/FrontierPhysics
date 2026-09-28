@@ -1,0 +1,145 @@
+{
+  "_provenance": "Raw JSON written by GLM's k41_baseline.py when run verbatim during this round. The copy executed has SHA-256 5244be1dd4632bc8d06317abef287e17cc5b8768dfca815ad4653fb1b6e4d7db, identical to the file on glm/PHYS-001-baseline-r1. It was written into a scratch directory by the verbatim copy and has been moved here as round evidence; it is GLM's output, not this round's.",
+  "_glm_output": {
+    "config": {
+      "N": 4096,
+      "k_band": [
+        3,
+        900
+      ],
+      "seeds": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "lags": [
+        16,
+        20,
+        25,
+        31,
+        39,
+        49,
+        62,
+        78,
+        98,
+        124,
+        156,
+        197,
+        249
+      ],
+      "spec_band": [
+        16,
+        512
+      ],
+      "tolerances": {
+        "energy": 0.1,
+        "sf_band": [
+          0.6166666666666666,
+          0.7166666666666667
+        ],
+        "sf_std": 0.03,
+        "neg_min": 1.7,
+        "spec": 0.1,
+        "cross": 0.1
+      }
+    },
+    "generated": "2026-09-28T03:53:51+00:00",
+    "cases": [
+      {
+        "beta_name": "K41_positive",
+        "beta": 1.6666666666666667,
+        "per_seed": [
+          {
+            "seed": 1,
+            "energy_rel_residual": 4.090885079679787e-14,
+            "sf_slope": 0.6383646079612458,
+            "spec_slope": 1.6669528360082404
+          },
+          {
+            "seed": 2,
+            "energy_rel_residual": 2.886035364431631e-14,
+            "sf_slope": 0.6383646079612351,
+            "spec_slope": 1.6669528360082537
+          },
+          {
+            "seed": 3,
+            "energy_rel_residual": 4.0488554384502e-14,
+            "sf_slope": 0.6383646079612427,
+            "spec_slope": 1.6669528360082442
+          },
+          {
+            "seed": 4,
+            "energy_rel_residual": 1.1488101936087073e-14,
+            "sf_slope": 0.6383646079612261,
+            "spec_slope": 1.66695283600825
+          },
+          {
+            "seed": 5,
+            "energy_rel_residual": 4.0488554384502e-14,
+            "sf_slope": 0.6383646079612424,
+            "spec_slope": 1.6669528360082322
+          }
+        ],
+        "sf_mean_slope": 0.6383646079612384,
+        "sf_std": 7.113575885558479e-15,
+        "spec_mean_slope": 1.6669528360082442,
+        "energy_max_rel_residual": 4.090885079679787e-14
+      },
+      {
+        "beta_name": "steep_negative",
+        "beta": 3.0,
+        "per_seed": [
+          {
+            "seed": 1,
+            "energy_rel_residual": 6.159398073909357e-14,
+            "sf_slope": 1.5400285073651276,
+            "spec_slope": 3.000771046954059
+          },
+          {
+            "seed": 2,
+            "energy_rel_residual": 6.12337820213211e-14,
+            "sf_slope": 1.540028507365125,
+            "spec_slope": 3.0007710469540645
+          },
+          {
+            "seed": 3,
+            "energy_rel_residual": 7.041884932451927e-14,
+            "sf_slope": 1.5400285073651325,
+            "spec_slope": 3.000771046954025
+          },
+          {
+            "seed": 4,
+            "energy_rel_residual": 3.8721362160541284e-14,
+            "sf_slope": 1.5400285073651188,
+            "spec_slope": 3.0007710469540703
+          },
+          {
+            "seed": 5,
+            "energy_rel_residual": 7.14994454778367e-14,
+            "sf_slope": 1.5400285073651316,
+            "spec_slope": 3.0007710469540125
+          }
+        ],
+        "sf_mean_slope": 1.5400285073651272,
+        "sf_std": 4.9888437096909465e-15,
+        "spec_mean_slope": 3.0007710469540463,
+        "energy_max_rel_residual": 7.14994454778367e-14
+      }
+    ],
+    "checks": {
+      "E1_energy_budget_pos": true,
+      "E1_energy_budget_neg": true,
+      "E2_sf_2_3_band": true,
+      "E3_negative_control_steep": false,
+      "E4_spectrum_slope_pos": true,
+      "E4_spectrum_slope_neg": true,
+      "E5_cross_consistency_pos": true,
+      "E6_sine_rejected_by_sf": true,
+      "E6_amplitude_inflation_rejected_by_energy": true
+    },
+    "verdict": "BASELINE_FAIL_DO_NOT_PROCEED_TO_NOVELTY",
+    "completed": "2026-09-28T03:53:56+00:00"
+  }
+}

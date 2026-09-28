@@ -1,0 +1,98 @@
+{
+  "artifacts": [
+    {
+      "path": "problems/PHYS-001/results/20260928T035326002008Z-dsk-PHYS-001/B1_glm_reproduction.json",
+      "bytes": 7415,
+      "sha256": "998397a2af6b64a6270aab0bd5658b5bf1082e99a9500652e8a933e3182f7bbf",
+      "hash_of": "git_blob",
+      "kind": "round output (in-round, regenerated)"
+    },
+    {
+      "path": "problems/PHYS-001/results/20260928T035326002008Z-dsk-PHYS-001/B1_glm_reproduction.log",
+      "bytes": 2901,
+      "sha256": "09e2c807e664d0ea3997773ed6b0f27f6bde452eb200da68b3ff2b5361f7f6e0",
+      "hash_of": "git_blob",
+      "kind": "round output (in-round, regenerated)"
+    },
+    {
+      "path": "problems/PHYS-001/results/20260928T035326002008Z-dsk-PHYS-001/B1_glm_reproduction_exploratory_copy.json",
+      "bytes": 7236,
+      "sha256": "cdc9af36064f5069d60a468b731f28023e97fe565cd1a8aa89371ef1f5e9759f",
+      "hash_of": "git_blob",
+      "kind": "round output (in-round, regenerated)"
+    },
+    {
+      "path": "problems/PHYS-001/results/20260928T035326002008Z-dsk-PHYS-001/B1_glm_verbatim_raw_output.json",
+      "bytes": 4153,
+      "sha256": "2f6275210a4929620d4ce3c797f152633d19bee53f52267748e92ddff83a98a5",
+      "hash_of": "git_blob",
+      "kind": "round output (in-round, regenerated)"
+    },
+    {
+      "path": "problems/PHYS-001/results/20260928T035326002008Z-dsk-PHYS-001/B2_B3_B4_exploratory_copy.json",
+      "bytes": 13167,
+      "sha256": "1da2de53de666180b7d89feb2c10d2e445858a0f9f2a29cd8d0ccbdd3bece0af",
+      "hash_of": "git_blob",
+      "kind": "round output (in-round, regenerated)"
+    },
+    {
+      "path": "problems/PHYS-001/results/20260928T035326002008Z-dsk-PHYS-001/B2_B3_B4_local_exponent.json",
+      "bytes": 13493,
+      "sha256": "479813a846c13e2c69022cd0a5f3c56da68b0e31177f0412201269710fee1d5e",
+      "hash_of": "git_blob",
+      "kind": "round output (in-round, regenerated)"
+    },
+    {
+      "path": "problems/PHYS-001/results/20260928T035326002008Z-dsk-PHYS-001/B2_B3_B4_local_exponent.log",
+      "bytes": 4607,
+      "sha256": "34be595c6127fd9d821643cd5113115426077f6411b0c23c7903a1b886c9b6c1",
+      "hash_of": "git_blob",
+      "kind": "round output (in-round, regenerated)"
+    },
+    {
+      "path": "problems/PHYS-001/experiments/dsk_audit_r1/reproduce_and_compare.py",
+      "bytes": 19403,
+      "sha256": "d1d18b67fa4aafd88a5cec774031bda7cd878eec2a927777018fc41fac86fc1e",
+      "hash_of": "git_blob",
+      "kind": "program / document"
+    },
+    {
+      "path": "problems/PHYS-001/experiments/dsk_audit_r1/s2_local_exponent.py",
+      "bytes": 21662,
+      "sha256": "dc923fef8c20a7aef7f937674ca57848e0a0532c5a0028d6e4832dd60a06c21a",
+      "hash_of": "git_blob",
+      "kind": "program / document"
+    },
+    {
+      "path": "problems/PHYS-001/experiments/dsk_audit_r1/reference/glm_k41_baseline_VERBATIM.py",
+      "bytes": 8706,
+      "sha256": "b1070ea49ec142addeda3be51092eaa92624199bcf788c78013cad0c172d5a70",
+      "hash_of": "git_blob",
+      "kind": "program / document"
+    },
+    {
+      "path": "problems/PHYS-001/experiments/dsk_audit_r1/PHYS001_INDEPENDENT_AUDIT.md",
+      "bytes": 12472,
+      "sha256": "5eecab4cc72caa986fab70ada510bbebaaa5d1be24040f6c0b1d751ca5e80450",
+      "hash_of": "git_blob",
+      "kind": "program / document"
+    }
+  ],
+  "executed_commands": [
+    {
+      "cmd": "python reproduce_and_compare.py --json ../../results/<round-id>/B1_glm_reproduction.json",
+      "cwd": "problems/PHYS-001/experiments/dsk_audit_r1",
+      "exit": 0,
+      "produced": "B1_glm_reproduction.json, B1_glm_reproduction.log",
+      "note": "runs GLM's script verbatim ONLY if its LF-normalised SHA-256 equals the pinned b1070ea49ec142addeda3be51092eaa92624199bcf788c78013cad0c172d5a70; it refuses to execute otherwise (verified by tampering the file). It also writes GLM's raw output, relocated here as B1_glm_verbatim_raw_output.json."
+    },
+    {
+      "cmd": "python s2_local_exponent.py --json ../../results/<round-id>/B2_B3_B4_local_exponent.json",
+      "cwd": "problems/PHYS-001/experiments/dsk_audit_r1",
+      "exit": 0,
+      "produced": "B2_B3_B4_local_exponent.json, B2_B3_B4_local_exponent.log",
+      "note": "standard library only; no third-party dependency."
+    }
+  ],
+  "hash_convention": "sha256 of git blob bytes; manifest excludes itself"
+}

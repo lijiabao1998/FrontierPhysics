@@ -1,0 +1,180 @@
+{
+  "comparison": {
+    "closed_form_k41_over_glm_lags": 0.6383646079612274,
+    "closed_form_steep_over_glm_lags": 1.540028507365114,
+    "comparison_bound": 1e-12,
+    "comparison_bound_reason": "floating-point error budget: both sides evaluate the same double-precision sum and OLS, so 1e-12 leaves ~3 orders of headroom over accumulated rounding while admitting no real discrepancy. An earlier 5e-5 bound rested on a false four-decimal rounding premise and is retracted.",
+    "gap_k41_vs_published": 1.099120794378905e-14,
+    "gap_steep_vs_published": 1.3100631690576847e-14,
+    "gaps": {
+      "bound": 1e-12,
+      "k41": 1.099120794378905e-14,
+      "steep": 1.3100631690576847e-14
+    },
+    "glm_reported_k41": 0.6383646079612384,
+    "glm_reported_k41_std": 7.113575885558479e-15,
+    "glm_reported_steep": 1.5400285073651272,
+    "own_k41_slopes": [
+      0.6383646079612283,
+      0.638364607961228,
+      0.6383646079612268,
+      0.6383646079612278,
+      0.6383646079612285
+    ],
+    "own_k41_spread": 1.6653345369377348e-15,
+    "own_reimplementation_internal_agreement": "per-seed slopes are identical to 10 decimal places; the independent generator implementation agrees with the closed form to ~5e-15",
+    "own_steep_slopes": [
+      1.5400285073651139,
+      1.5400285073651134,
+      1.540028507365114,
+      1.5400285073651134,
+      1.5400285073651128
+    ],
+    "own_steep_spread": 1.3322676295501878e-15,
+    "realisation_noise_is_zero": true,
+    "realisation_noise_note": "per-seed slopes agree to ~1e-15, i.e. floating-point summation order. The estimator carries no seed-dependent signal, so no 0.049 gap can be attributed to noise.",
+    "reproduced_within_float_bound_k41": true,
+    "reproduced_within_float_bound_steep": true,
+    "spread_zero_band": 1e-12,
+    "verdict": "GLM's structure-function slope is reproduced by an independent implementation of GLM's own specification, on GLM's own 13 geometric lags, to a gap of 1.1e-14 (beta=5/3) and 1.3e-14 (beta=3) against GLM's FULL-PRECISION stored values -- i.e. ordinary double-precision rounding, not a tolerance. My own generator agrees with the closed form to ~5e-15. The estimator is seed-independent: the per-seed spread is exactly 0.0, as GLM's own sf_std reports, because the j-average of the squared increment is phase-independent. Implementation error (B) is therefore excluded ON GLM'S OWN TERMS, by exact reproduction rather than by a tolerance. CORRECTION TO THE FIRST AUDIT: its 1.4911 was the slope of the same function over all 234 integers in [16,249] instead of GLM's 13 geometric lags, so the 0.0489 gap it reported was a LAG-SET (sampling) difference, not realisation noise -- and it could not have been noise, because the spread is exactly zero. The first audit's comparison was therefore between two different quantities, and its '3% apart, consistent with realisation noise' wording is retracted."
+  },
+  "config": {
+    "N": 4096,
+    "betas": {
+      "k41": 1.6666666666666667,
+      "steep": 3.0
+    },
+    "k_band": [
+      3,
+      900
+    ],
+    "lags": [
+      16,
+      20,
+      25,
+      31,
+      39,
+      49,
+      62,
+      78,
+      98,
+      124,
+      156,
+      197,
+      249
+    ]
+  },
+  "glm_reference": {
+    "available": true,
+    "exit": 1,
+    "expected_sha256_lf": "b1070ea49ec142addeda3be51092eaa92624199bcf788c78013cad0c172d5a70",
+    "hash_verified_against_pinned_value": true,
+    "results_fresh": true,
+    "results_path": "C:\\Users\\Leon1\\OneDrive\\Desktop\\\u524d\u6cbfRP\\_dsk\\FrontierPhysics\\problems\\PHYS-001\\experiments\\results\\r1\\k41_baseline_results.json",
+    "seconds": 3.25,
+    "sha256": "b1070ea49ec142addeda3be51092eaa92624199bcf788c78013cad0c172d5a70",
+    "sha256_normalisation": "LF (CRLF-normalised, so the value is checkout-independent)",
+    "sha256_raw_bytes": "5244be1dd4632bc8d06317abef287e17cc5b8768dfca815ad4653fb1b6e4d7db",
+    "stdout": "{\n  \"sf_mean_slope_pos\": 0.6384,\n  \"sf_std_pos\": 0.0,\n  \"sf_mean_slope_neg\": 1.54,\n  \"spec_mean_slope_pos\": 1.667,\n  \"spec_mean_slope_neg\": 3.0008,\n  \"energy_max_rel_residual_pos\": 4.090885079679787e-14,\n  \"checks\": {\n    \"E1_energy_budget_pos\": true,\n    \"E1_energy_budget_neg\": true,\n    \"E2_sf_2_3_band\": true,\n    \"E3_negative_control_steep\": false,\n    \"E4_spectrum_slope_pos\": true,\n    \"E4_spectrum_slope_neg\": true,\n    \"E5_cross_consistency_pos\": true,\n    \"E6_sine_rejected_by_sf\": true,\n    \"E6_amplitude_inflation_rejected_by_energy\": true\n  },\n  \"verdict\": \"BASELINE_FAIL_DO_NOT_PROCEED_TO_NOVELTY\"\n}\n"
+  },
+  "glm_reported": {
+    "beta_name": {
+      "K41_positive": {
+        "sf_mean_slope": 0.6383646079612384,
+        "sf_std": 7.113575885558479e-15,
+        "spec_mean_slope": 1.6669528360082442
+      },
+      "steep_negative": {
+        "sf_mean_slope": 1.5400285073651272,
+        "sf_std": 4.9888437096909465e-15,
+        "spec_mean_slope": 3.0007710469540463
+      }
+    },
+    "verdict": "BASELINE_FAIL_DO_NOT_PROCEED_TO_NOVELTY"
+  },
+  "lag_set_sensitivity": {
+    "K41_positive": {
+      "difference": 0.021464429171940802,
+      "slope_over_all_234_integers": 0.6169001787892866,
+      "slope_over_glm_13_lags": 0.6383646079612274
+    },
+    "steep_negative": {
+      "difference": 0.04889461381285032,
+      "slope_over_all_234_integers": 1.4911338935522638,
+      "slope_over_glm_13_lags": 1.540028507365114
+    }
+  },
+  "own_reimplementation_per_seed": [
+    {
+      "beta": 1.6666666666666667,
+      "beta_name": "K41_positive",
+      "max_rel_gap_vs_closed_form": 3.4266845961419107e-15,
+      "seed": 1,
+      "sf_slope": 0.6383646079612283
+    },
+    {
+      "beta": 1.6666666666666667,
+      "beta_name": "K41_positive",
+      "max_rel_gap_vs_closed_form": 6.724138914063044e-15,
+      "seed": 2,
+      "sf_slope": 0.638364607961228
+    },
+    {
+      "beta": 1.6666666666666667,
+      "beta_name": "K41_positive",
+      "max_rel_gap_vs_closed_form": 5.273834442402387e-15,
+      "seed": 3,
+      "sf_slope": 0.6383646079612268
+    },
+    {
+      "beta": 1.6666666666666667,
+      "beta_name": "K41_positive",
+      "max_rel_gap_vs_closed_form": 5.6693720255825656e-15,
+      "seed": 4,
+      "sf_slope": 0.6383646079612278
+    },
+    {
+      "beta": 1.6666666666666667,
+      "beta_name": "K41_positive",
+      "max_rel_gap_vs_closed_form": 3.631610133324261e-15,
+      "seed": 5,
+      "sf_slope": 0.6383646079612285
+    },
+    {
+      "beta": 3.0,
+      "beta_name": "steep_negative",
+      "max_rel_gap_vs_closed_form": 3.798474301836002e-15,
+      "seed": 1,
+      "sf_slope": 1.5400285073651139
+    },
+    {
+      "beta": 3.0,
+      "beta_name": "steep_negative",
+      "max_rel_gap_vs_closed_form": 5.368098066037748e-15,
+      "seed": 2,
+      "sf_slope": 1.5400285073651134
+    },
+    {
+      "beta": 3.0,
+      "beta_name": "steep_negative",
+      "max_rel_gap_vs_closed_form": 3.690567420400952e-15,
+      "seed": 3,
+      "sf_slope": 1.540028507365114
+    },
+    {
+      "beta": 3.0,
+      "beta_name": "steep_negative",
+      "max_rel_gap_vs_closed_form": 3.877080124470705e-15,
+      "seed": 4,
+      "sf_slope": 1.5400285073651134
+    },
+    {
+      "beta": 3.0,
+      "beta_name": "steep_negative",
+      "max_rel_gap_vs_closed_form": 3.798474301836002e-15,
+      "seed": 5,
+      "sf_slope": 1.5400285073651128
+    }
+  ],
+  "reference_script": "reference\\glm_k41_baseline_VERBATIM.py"
+}
