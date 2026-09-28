@@ -44,7 +44,8 @@ def main() -> int:
             for wname, window in c.WINDOWS.items():
                 stage_a.append({"beta": name, "window": wname,
                                 **c.measure(u, amps, window)})
-    bands = {}
+    energy_max = 2 * max(r["energy_rel_residual"] for r in stage_a)
+    bands = {"energy_max": energy_max}
     for name in c.BETAS:
         for wname in c.WINDOWS:
             for key, field in ((f"{name}|{wname}|sf", "sf_slope"),
@@ -78,6 +79,10 @@ def main() -> int:
                 if not (lo <= m["spec_slope"] <= hi):
                     viol.append({"beta": name, "window": wname, "seed": seed,
                                  "spec_slope": round(m["spec_slope"], 4)})
+                # B3 (frozen contract): energy residual <= 2x Stage A maximum
+                if m["energy_rel_residual"] > bands["energy_max"]:
+                    viol.append({"beta": name, "window": wname, "seed": seed,
+                                 "energy": m["energy_rel_residual"]})
     # B4: separation in ALL THREE windows (Codex P2)
     sep = {}
     for wname in c.WINDOWS:
@@ -92,8 +97,9 @@ def main() -> int:
            "n_violations": len(viol), "violations": viol[:10],
            "B4_separation_by_window": sep,
            "checks": checks,
-           "verdict": ("CALIBRATED_BASELINE_PASS" if all(checks.values())
+           "verdict": ("CALIBRATED_BASELINE_PASS" if all(out_reg["checks"].values())
                        else "CALIBRATED_BASELINE_FAIL"),
+           "registration_status": out_reg["registration_status"],
            "bands_doc": bdoc,
            "generated": datetime.now(timezone.utc).isoformat(timespec="seconds")}
     dest = HERE.parent.parent / "results" / "r2"
@@ -101,7 +107,7 @@ def main() -> int:
     (dest / "r2_cycle2_results.json").write_text(
         json.dumps(out, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(json.dumps({k: out[k] for k in ("cycle", "stage_a_n", "stage_b_n",
-                                          "n_violations", "checks", "verdict",
+                                          "n_violations", "registration_status", "checks", "verdict",
                                           "B4_separation_by_window")},
                      ensure_ascii=False, indent=2))
     return 0 if all(checks.values()) else 1
