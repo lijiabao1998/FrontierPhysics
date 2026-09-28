@@ -16,7 +16,7 @@ effect, or **(E)** insufficient evidence?
 | "independent value 1.4911 vs GLM's 1.54, 3% apart, **consistent with realisation noise**" | **RETRACTED** | The estimator has **zero** realisation noise: GLM's own `sf_std = 7.1e-15`, and my independent replication gives identical slopes for all 5 seeds. Noise cannot explain a 0.049 gap. Revision 1 was comparing **two different quantities**: its own number was the slope over all 234 integers in [16,249], while GLM's is the slope over GLM's 13 geometric lags. The gap is a **lag-set (sampling) difference**. |
 | "implementation error (B) **excluded**" | verdict unchanged, **justification replaced** | Revision 1's justification (a tolerance) was invalid, as the reviewer said. (B) is now excluded by **exact reproduction on GLM's own terms** — see §1. |
 | "the window's upper lags are **already saturated**; a second **saturation** mechanism truncates the window" | **RETRACTED** as stated | Saturation needs `k_lo·r >> 1`; the window only reaches `k_lo·r = 1.146`. The exact local exponent at `r=217` is **1.1630** and at `r=249` is **1.0723**, not ≈0. Replaced by: the window extends past the **onset of finite-band turnover** (`k_lo·r ~ 1`), so the local exponent is falling through the window. |
-| "C₀ = 0.461390, stable to 5e-7" | **RETRACTED** | The script printed `0.461336` while the report used `0.461390`. The honest value is `0.4613932125491026…` with a sweep-supported confidence of `2.1e-4` over `x = 1e-1 … 1e-20`. See §4. |
+| "C₀ = 0.461390, stable to 5e-7" | **RETRACTED, twice.** | The script printed `0.461336` while the report used `0.461390`. The first revision then replaced both with `0.4613932125`, which **was itself wrong in the 6th decimal** — it came from `mpmath.quad(f, [1, inf])`, which mishandles the oscillatory integral and gave `F_tail = 0.481883428` where two independent routes give `0.481882378`. The validated value is **`0.4613921675492818`**, computed with the standard library only. See §4. |
 | "recommended window `[4, 20]`" | **RETRACTED** — and so is its replacement | `[4,20]` violated the file's own gate (`k_hi·4 = 5.52 < 20`). The gate-satisfying window `[15,21]` was then tested and **did not achieve the gate's purpose**: it gives β=5/3 → **0.7285**, a *larger* deviation from 2/3 than GLM's window. See §3. |
 
 ## 1. (B) implementation error: excluded by exact reproduction
@@ -123,8 +123,11 @@ spectrum.** Two further consequences:
 - **Lag set matters too.** Over the same span, GLM's 13 geometric lags give 0.6384 while
   all 234 integers give 0.6169. Both are legitimate; neither is "the" exponent.
 - **β=3 can never be a power-law test here.** Its local exponent is
-  `2 − 1/(ln(1/(k_lo r)) + 2C₀)`, which exceeds 1.9 only for `k_lo r ≲ 3e-4`, i.e.
-  `r ≳ 3300` — far outside any usable window at this `N` and band. So β=3 must be reported
+  `2 − 1/(ln(1/(k_lo r)) + 2C₀)`. **CORRECTED (the earlier text had this inequality
+  reversed):** requiring it to exceed 1.9 gives `L > 10`, i.e. `ln(1/(k_lo r)) > 10 − 2C₀ =
+  9.077`, i.e. `k_lo r < 1.14e-4`, i.e. **`r < 0.0248`** — the required regime is at *small*
+  `r`, below one sample, not at `r ≳ 3300`. The conclusion is unchanged (no window makes β=3
+  a power-law test) but it is unreachable because it lies under the lattice spacing. So β=3 must be reported
   as **a reproducibility control with a closed form**, never as an exponent.
 
 **What should replace the retracted gate** (pre-registrable, and honest about what it can
@@ -148,13 +151,25 @@ C0 = F_tail + Σ_{n≥2} (−1)^(n+1) / ((2n)!·(2n−2)),   F_tail = ∫_1^∞ 
 
 computed with `mpmath` at 40 digits (tanh-sinh quadrature for `F_tail`).
 
-- **C₀ = 0.46139321254910263602** (40-digit computation)
+- **C₀ = 0.4613921675492818** — standard library only (no third-party module).
+  Computed as `F_tail` plus the rapidly converging series, where `F_tail` is a composite
+  Simpson on `[1, 1000]` plus its analytic remainder `1/(2Q²) + Q⁻³sinQ − 3Q⁻⁴cosQ`.
+  **`F_tail = 0.481882378019`**, validated to ~1e-12 by two independent routes: Simpson plus
+  analytic tail at `Q = 1000, 2000, 5000` (stable), and `F_tail = ½ − A₃(1)` with
+  `A₃(1) = ∫₁^∞ cos q / q³ dq` on a different grid to `2π·400` plus its own remainder.
+  This **replaces** the earlier `0.4613932125491026`, which was wrong in the 6th decimal.
 - Convergence sweep over the advertised range, `x = 1e-1 … 1e-20` (20 points):
   `F(x) − ½ln(1/x)` runs `0.4616015…` → `0.4613932…`, **max − min = 2.1e-4**.
 
 So the value is supported to **≈2e-4** by this sweep, not to 5e-7. The sweep is the one
-revision 1 advertised but never performed (it evaluated only `x = 1e-10`). Both revision
-1 numbers are replaced by this one.
+revision 1 advertised but never performed (it evaluated only `x = 1e-10`). All three earlier
+numbers — `0.461336`, `0.461390`, and `0.4613932125` — are superseded by `0.4613921675492818`.
+
+**Dependency note.** The first revision of this section used `mpmath` for a "40-digit"
+quadrature, which was declared nowhere in the repository, so the advertised reproduction
+command could not run on a clean checkout. The dependency is **removed**, not declared: the
+computation is standard library only. Reviewers should treat the surviving docstring mentions
+of `mpmath` as history, not as an import.
 
 ## 5. Verdict for the recorded PR (unchanged in substance, corrected in statement)
 

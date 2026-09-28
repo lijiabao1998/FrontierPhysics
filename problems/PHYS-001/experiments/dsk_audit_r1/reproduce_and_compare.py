@@ -154,6 +154,16 @@ def glm_reference_run() -> dict:
         return {"available": False, "reason": "verbatim reference copy not present"}
     digest = normalized_sha256(src)
     raw_digest = hashlib.sha256(open(src, "rb").read()).hexdigest()
+    # The reference script exits 1 on its scientific FAIL, so returncode alone cannot signal
+    # a usable run. Freshness is enforced instead: any pre-existing output is removed BEFORE
+    # launching, so the file found afterwards can only have been produced by this invocation.
+    stale = os.path.abspath(os.path.join(os.path.dirname(src), "..", "..",
+                                         "results", "r1", "k41_baseline_results.json"))
+    if os.path.exists(stale):
+        try:
+            os.remove(stale)
+        except OSError:
+            pass
     if digest != EXPECTED_REFERENCE_SHA256_LF:
         # Refuse to run: executing an unverified reference would make the whole
         # implementation-error exclusion meaningless.
@@ -177,10 +187,23 @@ def glm_reference_run() -> dict:
     # experiments/results/r1 -- i.e. TWO levels up from the reference directory, not three.
     cand = os.path.abspath(os.path.join(os.path.dirname(src), "..", "..",
                                         "results", "r1", "k41_baseline_results.json"))
-    if os.path.exists(cand):
+    if not os.path.exists(cand):
+        out["results"] = None
+        out["results_stale_or_missing"] = True
+        out["results_note"] = ("the reference produced no fresh results file, so no comparison "
+                               "is possible; any pre-existing file was deleted before launch "
+                               "precisely so a stale artifact cannot be mistaken for current "
+                               "evidence")
+        return out
+    try:
         with open(cand, "r", encoding="utf-8") as fh:
             out["results"] = json.load(fh)
         out["results_path"] = cand
+        out["results_fresh"] = True
+    except (OSError, json.JSONDecodeError) as exc:
+        out["results"] = None
+        out["results_stale_or_missing"] = True
+        out["results_note"] = f"fresh results file unreadable: {exc!r}"
     return out
 
 
@@ -197,14 +220,15 @@ def main(argv: Sequence[str] | None = None) -> int:
     print("== 1) GLM's script run verbatim, gated on a PINNED content hash ==")
     ref = glm_reference_run()
     rep["glm_reference"] = {k: v for k, v in ref.items() if k != "results"}
-    if not ref.get("available"):
-        print(f"   REFERENCE NOT USABLE: {ref.get('reason')}")
+    if not ref.get("available") or not ref.get("results"):
+        print(f"   REFERENCE NOT USABLE: {ref.get('reason') or ref.get('results_note')}")
         rep["comparison"] = {
             "verdict": ("The reference script could not be verified against its pinned hash, so "
                         "it was NOT executed and no reproduction claim is made. This is "
                         "fail-closed by design: running an unverified reference would make the "
                         "implementation-error exclusion meaningless."),
             "reference_usable": False,
+            "reference_reason": ref.get("reason") or ref.get("results_note"),
         }
         if args.json:
             os.makedirs(os.path.dirname(os.path.abspath(args.json)), exist_ok=True)
@@ -278,14 +302,21 @@ def main(argv: Sequence[str] | None = None) -> int:
     spread_is_zero_neg = spread_neg <= SPREAD_ZERO_BAND
     closed_k41 = slope_over(LAGS, BETA_K41)
     closed_neg = slope_over(LAGS, BETA_NEG)
-    # GLM's results JSON stores slopes rounded to 4 decimal places, so the tightest
-    # meaningful comparison is half a unit in the last published digit (5e-5). Claiming a
-    # 1e-9 agreement against a rounded number would be a false precision claim.
-    ROUND_BOUND = 5e-5
+    # The loaded GLM results JSON stores FULL-PRECISION slopes (e.g. 0.6383646079612384),
+    # not four-decimal values -- an earlier revision wrongly justified a 5e-5 bound on a
+    # rounding premise that is false, which would have let a regression of up to 5e-5 pass
+    # while the script claimed agreement to ~1e-14. The bound is now a genuine floating-point
+    # error budget: both sides evaluate the same sum in double precision, so the accumulated
+    # rounding is a few ulp of the slope magnitude (~1e-16) times the number of operations in
+    # the OLS; 1e-12 leaves three orders of headroom without admitting any real discrepancy.
+    FLOAT_BOUND = 1e-12
+    ROUND_BOUND = FLOAT_BOUND
     tol_k41 = abs(closed_k41 - glm_sf_k41) if glm_sf_k41 is not None else None
     tol_neg = abs(closed_neg - glm_sf_neg) if glm_sf_neg is not None else None
     agree_k41 = tol_k41 is not None and tol_k41 <= ROUND_BOUND
     agree_neg = tol_neg is not None and tol_neg <= ROUND_BOUND
+    # recorded for the report: the actual gaps, so a reader never has to trust the boolean
+    gap_report = {"k41": tol_k41, "steep": tol_neg, "bound": ROUND_BOUND}
     rep["comparison"] = {
         "glm_reported_k41": glm_sf_k41, "glm_reported_steep": glm_sf_neg,
         "glm_reported_k41_std": glm_std_k41,
@@ -294,13 +325,16 @@ def main(argv: Sequence[str] | None = None) -> int:
         "closed_form_k41_over_glm_lags": closed_k41,
         "closed_form_steep_over_glm_lags": closed_neg,
         "comparison_bound": ROUND_BOUND,
-        "comparison_bound_reason": ("GLM's results JSON rounds slopes to 4 decimals, so "
-                                    "agreement is asserted only to half a unit in the last "
-                                    "published digit"),
+        "gaps": gap_report,
+        "comparison_bound_reason": ("floating-point error budget: both sides evaluate the same "
+                                    "double-precision sum and OLS, so 1e-12 leaves ~3 orders of "
+                                    "headroom over accumulated rounding while admitting no real "
+                                    "discrepancy. An earlier 5e-5 bound rested on a false "
+                                    "four-decimal rounding premise and is retracted."),
         "gap_k41_vs_published": tol_k41,
         "gap_steep_vs_published": tol_neg,
-        "reproduced_within_published_precision_k41": bool(agree_k41),
-        "reproduced_within_published_precision_steep": bool(agree_neg),
+        "reproduced_within_float_bound_k41": bool(agree_k41),
+        "reproduced_within_float_bound_steep": bool(agree_neg),
         "own_reimplementation_internal_agreement": ("per-seed slopes are identical to 10 "
                                                     "decimal places; the independent "
                                                     "generator implementation agrees with "
@@ -314,9 +348,10 @@ def main(argv: Sequence[str] | None = None) -> int:
     }
     rep["comparison"]["verdict"] = (
         "GLM's structure-function slope is reproduced by an independent implementation of "
-        "GLM's own specification, on GLM's own 13 geometric lags, to within GLM's published "
-        "precision (4 decimals; gaps 3.5e-5 and 2.9e-5), and my own generator agrees with the "
-        "closed form to ~5e-15. The "
+        "GLM's own specification, on GLM's own 13 geometric lags, to a gap of 1.1e-14 (beta=5/3) "
+        "and 1.3e-14 (beta=3) against GLM's FULL-PRECISION stored values -- i.e. ordinary "
+        "double-precision rounding, not a tolerance. My own generator agrees with the closed "
+        "form to ~5e-15. The "
         "estimator is seed-independent: the per-seed spread is exactly 0.0, as GLM's own "
         "sf_std reports, because the j-average of the squared increment is phase-independent. "
         "Implementation error (B) is therefore excluded ON GLM'S OWN TERMS, by exact "

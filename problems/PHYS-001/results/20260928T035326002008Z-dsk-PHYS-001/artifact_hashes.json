@@ -2,44 +2,56 @@
   "artifacts": [
     {
       "path": "problems/PHYS-001/results/20260928T035326002008Z-dsk-PHYS-001/B1_glm_reproduction.json",
-      "bytes": 6898,
-      "sha256": "3634b65f5718920ce0a461968dcfda2cbf0ad684aef66d9708bf423898f2a3a6",
-      "kind": "round output (in-round)"
+      "bytes": 7594,
+      "sha256": "4d08c8dfbcec4b8636fccf01ef58642c905353804f2685839017509207d38b63",
+      "kind": "round output (in-round, regenerated)"
     },
     {
       "path": "problems/PHYS-001/results/20260928T035326002008Z-dsk-PHYS-001/B1_glm_reproduction.log",
-      "bytes": 2700,
-      "sha256": "77f715aa95a00b41cdc837babc2b120de81710a57798e28d910653a60d3e074a",
-      "kind": "round output (in-round)"
+      "bytes": 2924,
+      "sha256": "afbc4417eb91c0284e6e8789a016ae7852d111ebda9729ac82e259a773edafda",
+      "kind": "round output (in-round, regenerated)"
     },
     {
       "path": "problems/PHYS-001/results/20260928T035326002008Z-dsk-PHYS-001/B1_glm_reproduction_exploratory_copy.json",
-      "bytes": 6898,
-      "sha256": "ca6d9a8671626349a8967bbe9e189638628801de71790d8f9607de22e0606b7a",
-      "kind": "round output (in-round)"
+      "bytes": 7410,
+      "sha256": "5ada68382cde3c680451746617fb3f3a47738321ddd48e58b8513015fc9c33ef",
+      "kind": "round output (in-round, regenerated)"
     },
     {
       "path": "problems/PHYS-001/results/20260928T035326002008Z-dsk-PHYS-001/B1_glm_verbatim_raw_output.json",
       "bytes": 4297,
       "sha256": "7ec173eeab6de33462002e81eb68ad5d199c86d0de7ae7ec6f97a8042c309bf3",
-      "kind": "round output (in-round)"
+      "kind": "round output (in-round, regenerated)"
+    },
+    {
+      "path": "problems/PHYS-001/results/20260928T035326002008Z-dsk-PHYS-001/B2_B3_B4_exploratory_copy.json",
+      "bytes": 13564,
+      "sha256": "3296bd12ed5834efdedd329828806607b7c44457626e1213b2d402c90d8233b1",
+      "kind": "round output (in-round, regenerated)"
     },
     {
       "path": "problems/PHYS-001/results/20260928T035326002008Z-dsk-PHYS-001/B2_B3_B4_local_exponent.json",
-      "bytes": 12105,
-      "sha256": "d1da9168eac432ac267bbe3f0456ca2d47d68298479e3bfc3b40ba80e1a6515e",
-      "kind": "round output (in-round)"
+      "bytes": 13564,
+      "sha256": "3296bd12ed5834efdedd329828806607b7c44457626e1213b2d402c90d8233b1",
+      "kind": "round output (in-round, regenerated)"
     },
     {
       "path": "problems/PHYS-001/results/20260928T035326002008Z-dsk-PHYS-001/B2_B3_B4_local_exponent.log",
-      "bytes": 4131,
-      "sha256": "349fbf5958d49aaa0dbb5d04b1c2b01c83a24534cd8105f77d3f83329f96fc1e",
-      "kind": "round output (in-round)"
+      "bytes": 4638,
+      "sha256": "aa449934792d38005f4a3eeec67cfb9d26db5292450d84b28a8b2c9dc24708dd",
+      "kind": "round output (in-round, regenerated)"
+    },
+    {
+      "path": "problems/PHYS-001/results/20260928T035326002008Z-dsk-PHYS-001/artifact_hashes.json",
+      "bytes": 3618,
+      "sha256": "4f9dfeb9de7a0b9ba67ade667ffa36df0788dbeb0a339c1497d4547c209c5e17",
+      "kind": "round output (in-round, regenerated)"
     },
     {
       "path": "problems/PHYS-001/experiments/dsk_audit_r1/reproduce_and_compare.py",
-      "bytes": 17462,
-      "sha256": "cfeeb7e307591ab588ab46327c7974750430461e0da9ab1e901855e44a8f6cfa",
+      "bytes": 19780,
+      "sha256": "8835cc1b26de193a247c4a98831ad52eb4d5c9d08b357ff2b11c235567286ab6",
       "kind": "program / document"
     },
     {
@@ -56,8 +68,8 @@
     },
     {
       "path": "problems/PHYS-001/experiments/dsk_audit_r1/PHYS001_INDEPENDENT_AUDIT.md",
-      "bytes": 10870,
-      "sha256": "1de91f030abc79f21e65cf6bc4a453c3879cd8f1a2f0547d27a4450924591f94",
+      "bytes": 12670,
+      "sha256": "3f6b09762e220b58c481fbcab32907877418f4dcd4de19ff20391bb37b58f7cb",
       "kind": "program / document"
     }
   ],

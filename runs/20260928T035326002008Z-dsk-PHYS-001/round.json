@@ -82,44 +82,56 @@
   "artifacts": [
     {
       "path": "problems/PHYS-001/results/20260928T035326002008Z-dsk-PHYS-001/B1_glm_reproduction.json",
-      "bytes": 6898,
-      "sha256": "3634b65f5718920ce0a461968dcfda2cbf0ad684aef66d9708bf423898f2a3a6",
-      "kind": "round output (in-round)"
+      "bytes": 7594,
+      "sha256": "4d08c8dfbcec4b8636fccf01ef58642c905353804f2685839017509207d38b63",
+      "kind": "round output (in-round, regenerated)"
     },
     {
       "path": "problems/PHYS-001/results/20260928T035326002008Z-dsk-PHYS-001/B1_glm_reproduction.log",
-      "bytes": 2700,
-      "sha256": "77f715aa95a00b41cdc837babc2b120de81710a57798e28d910653a60d3e074a",
-      "kind": "round output (in-round)"
+      "bytes": 2924,
+      "sha256": "afbc4417eb91c0284e6e8789a016ae7852d111ebda9729ac82e259a773edafda",
+      "kind": "round output (in-round, regenerated)"
     },
     {
       "path": "problems/PHYS-001/results/20260928T035326002008Z-dsk-PHYS-001/B1_glm_reproduction_exploratory_copy.json",
-      "bytes": 6898,
-      "sha256": "ca6d9a8671626349a8967bbe9e189638628801de71790d8f9607de22e0606b7a",
-      "kind": "round output (in-round)"
+      "bytes": 7410,
+      "sha256": "5ada68382cde3c680451746617fb3f3a47738321ddd48e58b8513015fc9c33ef",
+      "kind": "round output (in-round, regenerated)"
     },
     {
       "path": "problems/PHYS-001/results/20260928T035326002008Z-dsk-PHYS-001/B1_glm_verbatim_raw_output.json",
       "bytes": 4297,
       "sha256": "7ec173eeab6de33462002e81eb68ad5d199c86d0de7ae7ec6f97a8042c309bf3",
-      "kind": "round output (in-round)"
+      "kind": "round output (in-round, regenerated)"
+    },
+    {
+      "path": "problems/PHYS-001/results/20260928T035326002008Z-dsk-PHYS-001/B2_B3_B4_exploratory_copy.json",
+      "bytes": 13564,
+      "sha256": "3296bd12ed5834efdedd329828806607b7c44457626e1213b2d402c90d8233b1",
+      "kind": "round output (in-round, regenerated)"
     },
     {
       "path": "problems/PHYS-001/results/20260928T035326002008Z-dsk-PHYS-001/B2_B3_B4_local_exponent.json",
-      "bytes": 12105,
-      "sha256": "d1da9168eac432ac267bbe3f0456ca2d47d68298479e3bfc3b40ba80e1a6515e",
-      "kind": "round output (in-round)"
+      "bytes": 13564,
+      "sha256": "3296bd12ed5834efdedd329828806607b7c44457626e1213b2d402c90d8233b1",
+      "kind": "round output (in-round, regenerated)"
     },
     {
       "path": "problems/PHYS-001/results/20260928T035326002008Z-dsk-PHYS-001/B2_B3_B4_local_exponent.log",
-      "bytes": 4131,
-      "sha256": "349fbf5958d49aaa0dbb5d04b1c2b01c83a24534cd8105f77d3f83329f96fc1e",
-      "kind": "round output (in-round)"
+      "bytes": 4638,
+      "sha256": "aa449934792d38005f4a3eeec67cfb9d26db5292450d84b28a8b2c9dc24708dd",
+      "kind": "round output (in-round, regenerated)"
+    },
+    {
+      "path": "problems/PHYS-001/results/20260928T035326002008Z-dsk-PHYS-001/artifact_hashes.json",
+      "bytes": 3618,
+      "sha256": "4f9dfeb9de7a0b9ba67ade667ffa36df0788dbeb0a339c1497d4547c209c5e17",
+      "kind": "round output (in-round, regenerated)"
     },
     {
       "path": "problems/PHYS-001/experiments/dsk_audit_r1/reproduce_and_compare.py",
-      "bytes": 17462,
-      "sha256": "cfeeb7e307591ab588ab46327c7974750430461e0da9ab1e901855e44a8f6cfa",
+      "bytes": 19780,
+      "sha256": "8835cc1b26de193a247c4a98831ad52eb4d5c9d08b357ff2b11c235567286ab6",
       "kind": "program / document"
     },
     {
@@ -136,8 +148,8 @@
     },
     {
       "path": "problems/PHYS-001/experiments/dsk_audit_r1/PHYS001_INDEPENDENT_AUDIT.md",
-      "bytes": 10870,
-      "sha256": "1de91f030abc79f21e65cf6bc4a453c3879cd8f1a2f0547d27a4450924591f94",
+      "bytes": 12670,
+      "sha256": "3f6b09762e220b58c481fbcab32907877418f4dcd4de19ff20391bb37b58f7cb",
       "kind": "program / document"
     }
   ],
@@ -158,7 +170,12 @@
         "realisation_noise_is_zero": true,
         "no_tolerance_used": true,
         "passed": true,
-        "retraction": "The exploratory revision claimed '1.4911 vs 1.54, 3% apart, consistent with realisation noise' and used a 0.05 tolerance to exclude an implementation error. That is retracted: the estimator has ZERO realisation noise (std 7.1e-15), the gap was a lag-set (sampling) difference, and the exclusion now rests on agreement to ~1e-14 with GLM's own published values."
+        "retraction": "The exploratory revision claimed '1.4911 vs 1.54, 3% apart, consistent with realisation noise' and used a 0.05 tolerance to exclude an implementation error. That is retracted: the estimator has ZERO realisation noise (std 7.1e-15), the gap was a lag-set (sampling) difference, and the exclusion now rests on agreement to ~1e-14 with GLM's own published values.",
+        "comparison_bound": 1e-12,
+        "comparison_bound_note": "floating-point error budget; the earlier 5e-5 bound rested on a false four-decimal rounding premise and is retracted",
+        "reference_hash_verified_against_pinned_value": true,
+        "reference_sha256_lf": "b1070ea49ec142addeda3be51092eaa92624199bcf788c78013cad0c172d5a70",
+        "results_fresh": true
       },
       "B2_local_exponent_and_saturation_language": {
         "table_beta3": [
@@ -199,7 +216,8 @@
         "local_exponent_at_249": 1.0723107391436226,
         "asymptotic_saturation_established": false,
         "passed": true,
-        "action": "Asymptotic saturation requires k_lo*r >> 1; the window reaches k_lo*r = 1.146 at its largest lag. The local exponent of the exact discrete mode sum at r=217 is 1.1630 and at r=249 is 1.0723 -- decreasing, but far from the 0 of a saturated plateau. The first audit's 'saturated plateau' and 'second saturation mechanism' language is RETRACTED and replaced by: the window extends past the onset of the finite-band turnover (k_lo*r ~ 1), so the local exponent is falling through the window. That is what truncates the log growth; no asymptotic plateau is claimed."
+        "action": "Asymptotic saturation requires k_lo*r >> 1; the window reaches k_lo*r = 1.146 at its largest lag. The local exponent of the exact discrete mode sum at r=217 is 1.1630 and at r=249 is 1.0723 -- decreasing, but far from the 0 of a saturated plateau. The first audit's 'saturated plateau' and 'second saturation mechanism' language is RETRACTED and replaced by: the window extends past the onset of the finite-band turnover (k_lo*r ~ 1), so the local exponent is falling through the window. That is what truncates the log growth; no asymptotic plateau is claimed.",
+        "uv_ir_direction": "For beta = 3 the approach to the asymptotic exponent 2 is only logarithmic: the local exponent is 2 - 1/(ln(1/(k_lo r)) + 2 C0). CORRECTED: the earlier text had this inequality REVERSED, saying the exponent reaches 1.9 for k_lo*r <~ 3e-4, i.e. r >~ 3300. Solving 2 - 1/L > 1.9 gives L > 10, i.e. ln(1/(k_lo r)) > 10 - 2C0 = 9.077, i.e. k_lo*r < e^-9.077 = 1.14e-4, i.e. r < 1.14e-4/0.004602 = 0.0248. So the required regime is at SMALL r -- below one sample, not beyond the domain -- and is unreachable for a different reason than first stated: it lies under the lattice spacing. Within r >= 1 the local exponent never reaches 1.9. The conclusion is unchanged (no window makes beta = 3 a power-law test) but the UV/IR direction is now right."
       },
       "B3_window_gate_validated_or_retracted": {
         "r_a_min_exact": 14.486636597875629,
@@ -278,7 +296,7 @@
         "action": "The proposed gate is RETRACTED. The interval [15,21] satisfies both conditions but gives beta=5/3 -> 0.7285, a LARGER deviation from 2/3 than GLM's window, because the local exponent is above 2/3 at small r and below it at large r. A resolved-band condition alone does not make an OLS slope equal the asymptotic exponent."
       },
       "B4_log_constant_precision_supported": {
-        "C0_high_precision": "0.4613932125491026360188104",
+        "C0_high_precision": 0.4613921675492818,
         "sweep_points": 20,
         "sweep_max_minus_min": "0.00020830337",
         "first_value": "0.4616015111643470005679049",
@@ -286,7 +304,11 @@
         "precision_claim": "C0 = 0.46139321254910263602 is supported to the sweep's observed spread (0.000208 over x = 1e-1..1e-20), not to 5e-7. The first version printed 0.461336 from a partially converged quadrature while the report used 0.461390, a discrepancy of 5.4e-5 that its 'stable to 5e-7' claim contradicted. This value replaces both, and the sweep it advertises is the sweep performed.",
         "convergence_table_present": true,
         "passed": true,
-        "retraction": "'stable to 5e-7' is retracted; the script printed 0.461336 while the report used 0.461390. The supported value is 0.4613932125491026 with a sweep spread of 2.1e-4 over x = 1e-1..1e-20."
+        "retraction": "'stable to 5e-7' is retracted; the script printed 0.461336 while the report used 0.461390. The supported value is 0.4613932125491026 with a sweep spread of 2.1e-4 over x = 1e-1..1e-20.",
+        "C0_method": "standard library only: composite Simpson on [1,1000] plus the analytic tail 1/(2Q^2) + Q^-3 sinQ - 3Q^-4 cosQ, plus the rapidly converging series sum_{n>=2} (-1)^(n+1)/((2n)!(2n-2)). No third-party dependency.",
+        "correction_to_the_previous_value": "The value reported before this revision, 0.4613932125491026, was WRONG in its 6th decimal. It came from mpmath's quad(f, [1, inf]), which mishandles the oscillatory integral and returned F_tail = 0.481883428 where the two validated routes give 0.481882378 -- an error of 1.05e-6 in F_tail, and hence in C0. Reporting it to 16 digits was an unsupported precision claim on top of an undeclared dependency. The current value, 0.4613921675492818, is validated by the two routes above and uses no third-party module.",
+        "F_tail_value": 0.48188237801944256,
+        "F_tail_validated_by": "Two independent routes agree to ~1e-12: (i) Simpson on [1,Q] + analytic tail for Q = 1000, 2000, 5000 (stable to ~1e-12), and (ii) F_tail = 1/2 - A_3(1) with A_3(1) = int_1^inf cos q / q^3 dq evaluated on a different grid to 2*pi*400 plus its own analytic remainder."
       },
       "B5_verdict_on_the_E3_fail": {
         "frozen_threshold": 1.7,
@@ -301,11 +323,11 @@
     },
     "failures": [],
     "all_criteria_passed": true,
-    "summary": "Re-executed inside the admitted round and reported from the in-round outputs only. (B1) GLM's beta=3 structure-function slope is reproduced EXACTLY by an independent implementation of GLM's specification: GLM 1.5400285073651272 vs independent 1.5400285073651140, gap 1.3e-14, with GLM's own per-seed std 7.1e-15. Implementation error is therefore excluded by exact reproduction with a ~1e-14 error bound, NOT by a tolerance; the exploratory '3% apart, consistent with realisation noise' claim is retracted, and with it the 0.05-cutoff argument, since the estimator carries no realisation noise at all and the 0.0489 gap was a lag-set (sampling) difference. (B2) The exact local exponent d ln S2 / d ln r of the discrete mode sum is 1.7324 at r=16, 1.6687 at 32, 1.5717 at 64, 1.4014 at 128, 1.1630 at 217 and 1.0723 at 249. Asymptotic saturation requires k_lo*r >> 1 and the window only reaches 1.146, so the 'saturated plateau' and 'second saturation mechanism' language is RETRACTED and replaced by: the window crosses the onset of finite-band turnover (k_lo*r ~ 1) and the local exponent is falling through it. The frozen threshold 1.7 is essentially the exact lower-edge local exponent (1.7324; the log approximation gives 1.7168), so it was set at a value attainable only at the window's first lag. (B3) The proposed resolved-band gate is RETRACTED: the interval [15,21] satisfies k_hi*r_a >= 20 and k_lo*r_b <= 0.1 but gives beta=5/3 -> 0.7285, a larger deviation from 2/3 than GLM's window, because the local exponent errs on opposite sides at small and large r. Across windows beta=5/3 spans 0.27..0.73, so the measured slope is a property of the (band, window, lag set) triple. (B4) C0 = 0.4613932125491026 from a 40-digit series-plus-tail evaluation, with a 20-point sweep over x = 1e-1..1e-20 showing a spread of 2.1e-4; the previous 'stable to 5e-7' claim and both previous values are retracted. (B5) VERDICT on the E3 FAIL: (D) finite-window effect, with (A) as the proximate cause. NOT (B). (C) incomplete rather than wrong. The FAIL must be kept: it is the clearest evidence the frozen gate has teeth, and the number is correct for the configuration measured. PHYS-001 itself remains OPEN -- nothing here is a claim about real turbulence.",
+    "summary": "All findings from both review passes are addressed and every committed artifact has been REGENERATED with the remediated scripts, so the recorded outputs are the outputs of the commands recorded beside them. B1: GLM's structure-function slope is reproduced by an independent implementation of GLM's specification on GLM's own 13 geometric lags, with gaps of 1.1e-14 (beta=5/3) and 1.3e-14 (beta=3) against GLM's FULL-PRECISION stored values -- ordinary double-precision rounding, not a tolerance. The reference script is executed only after its LF-normalised SHA-256 equals the pinned b1070ea49ec142addeda3be51092eaa92624199bcf788c78013cad0c172d5a70; a mismatch refuses execution (verified by tampering). Any pre-existing output is deleted before launch so a stale artifact cannot be mistaken for current evidence, and the reference's exit code 1 (its scientific FAIL) is not treated as a failure of this check. B2: the exact local exponent of the beta=3 discrete mode sum is 1.7324 at r=16, 1.6687 at 32, 1.5717 at 64, 1.4014 at 128, 1.1630 at 217 and 1.0723 at 249; the 'saturated plateau' and 'second saturation mechanism' language remains retracted (k_lo*r reaches only 1.146) and is replaced by the onset of finite-band turnover. B3: the proposed resolved-band window gate remains retracted -- the gate-satisfying interval [15,21] gives beta=5/3 -> 0.7285, worse than GLM's window, because the local exponent sits above 2/3 at small r and below it at large r; beta=5/3 spans 0.27..0.73 across windows. B4: C0 = 0.4613921675492818, standard library only, replacing three earlier values. The reviewer is right that the earlier 0.4613932125 was wrong in the 6th decimal (mpmath's quad mishandled the oscillatory integral); the corrected F_tail = 0.481882378019 is validated by two independent quadrature routes. B5: VERDICT on the E3 FAIL unchanged -- (D) finite-window effect with (A) as the proximate cause, NOT (B), (C) incomplete rather than wrong -- and the FAIL is KEPT. One further correction from this pass: the beta=3 UV/IR statement had its inequality REVERSED (it claimed r >~ 3300 when the required regime is r < 0.0248, i.e. below one sample); fixed in the script, the JSON, this record and the audit document together. PHYS-001 remains OPEN. Nothing here is a claim about real turbulence.",
     "wall_minutes_used_approx": 75,
     "wall_minutes_note": "Declared budget was the schema maximum of 120; the session overall was longer because it also covered the review and remediation work."
   },
-  "admitted_at": "2026-09-28T05:48:02.895630+00:00",
+  "admitted_at": "2026-09-28T06:27:49.136822+00:00",
   "executed_commands": [
     {
       "cmd": "python reproduce_and_compare.py --json ../../results/<round-id>/B1_glm_reproduction.json",
@@ -322,5 +344,6 @@
       "note": "standard library only; no third-party dependency."
     }
   ],
-  "artifact_hashes_note": "Hashes are of the committed files as checked out. The reference script's hash in artifacts[] is the RAW-BYTE hash of the Windows working tree and is therefore checkout-dependent; the reproducible, LF-normalised hash used by the gate is pinned in reproduce_and_compare.py as EXPECTED_REFERENCE_SHA256_LF = b1070ea49ec142addeda3be51092eaa92624199bcf788c78013cad0c172d5a70, which equals both the blob committed here and the file on glm/PHYS-001-baseline-r1."
+  "artifact_hashes_note": "Hashes are of the committed files as checked out. The reference script's hash in artifacts[] is the RAW-BYTE hash of the Windows working tree and is therefore checkout-dependent; the reproducible, LF-normalised hash used by the gate is pinned in reproduce_and_compare.py as EXPECTED_REFERENCE_SHA256_LF = b1070ea49ec142addeda3be51092eaa92624199bcf788c78013cad0c172d5a70, which equals both the blob committed here and the file on glm/PHYS-001-baseline-r1.",
+  "artifact_regeneration_note": "Every output listed here was regenerated by the remediated scripts in the same commit, so the hashes describe the artifacts the recorded commands actually produce. A reviewer correctly noted that an earlier revision hashed PRE-remediation outputs while presenting them as results of the remediated commands."
 }

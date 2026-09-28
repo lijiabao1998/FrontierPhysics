@@ -10,7 +10,7 @@
    beta=1.6667: slope=0.728457  theory=0.666667  gap=+0.061790  window-perturbation spread=2.25e-03
    beta=2.0000: slope=1.006433  theory=1.000000  gap=+0.006433  window-perturbation spread=2.50e-03
    beta=3.0000: slope=1.723289  theory=2.000000  gap=-0.276711  window-perturbation spread=4.47e-03
-   For beta = 3 the approach to the asymptotic exponent 2 is only logarithmic: the local exponent is 2 - 1/(ln(1/(k_lo r)) + 2 C0), which reaches 1.9 only when ln(1/(k_lo r)) >~ 8.1, i.e. k_lo r <~ 3e-4, i.e. r >~ 3300 -- far outside any usable window at this N and band. So no window makes beta = 3 a power-law test.
+   For beta = 3 the approach to the asymptotic exponent 2 is only logarithmic: the local exponent is 2 - 1/(ln(1/(k_lo r)) + 2 C0). CORRECTED: the earlier text had this inequality REVERSED, saying the exponent reaches 1.9 for k_lo*r <~ 3e-4, i.e. r >~ 3300. Solving 2 - 1/L > 1.9 gives L > 10, i.e. ln(1/(k_lo r)) > 10 - 2C0 = 9.077, i.e. k_lo*r < e^-9.077 = 1.14e-4, i.e. r < 1.14e-4/0.004602 = 0.0248. So the required regime is at SMALL r -- below one sample, not beyond the domain -- and is unreachable for a different reason than first stated: it lies under the lattice spacing. Within r >= 1 the local exponent never reaches 1.9. The conclusion is unchanged (no window makes beta = 3 a power-law test) but the UV/IR direction is now right.
 == P2-A addendum) chord slope vs window: the measured value is a window property ==
    [  16, 249]: beta=5/3 -> 0.6169   beta=2 -> 0.8725   beta=3 -> 1.4911
    [  15,  21]: beta=5/3 -> 0.7285   beta=2 -> 1.0064   beta=3 -> 1.7233
@@ -23,9 +23,9 @@
    [  16,1024]: beta=5/3 -> 0.2663   beta=2 -> 0.4038   beta=3 -> 0.7794
    The measured slope moves smoothly with the window over a range far larger than any tolerance used for it, so the number is a property of the (band, window) pair and not of the spectrum alone. CONSEQUENCE FOR THE PROPOSED GATE: it is retracted as a recommendation. The interval [15,21] satisfies k_hi*r_a >= 20 and k_lo*r_b <= 0.1 but gives beta=5/3 -> 0.7285, a LARGER deviation from 2/3 than GLM's window (-0.028) gives, because the local exponent is ABOVE 2/3 at small r and below it at large r, so which side a window errs on depends on where it sits, not on how well resolved the band is. A 'resolved-band' condition alone therefore does not make a slope equal the asymptotic exponent.
 == P2-B) beta=3 log constant C0 with a supported precision ==
-   C0 (series + high-precision tail, dps=40) = 0.46139321254910263602
-   x-sweep 1e-1..1e-20: 20 points, max-min = 0.00020830337
-   first: {'x': '1e-1', 'F_minus_half_log': '0.4616015111643470005679049'}
-   last : {'x': '1e-20', 'F_minus_half_log': '0.4613932077974767900420987'}
-   C0 = 0.46139321254910263602 is supported to the sweep's observed spread (0.000208 over x = 1e-1..1e-20), not to 5e-7. The first version printed 0.461336 from a partially converged quadrature while the report used 0.461390, a discrepancy of 5.4e-5 that its 'stable to 5e-7' claim contradicted. This value replaces both, and the sweep it advertises is the sweep performed.
+   C0 (stdlib series + Simpson tail) = 0.4613921675492818
+   x-sweep 1e-1..1e-20: 20 points, max-min = 2.082986e-04
+   first: {'x': '1e-1', 'F_minus_half_log': '0.46160046616452616'}
+   last : {'x': '1e-20', 'F_minus_half_log': '0.4613921675492818'}
+   C0 = 0.4613921675492818 is supported to the sweep's observed spread (0.000208 over x = 1e-1..1e-20), not to 5e-7. The first version printed 0.461336 from a partially converged quadrature while the report used 0.461390, a discrepancy of 5.4e-5 that its 'stable to 5e-7' claim contradicted. Both are replaced by this value, and the sweep it advertises is the sweep performed. The computation is standard-library only, so the advertised reproduction command runs on a clean checkout.
 [written] ../../results/20260928T035326002008Z-dsk-PHYS-001/B2_B3_B4_local_exponent.json
