@@ -42,7 +42,9 @@ def main() -> int:
         for seed in A_SEEDS:
             u, amps = c.make_field(beta, seed)
             for wname, window in c.WINDOWS.items():
-                stage_a.append({"beta": name, "window": wname,
+                # every raw row carries its full experimental coordinates
+                stage_a.append({"beta_name": name, "beta": beta, "N": 4096,
+                                "seed": seed, "window": wname,
                                 **c.measure(u, amps, window)})
     energy_max = 2 * max(r["energy_rel_residual"] for r in stage_a)
     bands = {"energy_max": energy_max}
@@ -51,7 +53,7 @@ def main() -> int:
             for key, field in ((f"{name}|{wname}|sf", "sf_slope"),
                                (f"{name}|{wname}|spec", "spec_slope")):
                 vals = [r[field] for r in stage_a
-                        if r["beta"] == name and r["window"] == wname]
+                        if r["beta_name"] == name and r["window"] == wname]
                 mu = sum(vals) / len(vals)
                 sd = (sum((v - mu) ** 2 for v in vals) / len(vals)) ** 0.5
                 half = max(4 * sd, FLOOR)
@@ -72,6 +74,8 @@ def main() -> int:
             u, amps = c.make_field(beta, seed)
             for wname, window in c.WINDOWS.items():
                 m = c.measure(u, amps, window)
+                m.update({"beta_name": name, "beta": beta, "seed": seed,
+                          "window": wname})
                 stage_b.append(m)
                 lo, hi = bands[f"{name}|{wname}|sf"]
                 if not (lo <= m["sf_slope"] <= hi):

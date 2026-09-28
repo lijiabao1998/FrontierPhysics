@@ -105,7 +105,34 @@
       "amplitude_guard": "k41_baseline E6 now uses real make_field amplitudes; results/r2/amplitude_guard_check.json: reference 4.1e-14 PASS, 1.5x 1.25 FAIL",
       "beta3_window_property": "beta=3 measured slope 1.54 is a WINDOW-DEPENDENT STATISTIC (marginal log correction), not a clean exponent — per dsk independent audit (PR #3); 1.54 must not be quoted as a universal exponent",
       "hashes": "verify_manifest.py; regenerated after final edits"
-    }
+    },
+    "commands": [
+      {
+        "purpose": "cycle-1 two-stage calibration (superseded by cycle-2)",
+        "cwd": "problems/PHYS-001",
+        "command": "python experiments/r2_calibration/calibrate_and_confirm.py"
+      },
+      {
+        "purpose": "cycle-2 two-stage calibration (committed executable; writes bands2.json + results/r2/r2_cycle2_results.json)",
+        "cwd": "problems/PHYS-001",
+        "command": "python experiments/r2_calibration/calibrate_and_confirm_cycle2.py"
+      },
+      {
+        "purpose": "amplitude guard teeth check",
+        "cwd": "problems/PHYS-001",
+        "command": "python (inline: k41_baseline.make_field + energy_budget on reference and 1.5x field; results/r2/amplitude_guard_check.json)"
+      },
+      {
+        "purpose": "K41 r1 baseline evaluator suite",
+        "cwd": "problems/PHYS-001",
+        "command": "python experiments/baseline_r1/k41_baseline.py"
+      },
+      {
+        "purpose": "manifest verification",
+        "cwd": "problems/PHYS-001",
+        "command": "python experiments/r2_calibration/verify_manifest.py"
+      }
+    ]
   },
   "admitted_at": "2026-09-27T19:30:10.980490+00:00"
 }

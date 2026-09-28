@@ -4,504 +4,720 @@
   "W3_note": "true 13-point geometric grid on [12,156] per admitted rule (round(12*13^(k/12)))",
   "stage_a_raw_rows": [
     {
-      "beta": "K41_5_3",
+      "beta_name": "K41_5_3",
+      "beta": 1.6666666666666667,
+      "N": 4096,
+      "seed": 21,
       "window": "W1",
       "sf_slope": 0.638364607961232,
       "spec_slope": 1.6669528360082484,
       "energy_rel_residual": 1.7932646924623724e-14
     },
     {
-      "beta": "K41_5_3",
+      "beta_name": "K41_5_3",
+      "beta": 1.6666666666666667,
+      "N": 4096,
+      "seed": 21,
       "window": "W2",
       "sf_slope": 0.5839125322256754,
       "spec_slope": 1.6669528360082484,
       "energy_rel_residual": 1.7932646924623724e-14
     },
     {
-      "beta": "K41_5_3",
+      "beta_name": "K41_5_3",
+      "beta": 1.6666666666666667,
+      "N": 4096,
+      "seed": 21,
       "window": "W3",
       "sf_slope": 0.6713832053316676,
       "spec_slope": 1.6669528360082484,
       "energy_rel_residual": 1.7932646924623724e-14
     },
     {
-      "beta": "K41_5_3",
+      "beta_name": "K41_5_3",
+      "beta": 1.6666666666666667,
+      "N": 4096,
+      "seed": 22,
       "window": "W1",
       "sf_slope": 0.6383646079612402,
       "spec_slope": 1.6669528360082555,
       "energy_rel_residual": 2.409699430496313e-14
     },
     {
-      "beta": "K41_5_3",
+      "beta_name": "K41_5_3",
+      "beta": 1.6666666666666667,
+      "N": 4096,
+      "seed": 22,
       "window": "W2",
       "sf_slope": 0.5839125322256843,
       "spec_slope": 1.6669528360082555,
       "energy_rel_residual": 2.409699430496313e-14
     },
     {
-      "beta": "K41_5_3",
+      "beta_name": "K41_5_3",
+      "beta": 1.6666666666666667,
+      "N": 4096,
+      "seed": 22,
       "window": "W3",
       "sf_slope": 0.6713832053316758,
       "spec_slope": 1.6669528360082555,
       "energy_rel_residual": 2.409699430496313e-14
     },
     {
-      "beta": "K41_5_3",
+      "beta_name": "K41_5_3",
+      "beta": 1.6666666666666667,
+      "N": 4096,
+      "seed": 23,
       "window": "W1",
       "sf_slope": 0.6383646079612388,
       "spec_slope": 1.6669528360082377,
       "energy_rel_residual": 3.7266281890233674e-14
     },
     {
-      "beta": "K41_5_3",
+      "beta_name": "K41_5_3",
+      "beta": 1.6666666666666667,
+      "N": 4096,
+      "seed": 23,
       "window": "W2",
       "sf_slope": 0.583912532225682,
       "spec_slope": 1.6669528360082377,
       "energy_rel_residual": 3.7266281890233674e-14
     },
     {
-      "beta": "K41_5_3",
+      "beta_name": "K41_5_3",
+      "beta": 1.6666666666666667,
+      "N": 4096,
+      "seed": 23,
       "window": "W3",
       "sf_slope": 0.6713832053316736,
       "spec_slope": 1.6669528360082377,
       "energy_rel_residual": 3.7266281890233674e-14
     },
     {
-      "beta": "K41_5_3",
+      "beta_name": "K41_5_3",
+      "beta": 1.6666666666666667,
+      "N": 4096,
+      "seed": 24,
       "window": "W1",
       "sf_slope": 0.6383646079612372,
       "spec_slope": 1.666952836008247,
       "energy_rel_residual": 3.3203416571373617e-14
     },
     {
-      "beta": "K41_5_3",
+      "beta_name": "K41_5_3",
+      "beta": 1.6666666666666667,
+      "N": 4096,
+      "seed": 24,
       "window": "W2",
       "sf_slope": 0.5839125322256801,
       "spec_slope": 1.666952836008247,
       "energy_rel_residual": 3.3203416571373617e-14
     },
     {
-      "beta": "K41_5_3",
+      "beta_name": "K41_5_3",
+      "beta": 1.6666666666666667,
+      "N": 4096,
+      "seed": 24,
       "window": "W3",
       "sf_slope": 0.671383205331675,
       "spec_slope": 1.666952836008247,
       "energy_rel_residual": 3.3203416571373617e-14
     },
     {
-      "beta": "K41_5_3",
+      "beta_name": "K41_5_3",
+      "beta": 1.6666666666666667,
+      "N": 4096,
+      "seed": 25,
       "window": "W1",
       "sf_slope": 0.6383646079612437,
       "spec_slope": 1.6669528360082477,
       "energy_rel_residual": 3.684598547793781e-14
     },
     {
-      "beta": "K41_5_3",
+      "beta_name": "K41_5_3",
+      "beta": 1.6666666666666667,
+      "N": 4096,
+      "seed": 25,
       "window": "W2",
       "sf_slope": 0.5839125322256856,
       "spec_slope": 1.6669528360082477,
       "energy_rel_residual": 3.684598547793781e-14
     },
     {
-      "beta": "K41_5_3",
+      "beta_name": "K41_5_3",
+      "beta": 1.6666666666666667,
+      "N": 4096,
+      "seed": 25,
       "window": "W3",
       "sf_slope": 0.6713832053316785,
       "spec_slope": 1.6669528360082477,
       "energy_rel_residual": 3.684598547793781e-14
     },
     {
-      "beta": "K41_5_3",
+      "beta_name": "K41_5_3",
+      "beta": 1.6666666666666667,
+      "N": 4096,
+      "seed": 26,
       "window": "W1",
       "sf_slope": 0.638364607961238,
       "spec_slope": 1.6669528360082257,
       "energy_rel_residual": 3.572519504514882e-14
     },
     {
-      "beta": "K41_5_3",
+      "beta_name": "K41_5_3",
+      "beta": 1.6666666666666667,
+      "N": 4096,
+      "seed": 26,
       "window": "W2",
       "sf_slope": 0.5839125322256818,
       "spec_slope": 1.6669528360082257,
       "energy_rel_residual": 3.572519504514882e-14
     },
     {
-      "beta": "K41_5_3",
+      "beta_name": "K41_5_3",
+      "beta": 1.6666666666666667,
+      "N": 4096,
+      "seed": 26,
       "window": "W3",
       "sf_slope": 0.671383205331672,
       "spec_slope": 1.6669528360082257,
       "energy_rel_residual": 3.572519504514882e-14
     },
     {
-      "beta": "K41_5_3",
+      "beta_name": "K41_5_3",
+      "beta": 1.6666666666666667,
+      "N": 4096,
+      "seed": 27,
       "window": "W1",
       "sf_slope": 0.6383646079612468,
       "spec_slope": 1.6669528360082349,
       "energy_rel_residual": 4.5672210136151046e-14
     },
     {
-      "beta": "K41_5_3",
+      "beta_name": "K41_5_3",
+      "beta": 1.6666666666666667,
+      "N": 4096,
+      "seed": 27,
       "window": "W2",
       "sf_slope": 0.5839125322256901,
       "spec_slope": 1.6669528360082349,
       "energy_rel_residual": 4.5672210136151046e-14
     },
     {
-      "beta": "K41_5_3",
+      "beta_name": "K41_5_3",
+      "beta": 1.6666666666666667,
+      "N": 4096,
+      "seed": 27,
       "window": "W3",
       "sf_slope": 0.671383205331679,
       "spec_slope": 1.6669528360082349,
       "energy_rel_residual": 4.5672210136151046e-14
     },
     {
-      "beta": "K41_5_3",
+      "beta_name": "K41_5_3",
+      "beta": 1.6666666666666667,
+      "N": 4096,
+      "seed": 28,
       "window": "W1",
       "sf_slope": 0.6383646079612346,
       "spec_slope": 1.6669528360082357,
       "energy_rel_residual": 3.110193450989427e-14
     },
     {
-      "beta": "K41_5_3",
+      "beta_name": "K41_5_3",
+      "beta": 1.6666666666666667,
+      "N": 4096,
+      "seed": 28,
       "window": "W2",
       "sf_slope": 0.583912532225679,
       "spec_slope": 1.6669528360082357,
       "energy_rel_residual": 3.110193450989427e-14
     },
     {
-      "beta": "K41_5_3",
+      "beta_name": "K41_5_3",
+      "beta": 1.6666666666666667,
+      "N": 4096,
+      "seed": 28,
       "window": "W3",
       "sf_slope": 0.6713832053316687,
       "spec_slope": 1.6669528360082357,
       "energy_rel_residual": 3.110193450989427e-14
     },
     {
-      "beta": "K2_2",
+      "beta_name": "K2_2",
+      "beta": 2.0,
+      "N": 4096,
+      "seed": 21,
       "window": "W1",
       "sf_slope": 0.9008361480776473,
       "spec_slope": 2.0003861798941225,
       "energy_rel_residual": 2.4948922428041088e-14
     },
     {
-      "beta": "K2_2",
+      "beta_name": "K2_2",
+      "beta": 2.0,
+      "N": 4096,
+      "seed": 21,
       "window": "W2",
       "sf_slope": 0.8287842697922049,
       "spec_slope": 2.0003861798941225,
       "energy_rel_residual": 2.4948922428041088e-14
     },
     {
-      "beta": "K2_2",
+      "beta_name": "K2_2",
+      "beta": 2.0,
+      "N": 4096,
+      "seed": 21,
       "window": "W3",
       "sf_slope": 0.9436806167966674,
       "spec_slope": 2.0003861798941225,
       "energy_rel_residual": 2.4948922428041088e-14
     },
     {
-      "beta": "K2_2",
+      "beta_name": "K2_2",
+      "beta": 2.0,
+      "N": 4096,
+      "seed": 22,
       "window": "W1",
       "sf_slope": 0.9008361480776584,
       "spec_slope": 2.000386179894105,
       "energy_rel_residual": 3.439286481605664e-14
     },
     {
-      "beta": "K2_2",
+      "beta_name": "K2_2",
+      "beta": 2.0,
+      "N": 4096,
+      "seed": 22,
       "window": "W2",
       "sf_slope": 0.8287842697922128,
       "spec_slope": 2.000386179894105,
       "energy_rel_residual": 3.439286481605664e-14
     },
     {
-      "beta": "K2_2",
+      "beta_name": "K2_2",
+      "beta": 2.0,
+      "N": 4096,
+      "seed": 22,
       "window": "W3",
       "sf_slope": 0.9436806167966753,
       "spec_slope": 2.000386179894105,
       "energy_rel_residual": 3.439286481605664e-14
     },
     {
-      "beta": "K2_2",
+      "beta_name": "K2_2",
+      "beta": 2.0,
+      "N": 4096,
+      "seed": 23,
       "window": "W1",
       "sf_slope": 0.9008361480776531,
       "spec_slope": 2.000386179894105,
       "energy_rel_residual": 4.3836807204072194e-14
     },
     {
-      "beta": "K2_2",
+      "beta_name": "K2_2",
+      "beta": 2.0,
+      "N": 4096,
+      "seed": 23,
       "window": "W2",
       "sf_slope": 0.8287842697922104,
       "spec_slope": 2.000386179894105,
       "energy_rel_residual": 4.3836807204072194e-14
     },
     {
-      "beta": "K2_2",
+      "beta_name": "K2_2",
+      "beta": 2.0,
+      "N": 4096,
+      "seed": 23,
       "window": "W3",
       "sf_slope": 0.9436806167966741,
       "spec_slope": 2.000386179894105,
       "energy_rel_residual": 4.3836807204072194e-14
     },
     {
-      "beta": "K2_2",
+      "beta_name": "K2_2",
+      "beta": 2.0,
+      "N": 4096,
+      "seed": 24,
       "window": "W1",
       "sf_slope": 0.9008361480776526,
       "spec_slope": 2.000386179894117,
       "energy_rel_residual": 3.932626755606477e-14
     },
     {
-      "beta": "K2_2",
+      "beta_name": "K2_2",
+      "beta": 2.0,
+      "N": 4096,
+      "seed": 24,
       "window": "W2",
       "sf_slope": 0.8287842697922073,
       "spec_slope": 2.000386179894117,
       "energy_rel_residual": 3.932626755606477e-14
     },
     {
-      "beta": "K2_2",
+      "beta_name": "K2_2",
+      "beta": 2.0,
+      "N": 4096,
+      "seed": 24,
       "window": "W3",
       "sf_slope": 0.9436806167966731,
       "spec_slope": 2.000386179894117,
       "energy_rel_residual": 3.932626755606477e-14
     },
     {
-      "beta": "K2_2",
+      "beta_name": "K2_2",
+      "beta": 2.0,
+      "N": 4096,
+      "seed": 25,
       "window": "W1",
       "sf_slope": 0.9008361480776605,
       "spec_slope": 2.000386179894118,
       "energy_rel_residual": 4.820639248807939e-14
     },
     {
-      "beta": "K2_2",
+      "beta_name": "K2_2",
+      "beta": 2.0,
+      "N": 4096,
+      "seed": 25,
       "window": "W2",
       "sf_slope": 0.8287842697922131,
       "spec_slope": 2.000386179894118,
       "energy_rel_residual": 4.820639248807939e-14
     },
     {
-      "beta": "K2_2",
+      "beta_name": "K2_2",
+      "beta": 2.0,
+      "N": 4096,
+      "seed": 25,
       "window": "W3",
       "sf_slope": 0.94368061679668,
       "spec_slope": 2.000386179894118,
       "energy_rel_residual": 4.820639248807939e-14
     },
     {
-      "beta": "K2_2",
+      "beta_name": "K2_2",
+      "beta": 2.0,
+      "N": 4096,
+      "seed": 26,
       "window": "W1",
       "sf_slope": 0.9008361480776531,
       "spec_slope": 2.0003861798940954,
       "energy_rel_residual": 4.200440047206918e-14
     },
     {
-      "beta": "K2_2",
+      "beta_name": "K2_2",
+      "beta": 2.0,
+      "N": 4096,
+      "seed": 26,
       "window": "W2",
       "sf_slope": 0.8287842697922111,
       "spec_slope": 2.0003861798940954,
       "energy_rel_residual": 4.200440047206918e-14
     },
     {
-      "beta": "K2_2",
+      "beta_name": "K2_2",
+      "beta": 2.0,
+      "N": 4096,
+      "seed": 26,
       "window": "W3",
       "sf_slope": 0.9436806167966713,
       "spec_slope": 2.0003861798940954,
       "energy_rel_residual": 4.200440047206918e-14
     },
     {
-      "beta": "K2_2",
+      "beta_name": "K2_2",
+      "beta": 2.0,
+      "N": 4096,
+      "seed": 27,
       "window": "W1",
       "sf_slope": 0.9008361480776612,
       "spec_slope": 2.0003861798940847,
       "energy_rel_residual": 5.44083845040896e-14
     },
     {
-      "beta": "K2_2",
+      "beta_name": "K2_2",
+      "beta": 2.0,
+      "N": 4096,
+      "seed": 27,
       "window": "W2",
       "sf_slope": 0.8287842697922165,
       "spec_slope": 2.0003861798940847,
       "energy_rel_residual": 5.44083845040896e-14
     },
     {
-      "beta": "K2_2",
+      "beta_name": "K2_2",
+      "beta": 2.0,
+      "N": 4096,
+      "seed": 27,
       "window": "W3",
       "sf_slope": 0.9436806167966794,
       "spec_slope": 2.0003861798940847,
       "energy_rel_residual": 5.44083845040896e-14
     },
     {
-      "beta": "K2_2",
+      "beta_name": "K2_2",
+      "beta": 2.0,
+      "N": 4096,
+      "seed": 28,
       "window": "W1",
       "sf_slope": 0.9008361480776507,
       "spec_slope": 2.0003861798941056,
       "energy_rel_residual": 3.7352906460061516e-14
     },
     {
-      "beta": "K2_2",
+      "beta_name": "K2_2",
+      "beta": 2.0,
+      "N": 4096,
+      "seed": 28,
       "window": "W2",
       "sf_slope": 0.8287842697922074,
       "spec_slope": 2.0003861798941056,
       "energy_rel_residual": 3.7352906460061516e-14
     },
     {
-      "beta": "K2_2",
+      "beta_name": "K2_2",
+      "beta": 2.0,
+      "N": 4096,
+      "seed": 28,
       "window": "W3",
       "sf_slope": 0.9436806167966695,
       "spec_slope": 2.0003861798941056,
       "energy_rel_residual": 3.7352906460061516e-14
     },
     {
-      "beta": "K3_3",
+      "beta_name": "K3_3",
+      "beta": 3.0,
+      "N": 4096,
+      "seed": 21,
       "window": "W1",
       "sf_slope": 1.5400285073651228,
       "spec_slope": 3.0007710469540414,
       "energy_rel_residual": 4.826662818151193e-14
     },
     {
-      "beta": "K3_3",
+      "beta_name": "K3_3",
+      "beta": 3.0,
+      "N": 4096,
+      "seed": 21,
       "window": "W2",
       "sf_slope": 1.4246020992488817,
       "spec_slope": 3.0007710469540414,
       "energy_rel_residual": 4.826662818151193e-14
     },
     {
-      "beta": "K3_3",
+      "beta_name": "K3_3",
+      "beta": 3.0,
+      "N": 4096,
+      "seed": 21,
       "window": "W3",
       "sf_slope": 1.6129557613213057,
       "spec_slope": 3.0007710469540414,
       "energy_rel_residual": 4.826662818151193e-14
     },
     {
-      "beta": "K3_3",
+      "beta_name": "K3_3",
+      "beta": 3.0,
+      "N": 4096,
+      "seed": 22,
       "window": "W1",
       "sf_slope": 1.5400285073651303,
       "spec_slope": 3.0007710469540547,
       "energy_rel_residual": 4.970742305260183e-14
     },
     {
-      "beta": "K3_3",
+      "beta_name": "K3_3",
+      "beta": 3.0,
+      "N": 4096,
+      "seed": 22,
       "window": "W2",
       "sf_slope": 1.424602099248887,
       "spec_slope": 3.0007710469540547,
       "energy_rel_residual": 4.970742305260183e-14
     },
     {
-      "beta": "K3_3",
+      "beta_name": "K3_3",
+      "beta": 3.0,
+      "N": 4096,
+      "seed": 22,
       "window": "W3",
       "sf_slope": 1.6129557613213121,
       "spec_slope": 3.0007710469540547,
       "energy_rel_residual": 4.970742305260183e-14
     },
     {
-      "beta": "K3_3",
+      "beta_name": "K3_3",
+      "beta": 3.0,
+      "N": 4096,
+      "seed": 23,
       "window": "W1",
       "sf_slope": 1.5400285073651259,
       "spec_slope": 3.000771046953983,
       "energy_rel_residual": 6.537606727570459e-14
     },
     {
-      "beta": "K3_3",
+      "beta_name": "K3_3",
+      "beta": 3.0,
+      "N": 4096,
+      "seed": 23,
       "window": "W2",
       "sf_slope": 1.4246020992488835,
       "spec_slope": 3.000771046953983,
       "energy_rel_residual": 6.537606727570459e-14
     },
     {
-      "beta": "K3_3",
+      "beta_name": "K3_3",
+      "beta": 3.0,
+      "N": 4096,
+      "seed": 23,
       "window": "W3",
       "sf_slope": 1.6129557613213097,
       "spec_slope": 3.000771046953983,
       "energy_rel_residual": 6.537606727570459e-14
     },
     {
-      "beta": "K3_3",
+      "beta_name": "K3_3",
+      "beta": 3.0,
+      "N": 4096,
+      "seed": 24,
       "window": "W1",
       "sf_slope": 1.5400285073651228,
       "spec_slope": 3.000771046954035,
       "energy_rel_residual": 4.772633010485321e-14
     },
     {
-      "beta": "K3_3",
+      "beta_name": "K3_3",
+      "beta": 3.0,
+      "N": 4096,
+      "seed": 24,
       "window": "W2",
       "sf_slope": 1.4246020992488808,
       "spec_slope": 3.000771046954035,
       "energy_rel_residual": 4.772633010485321e-14
     },
     {
-      "beta": "K3_3",
+      "beta_name": "K3_3",
+      "beta": 3.0,
+      "N": 4096,
+      "seed": 24,
       "window": "W3",
       "sf_slope": 1.6129557613213057,
       "spec_slope": 3.000771046954035,
       "energy_rel_residual": 4.772633010485321e-14
     },
     {
-      "beta": "K3_3",
+      "beta_name": "K3_3",
+      "beta": 3.0,
+      "N": 4096,
+      "seed": 25,
       "window": "W1",
       "sf_slope": 1.5400285073651285,
       "spec_slope": 3.000771046954034,
       "energy_rel_residual": 6.285467625129724e-14
     },
     {
-      "beta": "K3_3",
+      "beta_name": "K3_3",
+      "beta": 3.0,
+      "N": 4096,
+      "seed": 25,
       "window": "W2",
       "sf_slope": 1.424602099248883,
       "spec_slope": 3.000771046954034,
       "energy_rel_residual": 6.285467625129724e-14
     },
     {
-      "beta": "K3_3",
+      "beta_name": "K3_3",
+      "beta": 3.0,
+      "N": 4096,
+      "seed": 25,
       "window": "W3",
       "sf_slope": 1.6129557613213124,
       "spec_slope": 3.000771046954034,
       "energy_rel_residual": 6.285467625129724e-14
     },
     {
-      "beta": "K3_3",
+      "beta_name": "K3_3",
+      "beta": 3.0,
+      "N": 4096,
+      "seed": 26,
       "window": "W1",
       "sf_slope": 1.5400285073651232,
       "spec_slope": 3.000771046954,
       "energy_rel_residual": 5.150841664146422e-14
     },
     {
-      "beta": "K3_3",
+      "beta_name": "K3_3",
+      "beta": 3.0,
+      "N": 4096,
+      "seed": 26,
       "window": "W2",
       "sf_slope": 1.424602099248879,
       "spec_slope": 3.000771046954,
       "energy_rel_residual": 5.150841664146422e-14
     },
     {
-      "beta": "K3_3",
+      "beta_name": "K3_3",
+      "beta": 3.0,
+      "N": 4096,
+      "seed": 26,
       "window": "W3",
       "sf_slope": 1.6129557613213072,
       "spec_slope": 3.000771046954,
       "energy_rel_residual": 5.150841664146422e-14
     },
     {
-      "beta": "K3_3",
+      "beta_name": "K3_3",
+      "beta": 3.0,
+      "N": 4096,
+      "seed": 27,
       "window": "W1",
       "sf_slope": 1.540028507365129,
       "spec_slope": 3.0007710469540627,
       "energy_rel_residual": 6.303477561018348e-14
     },
     {
-      "beta": "K3_3",
+      "beta_name": "K3_3",
+      "beta": 3.0,
+      "N": 4096,
+      "seed": 27,
       "window": "W2",
       "sf_slope": 1.4246020992488857,
       "spec_slope": 3.0007710469540627,
       "energy_rel_residual": 6.303477561018348e-14
     },
     {
-      "beta": "K3_3",
+      "beta_name": "K3_3",
+      "beta": 3.0,
+      "N": 4096,
+      "seed": 27,
       "window": "W3",
       "sf_slope": 1.6129557613213117,
       "spec_slope": 3.0007710469540627,
       "energy_rel_residual": 6.303477561018348e-14
     },
     {
-      "beta": "K3_3",
+      "beta_name": "K3_3",
+      "beta": 3.0,
+      "N": 4096,
+      "seed": 28,
       "window": "W1",
       "sf_slope": 1.5400285073651243,
       "spec_slope": 3.000771046954002,
       "energy_rel_residual": 5.312931087144037e-14
     },
     {
-      "beta": "K3_3",
+      "beta_name": "K3_3",
+      "beta": 3.0,
+      "N": 4096,
+      "seed": 28,
       "window": "W2",
       "sf_slope": 1.424602099248882,
       "spec_slope": 3.000771046954002,
       "energy_rel_residual": 5.312931087144037e-14
     },
     {
-      "beta": "K3_3",
+      "beta_name": "K3_3",
+      "beta": 3.0,
+      "N": 4096,
+      "seed": 28,
       "window": "W3",
       "sf_slope": 1.6129557613213068,
       "spec_slope": 3.000771046954002,
@@ -512,452 +728,812 @@
     {
       "sf_slope": 0.6383646079612381,
       "spec_slope": 1.666952836008243,
-      "energy_rel_residual": 3.264302135497912e-14
+      "energy_rel_residual": 3.264302135497912e-14,
+      "beta_name": "K41_5_3",
+      "beta": 1.6666666666666667,
+      "seed": 31,
+      "window": "W1"
     },
     {
       "sf_slope": 0.5839125322256817,
       "spec_slope": 1.666952836008243,
-      "energy_rel_residual": 3.264302135497912e-14
+      "energy_rel_residual": 3.264302135497912e-14,
+      "beta_name": "K41_5_3",
+      "beta": 1.6666666666666667,
+      "seed": 31,
+      "window": "W2"
     },
     {
       "sf_slope": 0.6713832053316742,
       "spec_slope": 1.666952836008243,
-      "energy_rel_residual": 3.264302135497912e-14
+      "energy_rel_residual": 3.264302135497912e-14,
+      "beta_name": "K41_5_3",
+      "beta": 1.6666666666666667,
+      "seed": 31,
+      "window": "W3"
     },
     {
       "sf_slope": 0.6383646079612385,
       "spec_slope": 1.6669528360082204,
-      "energy_rel_residual": 3.1662329726288766e-14
+      "energy_rel_residual": 3.1662329726288766e-14,
+      "beta_name": "K41_5_3",
+      "beta": 1.6666666666666667,
+      "seed": 32,
+      "window": "W1"
     },
     {
       "sf_slope": 0.5839125322256832,
       "spec_slope": 1.6669528360082204,
-      "energy_rel_residual": 3.1662329726288766e-14
+      "energy_rel_residual": 3.1662329726288766e-14,
+      "beta_name": "K41_5_3",
+      "beta": 1.6666666666666667,
+      "seed": 32,
+      "window": "W2"
     },
     {
       "sf_slope": 0.6713832053316731,
       "spec_slope": 1.6669528360082204,
-      "energy_rel_residual": 3.1662329726288766e-14
+      "energy_rel_residual": 3.1662329726288766e-14,
+      "beta_name": "K41_5_3",
+      "beta": 1.6666666666666667,
+      "seed": 32,
+      "window": "W3"
     },
     {
       "sf_slope": 0.6383646079612424,
       "spec_slope": 1.6669528360082524,
-      "energy_rel_residual": 3.7686578302529545e-14
+      "energy_rel_residual": 3.7686578302529545e-14,
+      "beta_name": "K41_5_3",
+      "beta": 1.6666666666666667,
+      "seed": 33,
+      "window": "W1"
     },
     {
       "sf_slope": 0.5839125322256842,
       "spec_slope": 1.6669528360082524,
-      "energy_rel_residual": 3.7686578302529545e-14
+      "energy_rel_residual": 3.7686578302529545e-14,
+      "beta_name": "K41_5_3",
+      "beta": 1.6666666666666667,
+      "seed": 33,
+      "window": "W2"
     },
     {
       "sf_slope": 0.6713832053316765,
       "spec_slope": 1.6669528360082524,
-      "energy_rel_residual": 3.7686578302529545e-14
+      "energy_rel_residual": 3.7686578302529545e-14,
+      "beta_name": "K41_5_3",
+      "beta": 1.6666666666666667,
+      "seed": 33,
+      "window": "W3"
     },
     {
       "sf_slope": 0.6383646079612436,
       "spec_slope": 1.6669528360082368,
-      "energy_rel_residual": 3.9788060364008886e-14
+      "energy_rel_residual": 3.9788060364008886e-14,
+      "beta_name": "K41_5_3",
+      "beta": 1.6666666666666667,
+      "seed": 34,
+      "window": "W1"
     },
     {
       "sf_slope": 0.5839125322256853,
       "spec_slope": 1.6669528360082368,
-      "energy_rel_residual": 3.9788060364008886e-14
+      "energy_rel_residual": 3.9788060364008886e-14,
+      "beta_name": "K41_5_3",
+      "beta": 1.6666666666666667,
+      "seed": 34,
+      "window": "W2"
     },
     {
       "sf_slope": 0.6713832053316768,
       "spec_slope": 1.6669528360082368,
-      "energy_rel_residual": 3.9788060364008886e-14
+      "energy_rel_residual": 3.9788060364008886e-14,
+      "beta_name": "K41_5_3",
+      "beta": 1.6666666666666667,
+      "seed": 34,
+      "window": "W3"
     },
     {
       "sf_slope": 0.6383646079612447,
       "spec_slope": 1.666952836008246,
-      "energy_rel_residual": 4.819398860992626e-14
+      "energy_rel_residual": 4.819398860992626e-14,
+      "beta_name": "K41_5_3",
+      "beta": 1.6666666666666667,
+      "seed": 35,
+      "window": "W1"
     },
     {
       "sf_slope": 0.583912532225688,
       "spec_slope": 1.666952836008246,
-      "energy_rel_residual": 4.819398860992626e-14
+      "energy_rel_residual": 4.819398860992626e-14,
+      "beta_name": "K41_5_3",
+      "beta": 1.6666666666666667,
+      "seed": 35,
+      "window": "W2"
     },
     {
       "sf_slope": 0.6713832053316778,
       "spec_slope": 1.666952836008246,
-      "energy_rel_residual": 4.819398860992626e-14
+      "energy_rel_residual": 4.819398860992626e-14,
+      "beta_name": "K41_5_3",
+      "beta": 1.6666666666666667,
+      "seed": 35,
+      "window": "W3"
     },
     {
       "sf_slope": 0.6383646079612361,
       "spec_slope": 1.6669528360082466,
-      "energy_rel_residual": 2.5918278758245225e-14
+      "energy_rel_residual": 2.5918278758245225e-14,
+      "beta_name": "K41_5_3",
+      "beta": 1.6666666666666667,
+      "seed": 36,
+      "window": "W1"
     },
     {
       "sf_slope": 0.5839125322256766,
       "spec_slope": 1.6669528360082466,
-      "energy_rel_residual": 2.5918278758245225e-14
+      "energy_rel_residual": 2.5918278758245225e-14,
+      "beta_name": "K41_5_3",
+      "beta": 1.6666666666666667,
+      "seed": 36,
+      "window": "W2"
     },
     {
       "sf_slope": 0.6713832053316708,
       "spec_slope": 1.6669528360082466,
-      "energy_rel_residual": 2.5918278758245225e-14
+      "energy_rel_residual": 2.5918278758245225e-14,
+      "beta_name": "K41_5_3",
+      "beta": 1.6666666666666667,
+      "seed": 36,
+      "window": "W3"
     },
     {
       "sf_slope": 0.6383646079612425,
       "spec_slope": 1.666952836008259,
-      "energy_rel_residual": 3.6145491457444693e-14
+      "energy_rel_residual": 3.6145491457444693e-14,
+      "beta_name": "K41_5_3",
+      "beta": 1.6666666666666667,
+      "seed": 37,
+      "window": "W1"
     },
     {
       "sf_slope": 0.5839125322256874,
       "spec_slope": 1.666952836008259,
-      "energy_rel_residual": 3.6145491457444693e-14
+      "energy_rel_residual": 3.6145491457444693e-14,
+      "beta_name": "K41_5_3",
+      "beta": 1.6666666666666667,
+      "seed": 37,
+      "window": "W2"
     },
     {
       "sf_slope": 0.6713832053316746,
       "spec_slope": 1.666952836008259,
-      "energy_rel_residual": 3.6145491457444693e-14
+      "energy_rel_residual": 3.6145491457444693e-14,
+      "beta_name": "K41_5_3",
+      "beta": 1.6666666666666667,
+      "seed": 37,
+      "window": "W3"
     },
     {
       "sf_slope": 0.6383646079612366,
       "spec_slope": 1.6669528360082624,
-      "energy_rel_residual": 4.23098388377841e-14
+      "energy_rel_residual": 4.23098388377841e-14,
+      "beta_name": "K41_5_3",
+      "beta": 1.6666666666666667,
+      "seed": 38,
+      "window": "W1"
     },
     {
       "sf_slope": 0.5839125322256833,
       "spec_slope": 1.6669528360082624,
-      "energy_rel_residual": 4.23098388377841e-14
+      "energy_rel_residual": 4.23098388377841e-14,
+      "beta_name": "K41_5_3",
+      "beta": 1.6666666666666667,
+      "seed": 38,
+      "window": "W2"
     },
     {
       "sf_slope": 0.6713832053316743,
       "spec_slope": 1.6669528360082624,
-      "energy_rel_residual": 4.23098388377841e-14
+      "energy_rel_residual": 4.23098388377841e-14,
+      "beta_name": "K41_5_3",
+      "beta": 1.6666666666666667,
+      "seed": 38,
+      "window": "W3"
     },
     {
       "sf_slope": 0.6383646079612368,
       "spec_slope": 1.666952836008263,
-      "energy_rel_residual": 3.0261341685302534e-14
+      "energy_rel_residual": 3.0261341685302534e-14,
+      "beta_name": "K41_5_3",
+      "beta": 1.6666666666666667,
+      "seed": 39,
+      "window": "W1"
     },
     {
       "sf_slope": 0.58391253222568,
       "spec_slope": 1.666952836008263,
-      "energy_rel_residual": 3.0261341685302534e-14
+      "energy_rel_residual": 3.0261341685302534e-14,
+      "beta_name": "K41_5_3",
+      "beta": 1.6666666666666667,
+      "seed": 39,
+      "window": "W2"
     },
     {
       "sf_slope": 0.6713832053316724,
       "spec_slope": 1.666952836008263,
-      "energy_rel_residual": 3.0261341685302534e-14
+      "energy_rel_residual": 3.0261341685302534e-14,
+      "beta_name": "K41_5_3",
+      "beta": 1.6666666666666667,
+      "seed": 39,
+      "window": "W3"
     },
     {
       "sf_slope": 0.638364607961238,
       "spec_slope": 1.6669528360082495,
-      "energy_rel_residual": 3.2362823746781875e-14
+      "energy_rel_residual": 3.2362823746781875e-14,
+      "beta_name": "K41_5_3",
+      "beta": 1.6666666666666667,
+      "seed": 40,
+      "window": "W1"
     },
     {
       "sf_slope": 0.5839125322256828,
       "spec_slope": 1.6669528360082495,
-      "energy_rel_residual": 3.2362823746781875e-14
+      "energy_rel_residual": 3.2362823746781875e-14,
+      "beta_name": "K41_5_3",
+      "beta": 1.6666666666666667,
+      "seed": 40,
+      "window": "W2"
     },
     {
       "sf_slope": 0.6713832053316707,
       "spec_slope": 1.6669528360082495,
-      "energy_rel_residual": 3.2362823746781875e-14
+      "energy_rel_residual": 3.2362823746781875e-14,
+      "beta_name": "K41_5_3",
+      "beta": 1.6666666666666667,
+      "seed": 40,
+      "window": "W3"
     },
     {
       "sf_slope": 0.9008361480776534,
       "spec_slope": 2.0003861798941145,
-      "energy_rel_residual": 4.1440583016068245e-14
+      "energy_rel_residual": 4.1440583016068245e-14,
+      "beta_name": "K2_2",
+      "beta": 2.0,
+      "seed": 31,
+      "window": "W1"
     },
     {
       "sf_slope": 0.8287842697922089,
       "spec_slope": 2.0003861798941145,
-      "energy_rel_residual": 4.1440583016068245e-14
+      "energy_rel_residual": 4.1440583016068245e-14,
+      "beta_name": "K2_2",
+      "beta": 2.0,
+      "seed": 31,
+      "window": "W2"
     },
     {
       "sf_slope": 0.9436806167966741,
       "spec_slope": 2.0003861798941145,
-      "energy_rel_residual": 4.1440583016068245e-14
+      "energy_rel_residual": 4.1440583016068245e-14,
+      "beta_name": "K2_2",
+      "beta": 2.0,
+      "seed": 31,
+      "window": "W3"
     },
     {
       "sf_slope": 0.9008361480776529,
       "spec_slope": 2.0003861798940914,
-      "energy_rel_residual": 3.439286481605664e-14
+      "energy_rel_residual": 3.439286481605664e-14,
+      "beta_name": "K2_2",
+      "beta": 2.0,
+      "seed": 32,
+      "window": "W1"
     },
     {
       "sf_slope": 0.8287842697922104,
       "spec_slope": 2.0003861798940914,
-      "energy_rel_residual": 3.439286481605664e-14
+      "energy_rel_residual": 3.439286481605664e-14,
+      "beta_name": "K2_2",
+      "beta": 2.0,
+      "seed": 32,
+      "window": "W2"
     },
     {
       "sf_slope": 0.9436806167966728,
       "spec_slope": 2.0003861798940914,
-      "energy_rel_residual": 3.439286481605664e-14
+      "energy_rel_residual": 3.439286481605664e-14,
+      "beta_name": "K2_2",
+      "beta": 2.0,
+      "seed": 32,
+      "window": "W3"
     },
     {
       "sf_slope": 0.9008361480776581,
       "spec_slope": 2.0003861798941194,
-      "energy_rel_residual": 4.9052118672080783e-14
+      "energy_rel_residual": 4.9052118672080783e-14,
+      "beta_name": "K2_2",
+      "beta": 2.0,
+      "seed": 33,
+      "window": "W1"
     },
     {
       "sf_slope": 0.8287842697922133,
       "spec_slope": 2.0003861798941194,
-      "energy_rel_residual": 4.9052118672080783e-14
+      "energy_rel_residual": 4.9052118672080783e-14,
+      "beta_name": "K2_2",
+      "beta": 2.0,
+      "seed": 33,
+      "window": "W2"
     },
     {
       "sf_slope": 0.9436806167966777,
       "spec_slope": 2.0003861798941194,
-      "energy_rel_residual": 4.9052118672080783e-14
+      "energy_rel_residual": 4.9052118672080783e-14,
+      "beta_name": "K2_2",
+      "beta": 2.0,
+      "seed": 33,
+      "window": "W3"
     },
     {
       "sf_slope": 0.90083614807766,
       "spec_slope": 2.000386179894106,
-      "energy_rel_residual": 5.201216031608566e-14
+      "energy_rel_residual": 5.201216031608566e-14,
+      "beta_name": "K2_2",
+      "beta": 2.0,
+      "seed": 34,
+      "window": "W1"
     },
     {
       "sf_slope": 0.8287842697922164,
       "spec_slope": 2.000386179894106,
-      "energy_rel_residual": 5.201216031608566e-14
+      "energy_rel_residual": 5.201216031608566e-14,
+      "beta_name": "K2_2",
+      "beta": 2.0,
+      "seed": 34,
+      "window": "W2"
     },
     {
       "sf_slope": 0.9436806167966775,
       "spec_slope": 2.000386179894106,
-      "energy_rel_residual": 5.201216031608566e-14
+      "energy_rel_residual": 5.201216031608566e-14,
+      "beta_name": "K2_2",
+      "beta": 2.0,
+      "seed": 34,
+      "window": "W3"
     },
     {
       "sf_slope": 0.9008361480776617,
       "spec_slope": 2.000386179894118,
-      "energy_rel_residual": 5.905987851609726e-14
+      "energy_rel_residual": 5.905987851609726e-14,
+      "beta_name": "K2_2",
+      "beta": 2.0,
+      "seed": 35,
+      "window": "W1"
     },
     {
       "sf_slope": 0.8287842697922182,
       "spec_slope": 2.000386179894118,
-      "energy_rel_residual": 5.905987851609726e-14
+      "energy_rel_residual": 5.905987851609726e-14,
+      "beta_name": "K2_2",
+      "beta": 2.0,
+      "seed": 35,
+      "window": "W2"
     },
     {
       "sf_slope": 0.9436806167966787,
       "spec_slope": 2.000386179894118,
-      "energy_rel_residual": 5.905987851609726e-14
+      "energy_rel_residual": 5.905987851609726e-14,
+      "beta_name": "K2_2",
+      "beta": 2.0,
+      "seed": 35,
+      "window": "W3"
     },
     {
       "sf_slope": 0.9008361480776493,
       "spec_slope": 2.0003861798941154,
-      "energy_rel_residual": 3.058709698805037e-14
+      "energy_rel_residual": 3.058709698805037e-14,
+      "beta_name": "K2_2",
+      "beta": 2.0,
+      "seed": 36,
+      "window": "W1"
     },
     {
       "sf_slope": 0.8287842697922053,
       "spec_slope": 2.0003861798941154,
-      "energy_rel_residual": 3.058709698805037e-14
+      "energy_rel_residual": 3.058709698805037e-14,
+      "beta_name": "K2_2",
+      "beta": 2.0,
+      "seed": 36,
+      "window": "W2"
     },
     {
       "sf_slope": 0.9436806167966703,
       "spec_slope": 2.0003861798941154,
-      "energy_rel_residual": 3.058709698805037e-14
+      "energy_rel_residual": 3.058709698805037e-14,
+      "beta_name": "K2_2",
+      "beta": 2.0,
+      "seed": 36,
+      "window": "W3"
     },
     {
       "sf_slope": 0.9008361480776573,
       "spec_slope": 2.000386179894131,
-      "energy_rel_residual": 4.411871593207266e-14
+      "energy_rel_residual": 4.411871593207266e-14,
+      "beta_name": "K2_2",
+      "beta": 2.0,
+      "seed": 37,
+      "window": "W1"
     },
     {
       "sf_slope": 0.8287842697922165,
       "spec_slope": 2.000386179894131,
-      "energy_rel_residual": 4.411871593207266e-14
+      "energy_rel_residual": 4.411871593207266e-14,
+      "beta_name": "K2_2",
+      "beta": 2.0,
+      "seed": 37,
+      "window": "W2"
     },
     {
       "sf_slope": 0.9436806167966763,
       "spec_slope": 2.000386179894131,
-      "energy_rel_residual": 4.411871593207266e-14
+      "energy_rel_residual": 4.411871593207266e-14,
+      "beta_name": "K2_2",
+      "beta": 2.0,
+      "seed": 37,
+      "window": "W3"
     },
     {
       "sf_slope": 0.9008361480776531,
       "spec_slope": 2.0003861798941296,
-      "energy_rel_residual": 4.9897844856082177e-14
+      "energy_rel_residual": 4.9897844856082177e-14,
+      "beta_name": "K2_2",
+      "beta": 2.0,
+      "seed": 38,
+      "window": "W1"
     },
     {
       "sf_slope": 0.828784269792211,
       "spec_slope": 2.0003861798941296,
-      "energy_rel_residual": 4.9897844856082177e-14
+      "energy_rel_residual": 4.9897844856082177e-14,
+      "beta_name": "K2_2",
+      "beta": 2.0,
+      "seed": 38,
+      "window": "W2"
     },
     {
       "sf_slope": 0.9436806167966726,
       "spec_slope": 2.0003861798941296,
-      "energy_rel_residual": 4.9897844856082177e-14
+      "energy_rel_residual": 4.9897844856082177e-14,
+      "beta_name": "K2_2",
+      "beta": 2.0,
+      "seed": 38,
+      "window": "W3"
     },
     {
       "sf_slope": 0.9008361480776546,
       "spec_slope": 2.0003861798941345,
-      "energy_rel_residual": 4.2568217928070105e-14
+      "energy_rel_residual": 4.2568217928070105e-14,
+      "beta_name": "K2_2",
+      "beta": 2.0,
+      "seed": 39,
+      "window": "W1"
     },
     {
       "sf_slope": 0.8287842697922104,
       "spec_slope": 2.0003861798941345,
-      "energy_rel_residual": 4.2568217928070105e-14
+      "energy_rel_residual": 4.2568217928070105e-14,
+      "beta_name": "K2_2",
+      "beta": 2.0,
+      "seed": 39,
+      "window": "W2"
     },
     {
       "sf_slope": 0.9436806167966728,
       "spec_slope": 2.0003861798941345,
-      "energy_rel_residual": 4.2568217928070105e-14
+      "energy_rel_residual": 4.2568217928070105e-14,
+      "beta_name": "K2_2",
+      "beta": 2.0,
+      "seed": 39,
+      "window": "W3"
     },
     {
       "sf_slope": 0.9008361480776557,
       "spec_slope": 2.00038617989412,
-      "energy_rel_residual": 3.580240845605896e-14
+      "energy_rel_residual": 3.580240845605896e-14,
+      "beta_name": "K2_2",
+      "beta": 2.0,
+      "seed": 40,
+      "window": "W1"
     },
     {
       "sf_slope": 0.8287842697922111,
       "spec_slope": 2.00038617989412,
-      "energy_rel_residual": 3.580240845605896e-14
+      "energy_rel_residual": 3.580240845605896e-14,
+      "beta_name": "K2_2",
+      "beta": 2.0,
+      "seed": 40,
+      "window": "W2"
     },
     {
       "sf_slope": 0.9436806167966721,
       "spec_slope": 2.00038617989412,
-      "energy_rel_residual": 3.580240845605896e-14
+      "energy_rel_residual": 3.580240845605896e-14,
+      "beta_name": "K2_2",
+      "beta": 2.0,
+      "seed": 40,
+      "window": "W3"
     },
     {
       "sf_slope": 1.540028507365127,
       "spec_slope": 3.0007710469540245,
-      "energy_rel_residual": 6.609646471124953e-14
+      "energy_rel_residual": 6.609646471124953e-14,
+      "beta_name": "K3_3",
+      "beta": 3.0,
+      "seed": 31,
+      "window": "W1"
     },
     {
       "sf_slope": 1.4246020992488846,
       "spec_slope": 3.0007710469540245,
-      "energy_rel_residual": 6.609646471124953e-14
+      "energy_rel_residual": 6.609646471124953e-14,
+      "beta_name": "K3_3",
+      "beta": 3.0,
+      "seed": 31,
+      "window": "W2"
     },
     {
       "sf_slope": 1.612955761321309,
       "spec_slope": 3.0007710469540245,
-      "energy_rel_residual": 6.609646471124953e-14
+      "energy_rel_residual": 6.609646471124953e-14,
+      "beta_name": "K3_3",
+      "beta": 3.0,
+      "seed": 31,
+      "window": "W3"
     },
     {
       "sf_slope": 1.5400285073651256,
       "spec_slope": 3.0007710469539943,
-      "energy_rel_residual": 4.772633010485321e-14
+      "energy_rel_residual": 4.772633010485321e-14,
+      "beta_name": "K3_3",
+      "beta": 3.0,
+      "seed": 32,
+      "window": "W1"
     },
     {
       "sf_slope": 1.4246020992488833,
       "spec_slope": 3.0007710469539943,
-      "energy_rel_residual": 4.772633010485321e-14
+      "energy_rel_residual": 4.772633010485321e-14,
+      "beta_name": "K3_3",
+      "beta": 3.0,
+      "seed": 32,
+      "window": "W2"
     },
     {
       "sf_slope": 1.6129557613213095,
       "spec_slope": 3.0007710469539943,
-      "energy_rel_residual": 4.772633010485321e-14
+      "energy_rel_residual": 4.772633010485321e-14,
+      "beta_name": "K3_3",
+      "beta": 3.0,
+      "seed": 32,
+      "window": "W3"
     },
     {
       "sf_slope": 1.540028507365127,
       "spec_slope": 3.000771046954006,
-      "energy_rel_residual": 6.087358330354863e-14
+      "energy_rel_residual": 6.087358330354863e-14,
+      "beta_name": "K3_3",
+      "beta": 3.0,
+      "seed": 33,
+      "window": "W1"
     },
     {
       "sf_slope": 1.4246020992488833,
       "spec_slope": 3.000771046954006,
-      "energy_rel_residual": 6.087358330354863e-14
+      "energy_rel_residual": 6.087358330354863e-14,
+      "beta_name": "K3_3",
+      "beta": 3.0,
+      "seed": 33,
+      "window": "W2"
     },
     {
       "sf_slope": 1.6129557613213104,
       "spec_slope": 3.000771046954006,
-      "energy_rel_residual": 6.087358330354863e-14
+      "energy_rel_residual": 6.087358330354863e-14,
+      "beta_name": "K3_3",
+      "beta": 3.0,
+      "seed": 33,
+      "window": "W3"
     },
     {
       "sf_slope": 1.5400285073651307,
       "spec_slope": 3.0007710469539615,
-      "energy_rel_residual": 7.330043906669908e-14
+      "energy_rel_residual": 7.330043906669908e-14,
+      "beta_name": "K3_3",
+      "beta": 3.0,
+      "seed": 34,
+      "window": "W1"
     },
     {
       "sf_slope": 1.4246020992488881,
       "spec_slope": 3.0007710469539615,
-      "energy_rel_residual": 7.330043906669908e-14
+      "energy_rel_residual": 7.330043906669908e-14,
+      "beta_name": "K3_3",
+      "beta": 3.0,
+      "seed": 34,
+      "window": "W2"
     },
     {
       "sf_slope": 1.612955761321314,
       "spec_slope": 3.0007710469539615,
-      "energy_rel_residual": 7.330043906669908e-14
+      "energy_rel_residual": 7.330043906669908e-14,
+      "beta_name": "K3_3",
+      "beta": 3.0,
+      "seed": 34,
+      "window": "W3"
     },
     {
       "sf_slope": 1.5400285073651323,
       "spec_slope": 3.0007710469539965,
-      "energy_rel_residual": 8.32059038054422e-14
+      "energy_rel_residual": 8.32059038054422e-14,
+      "beta_name": "K3_3",
+      "beta": 3.0,
+      "seed": 35,
+      "window": "W1"
     },
     {
       "sf_slope": 1.4246020992488901,
       "spec_slope": 3.0007710469539965,
-      "energy_rel_residual": 8.32059038054422e-14
+      "energy_rel_residual": 8.32059038054422e-14,
+      "beta_name": "K3_3",
+      "beta": 3.0,
+      "seed": 35,
+      "window": "W2"
     },
     {
       "sf_slope": 1.6129557613213164,
       "spec_slope": 3.0007710469539965,
-      "energy_rel_residual": 8.32059038054422e-14
+      "energy_rel_residual": 8.32059038054422e-14,
+      "beta_name": "K3_3",
+      "beta": 3.0,
+      "seed": 35,
+      "window": "W3"
     },
     {
       "sf_slope": 1.540028507365123,
       "spec_slope": 3.0007710469540334,
-      "energy_rel_residual": 4.7366131387080737e-14
+      "energy_rel_residual": 4.7366131387080737e-14,
+      "beta_name": "K3_3",
+      "beta": 3.0,
+      "seed": 36,
+      "window": "W1"
     },
     {
       "sf_slope": 1.42460209924888,
       "spec_slope": 3.0007710469540334,
-      "energy_rel_residual": 4.7366131387080737e-14
+      "energy_rel_residual": 4.7366131387080737e-14,
+      "beta_name": "K3_3",
+      "beta": 3.0,
+      "seed": 36,
+      "window": "W2"
     },
     {
       "sf_slope": 1.612955761321308,
       "spec_slope": 3.0007710469540334,
-      "energy_rel_residual": 4.7366131387080737e-14
+      "energy_rel_residual": 4.7366131387080737e-14,
+      "beta_name": "K3_3",
+      "beta": 3.0,
+      "seed": 36,
+      "window": "W3"
     },
     {
       "sf_slope": 1.5400285073651283,
       "spec_slope": 3.0007710469540827,
-      "energy_rel_residual": 6.177408009797981e-14
+      "energy_rel_residual": 6.177408009797981e-14,
+      "beta_name": "K3_3",
+      "beta": 3.0,
+      "seed": 37,
+      "window": "W1"
     },
     {
       "sf_slope": 1.4246020992488868,
       "spec_slope": 3.0007710469540827,
-      "energy_rel_residual": 6.177408009797981e-14
+      "energy_rel_residual": 6.177408009797981e-14,
+      "beta_name": "K3_3",
+      "beta": 3.0,
+      "seed": 37,
+      "window": "W2"
     },
     {
       "sf_slope": 1.6129557613213106,
       "spec_slope": 3.0007710469540827,
-      "energy_rel_residual": 6.177408009797981e-14
+      "energy_rel_residual": 6.177408009797981e-14,
+      "beta_name": "K3_3",
+      "beta": 3.0,
+      "seed": 37,
+      "window": "W3"
     },
     {
       "sf_slope": 1.5400285073651254,
       "spec_slope": 3.0007710469540556,
-      "energy_rel_residual": 6.879795509454311e-14
+      "energy_rel_residual": 6.879795509454311e-14,
+      "beta_name": "K3_3",
+      "beta": 3.0,
+      "seed": 38,
+      "window": "W1"
     },
     {
       "sf_slope": 1.4246020992488841,
       "spec_slope": 3.0007710469540556,
-      "energy_rel_residual": 6.879795509454311e-14
+      "energy_rel_residual": 6.879795509454311e-14,
+      "beta_name": "K3_3",
+      "beta": 3.0,
+      "seed": 38,
+      "window": "W2"
     },
     {
       "sf_slope": 1.6129557613213075,
       "spec_slope": 3.0007710469540556,
-      "energy_rel_residual": 6.879795509454311e-14
+      "energy_rel_residual": 6.879795509454311e-14,
+      "beta_name": "K3_3",
+      "beta": 3.0,
+      "seed": 38,
+      "window": "W3"
     },
     {
       "sf_slope": 1.5400285073651285,
       "spec_slope": 3.0007710469540414,
-      "energy_rel_residual": 6.717706086456697e-14
+      "energy_rel_residual": 6.717706086456697e-14,
+      "beta_name": "K3_3",
+      "beta": 3.0,
+      "seed": 39,
+      "window": "W1"
     },
     {
       "sf_slope": 1.4246020992488861,
       "spec_slope": 3.0007710469540414,
-      "energy_rel_residual": 6.717706086456697e-14
+      "energy_rel_residual": 6.717706086456697e-14,
+      "beta_name": "K3_3",
+      "beta": 3.0,
+      "seed": 39,
+      "window": "W2"
     },
     {
       "sf_slope": 1.6129557613213115,
       "spec_slope": 3.0007710469540414,
-      "energy_rel_residual": 6.717706086456697e-14
+      "energy_rel_residual": 6.717706086456697e-14,
+      "beta_name": "K3_3",
+      "beta": 3.0,
+      "seed": 39,
+      "window": "W3"
     },
     {
       "sf_slope": 1.540028507365126,
       "spec_slope": 3.000771046954026,
-      "energy_rel_residual": 4.3223846132697246e-14
+      "energy_rel_residual": 4.3223846132697246e-14,
+      "beta_name": "K3_3",
+      "beta": 3.0,
+      "seed": 40,
+      "window": "W1"
     },
     {
       "sf_slope": 1.4246020992488821,
       "spec_slope": 3.000771046954026,
-      "energy_rel_residual": 4.3223846132697246e-14
+      "energy_rel_residual": 4.3223846132697246e-14,
+      "beta_name": "K3_3",
+      "beta": 3.0,
+      "seed": 40,
+      "window": "W2"
     },
     {
       "sf_slope": 1.6129557613213084,
       "spec_slope": 3.000771046954026,
-      "energy_rel_residual": 4.3223846132697246e-14
+      "energy_rel_residual": 4.3223846132697246e-14,
+      "beta_name": "K3_3",
+      "beta": 3.0,
+      "seed": 40,
+      "window": "W3"
     }
   ],
   "semantics": "deterministic numerical reproducibility check (seeds vary phases only; not a statistical confirmation)",
@@ -999,7 +1575,7 @@
   "verdict": "CALIBRATED_BASELINE_PASS",
   "registration_status": "POST_HOC (rule adopted after cycle-1 failure; formal re-admission with pre-frozen thresholds deferred to owner decision)",
   "bands_doc": {
-    "frozen_at": "2026-09-28T16:28:51+00:00",
+    "frozen_at": "2026-09-28T16:41:34+00:00",
     "rule": "mean +/- max(4*std, 0.01); Stage A seeds 21-28, N=4096",
     "floor": 0.01,
     "energy_max": 1.3075213455140918e-13,
@@ -1078,5 +1654,5 @@
       ]
     }
   },
-  "generated": "2026-09-28T16:29:03+00:00"
+  "generated": "2026-09-28T16:41:47+00:00"
 }
