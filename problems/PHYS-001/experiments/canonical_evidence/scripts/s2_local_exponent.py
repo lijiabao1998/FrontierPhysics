@@ -305,18 +305,18 @@ def main(argv: Sequence[str] | None = None) -> int:
             "beta_3_slope_in_window": g3["slope_over_candidate_window"],
             "beta_3_gap_to_theory": g3["gap_to_theory"],
             "beta_3_can_ever_reach_2_in_a_finite_window": False,
-            "reason": ("For beta = 3 the approach to the asymptotic exponent 2 is only "
-                       "logarithmic: the local exponent is 2 - 1/(ln(1/(k_lo r)) + 2 C0). "
-                       "CORRECTED: the earlier text had this inequality REVERSED, saying the "
-                       "exponent reaches 1.9 for k_lo*r <~ 3e-4, i.e. r >~ 3300. Solving "
-                       "2 - 1/L > 1.9 gives L > 10, i.e. ln(1/(k_lo r)) > 10 - 2C0 = 9.077, "
-                       "i.e. k_lo*r < e^-9.077 = 1.14e-4, i.e. r < 1.14e-4/0.004602 = 0.0248. "
-                       "So the required regime is at SMALL r -- below one sample, not beyond "
-                       "the domain -- and is unreachable for a different reason than first "
-                       "stated: it lies under the lattice spacing. Within r >= 1 the local "
-                       "exponent never reaches 1.9. The conclusion is unchanged (no window "
-                       "makes beta = 3 a power-law test) but the UV/IR direction is now right."),
-            "therefore": ("Criterion (a) (narrow the window) is satisfiable and DOES bring "
+            "reason": ("For beta = 3 the log-corrected form requires BOTH k_lo*r << 1 and "
+                       "k_hi*r >> 1. With k_lo = 0.004602 and k_hi = 1.3806 those gates are "
+                       "r <= 21.73 and r >= 14.49, so the gate-satisfying window is r in "
+                       "[15, 21] -- BOTH conditions are SATISFIED there, not violated. Inside "
+                       "it the log form gives 1.7219 at r=15 against an exact local exponent of "
+                       "1.7364, and an OLS fit over [15,21] gives 1.7233, so the marginal form "
+                       "IS valid there -- and its value is about 1.72, not 2, because "
+                       "ln(1/(k_lo*r)) is only 2.67. Reaching 1.9 would need r < 0.0248, where "
+                       "k_hi*r = 0.03 fails the UV gate and the analytic r^2 regime takes over "
+                       "(which is why the exponent reads 1.97 at r=1). An earlier revision of "
+                       "this field had the direction reversed twice; a reviewer caught both."),
+"therefore": ("Criterion (a) (narrow the window) is satisfiable and DOES bring "
                           "beta = 2 to within 0.007 of theory, but it does NOT fix beta = 5/3: "
                           "it gives 0.7285, i.e. +0.062, which is a LARGER error than GLM's "
                           "window (-0.028). So the proposed gate is retracted as a "
