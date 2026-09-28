@@ -1,0 +1,80 @@
+{
+  "artifacts": [
+    {
+      "path": "problems/PHYS-001/results/20260928T035326002008Z-dsk-PHYS-001/B1_glm_reproduction.json",
+      "bytes": 6898,
+      "sha256": "3634b65f5718920ce0a461968dcfda2cbf0ad684aef66d9708bf423898f2a3a6",
+      "kind": "round output (in-round)"
+    },
+    {
+      "path": "problems/PHYS-001/results/20260928T035326002008Z-dsk-PHYS-001/B1_glm_reproduction.log",
+      "bytes": 2700,
+      "sha256": "77f715aa95a00b41cdc837babc2b120de81710a57798e28d910653a60d3e074a",
+      "kind": "round output (in-round)"
+    },
+    {
+      "path": "problems/PHYS-001/results/20260928T035326002008Z-dsk-PHYS-001/B1_glm_reproduction_exploratory_copy.json",
+      "bytes": 6898,
+      "sha256": "ca6d9a8671626349a8967bbe9e189638628801de71790d8f9607de22e0606b7a",
+      "kind": "round output (in-round)"
+    },
+    {
+      "path": "problems/PHYS-001/results/20260928T035326002008Z-dsk-PHYS-001/B1_glm_verbatim_raw_output.json",
+      "bytes": 4297,
+      "sha256": "7ec173eeab6de33462002e81eb68ad5d199c86d0de7ae7ec6f97a8042c309bf3",
+      "kind": "round output (in-round)"
+    },
+    {
+      "path": "problems/PHYS-001/results/20260928T035326002008Z-dsk-PHYS-001/B2_B3_B4_local_exponent.json",
+      "bytes": 12105,
+      "sha256": "d1da9168eac432ac267bbe3f0456ca2d47d68298479e3bfc3b40ba80e1a6515e",
+      "kind": "round output (in-round)"
+    },
+    {
+      "path": "problems/PHYS-001/results/20260928T035326002008Z-dsk-PHYS-001/B2_B3_B4_local_exponent.log",
+      "bytes": 4131,
+      "sha256": "349fbf5958d49aaa0dbb5d04b1c2b01c83a24534cd8105f77d3f83329f96fc1e",
+      "kind": "round output (in-round)"
+    },
+    {
+      "path": "problems/PHYS-001/experiments/dsk_audit_r1/reproduce_and_compare.py",
+      "bytes": 17462,
+      "sha256": "cfeeb7e307591ab588ab46327c7974750430461e0da9ab1e901855e44a8f6cfa",
+      "kind": "program / document"
+    },
+    {
+      "path": "problems/PHYS-001/experiments/dsk_audit_r1/s2_local_exponent.py",
+      "bytes": 20207,
+      "sha256": "83b5d6b40be6268b6b995d560e2fd06ae69386ac8f633d984c95f3b529b95620",
+      "kind": "program / document"
+    },
+    {
+      "path": "problems/PHYS-001/experiments/dsk_audit_r1/reference/glm_k41_baseline_VERBATIM.py",
+      "bytes": 8907,
+      "sha256": "5244be1dd4632bc8d06317abef287e17cc5b8768dfca815ad4653fb1b6e4d7db",
+      "kind": "program / document"
+    },
+    {
+      "path": "problems/PHYS-001/experiments/dsk_audit_r1/PHYS001_INDEPENDENT_AUDIT.md",
+      "bytes": 10870,
+      "sha256": "1de91f030abc79f21e65cf6bc4a453c3879cd8f1a2f0547d27a4450924591f94",
+      "kind": "program / document"
+    }
+  ],
+  "executed_commands": [
+    {
+      "cmd": "python reproduce_and_compare.py --json ../../results/<round-id>/B1_glm_reproduction.json",
+      "cwd": "problems/PHYS-001/experiments/dsk_audit_r1",
+      "exit": 0,
+      "produced": "B1_glm_reproduction.json, B1_glm_reproduction.log",
+      "note": "runs GLM's script verbatim ONLY if its LF-normalised SHA-256 equals the pinned b1070ea49ec142addeda3be51092eaa92624199bcf788c78013cad0c172d5a70; it refuses to execute otherwise (verified by tampering the file). It also writes GLM's raw output, relocated here as B1_glm_verbatim_raw_output.json."
+    },
+    {
+      "cmd": "python s2_local_exponent.py --json ../../results/<round-id>/B2_B3_B4_local_exponent.json",
+      "cwd": "problems/PHYS-001/experiments/dsk_audit_r1",
+      "exit": 0,
+      "produced": "B2_B3_B4_local_exponent.json, B2_B3_B4_local_exponent.log",
+      "note": "standard library only; no third-party dependency."
+    }
+  ]
+}

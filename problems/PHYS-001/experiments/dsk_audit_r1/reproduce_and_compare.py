@@ -58,6 +58,20 @@ BETA_NEG = 3.0
 SEEDS = [1, 2, 3, 4, 5]
 REFERENCE_SCRIPT = os.path.join(HERE, "reference", "glm_k41_baseline_VERBATIM.py")
 
+# The expected content hash of the reference copy, PINNED and CHECKED.
+#
+# Two defects are fixed here. (1) The original code computed a digest, stored it, and never
+# compared it to anything, so a modified or substituted reference would have been executed
+# and reported as "verbatim". (2) The digest was taken on raw bytes, which makes it
+# checkout-dependent: with autocrlf the Windows working tree has CRLF while the committed
+# blob has LF, so the same file hashed to 5244be1d... on Windows and b1070ea4... on Linux.
+# The hash is therefore computed over LF-normalised bytes, and a mismatch is fatal.
+#
+# The pinned value equals both the blob committed here and the file on
+# glm/PHYS-001-baseline-r1 (verified with `git show <ref>:<path>`), so the copy really is
+# byte-identical to GLM's, which is what makes the reproduction meaningful.
+EXPECTED_REFERENCE_SHA256_LF = "b1070ea49ec142addeda3be51092eaa92624199bcf788c78013cad0c172d5a70"
+
 
 # --------------------------------------------------------------------------- #
 # independent reimplementation of GLM's specification (my own code)
@@ -120,17 +134,43 @@ def slope_over(lags: Sequence[int], beta: float, model: str = "glm") -> float:
     return ols([math.log(r) for r in lags], ys)
 
 
+CRLF = bytes([13, 10])
+
+CRLF = bytes([13, 10])
+LF_BYTE = bytes([10])
+
+
+def normalized_sha256(path: str) -> str:
+    """SHA-256 over LF-normalised bytes, so the digest does not depend on the checkout."""
+    with open(path, "rb") as fh:
+        return hashlib.sha256(fh.read().replace(CRLF, LF_BYTE)).hexdigest()
+
+
+
 def glm_reference_run() -> dict:
-    """Run GLM's script verbatim (hash-checked) and capture its per-seed output."""
+    """Run GLM's script verbatim, but ONLY after its content hash matches the pinned value."""
     src = REFERENCE_SCRIPT
     if not os.path.exists(src):
         return {"available": False, "reason": "verbatim reference copy not present"}
-    digest = hashlib.sha256(open(src, "rb").read()).hexdigest()
+    digest = normalized_sha256(src)
+    raw_digest = hashlib.sha256(open(src, "rb").read()).hexdigest()
+    if digest != EXPECTED_REFERENCE_SHA256_LF:
+        # Refuse to run: executing an unverified reference would make the whole
+        # implementation-error exclusion meaningless.
+        return {"available": False,
+                "reason": ("reference content hash mismatch; refusing to execute it. "
+                           f"expected(LF-normalised) {EXPECTED_REFERENCE_SHA256_LF}, got {digest}"),
+                "sha256": digest, "sha256_raw_bytes": raw_digest,
+                "hash_normalisation": "LF; raw-byte hash is checkout-dependent (CRLF on Windows)"}
     t0 = time.time()
     p = subprocess.run([sys.executable, src], cwd=os.path.dirname(src),
                        capture_output=True, text=True, timeout=5400)
-    out = {"available": True, "sha256": digest, "exit": p.returncode,
-           "seconds": round(time.time() - t0, 2), "stdout": p.stdout[-2500:]}
+    out = {"available": True, "sha256": digest, "sha256_raw_bytes": raw_digest,
+           "sha256_normalisation": "LF (CRLF-normalised, so the value is checkout-independent)",
+           "hash_verified_against_pinned_value": True,
+           "expected_sha256_lf": EXPECTED_REFERENCE_SHA256_LF,
+           "exit": p.returncode, "seconds": round(time.time() - t0, 2),
+           "stdout": p.stdout[-2500:]}
     # the script writes results/r1/k41_baseline_results.json relative to problems/PHYS-001
     # GLM's script writes to Path(__file__).parents[2]/results/r1. For the verbatim copy at
     # experiments/dsk_audit_r1/reference/glm_k41_baseline_VERBATIM.py that resolves to
@@ -154,11 +194,27 @@ def main(argv: Sequence[str] | None = None) -> int:
                  "reference_script": os.path.relpath(REFERENCE_SCRIPT, HERE)}
 
     # ---- 1) run GLM's code verbatim ----
-    print("== 1) GLM's script run verbatim (hash-checked) ==")
+    print("== 1) GLM's script run verbatim, gated on a PINNED content hash ==")
     ref = glm_reference_run()
     rep["glm_reference"] = {k: v for k, v in ref.items() if k != "results"}
+    if not ref.get("available"):
+        print(f"   REFERENCE NOT USABLE: {ref.get('reason')}")
+        rep["comparison"] = {
+            "verdict": ("The reference script could not be verified against its pinned hash, so "
+                        "it was NOT executed and no reproduction claim is made. This is "
+                        "fail-closed by design: running an unverified reference would make the "
+                        "implementation-error exclusion meaningless."),
+            "reference_usable": False,
+        }
+        if args.json:
+            os.makedirs(os.path.dirname(os.path.abspath(args.json)), exist_ok=True)
+            with open(args.json, "w", encoding="utf-8") as fh:
+                json.dump(rep, fh, indent=2, sort_keys=True)
+            print(f"[written] {args.json}")
+        return 1
     if ref.get("available"):
-        print(f"   sha256={ref['sha256']}")
+        print(f"   sha256(LF-normalised)={ref['sha256']}")
+        print(f"   pinned expected        ={EXPECTED_REFERENCE_SHA256_LF}  -> MATCH, executing")
         print(f"   exit={ref['exit']}  {ref['seconds']}s")
         if "results" in ref:
             for c in ref["results"]["cases"]:

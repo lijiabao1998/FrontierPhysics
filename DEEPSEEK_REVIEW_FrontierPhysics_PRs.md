@@ -1,5 +1,29 @@
 # External verifier review — FrontierPhysics PRs #1, #2 (DeepSeek r1, 2026-09-28)
 
+> ## ⚠ SUPERSEDED IN PART — read this first
+>
+> This review was written before this PR's own revision 2 audit. Two of its statements
+> are **no longer accurate** and must not be acted on:
+>
+> 1. It describes the β=3 window as straddling a **saturation** edge and recommends a
+>    change on that basis. Revision 2 **retracted** the saturation diagnosis: `k_lo·r`
+>    reaches only 1.146, not `>> 1`, and the exact local exponent is **1.1630** at
+>    r=217 and **1.0723** at r=249 — nowhere near the 0 of a saturated plateau. The
+>    correct description is that the window crosses the **onset of finite-band
+>    turnover**. See `problems/PHYS-001/experiments/dsk_audit_r1/PHYS001_INDEPENDENT_AUDIT.md`
+>    §2.
+> 2. It quotes `F(x) = ½·ln(1/x) + 0.461390…`. That constant is superseded twice over:
+>    the validated value is **0.4613921675492818** (see the audit §4), and the earlier
+>    0.4613932125 from mpmath was itself wrong in the 6th decimal.
+>
+> The **verdicts** in this review are unchanged and still stand: the FAIL is kept, PR #1
+> and PR #2 both `NEEDS_CHANGES` on their explanations rather than on any result. What is
+> withdrawn is the saturation *mechanism* and the quoted constant. The authoritative
+> document is `PHYS001_INDEPENDENT_AUDIT.md` (revision 2); this file is kept as the record
+> of the first review, not as current guidance.
+
+
+
 Reviewer: DeepSeek, branch `dsk/PHYS-001-independent-audit-r1`. No reviewed branch
 modified; no merge performed. Independent implementation:
 `problems/PHYS-001/experiments/dsk_audit_r1/s2_scaling_audit.py` (direct summation

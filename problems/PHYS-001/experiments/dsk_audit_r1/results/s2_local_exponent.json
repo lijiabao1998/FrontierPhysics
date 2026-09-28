@@ -259,7 +259,7 @@
       "beta_3_slope_in_window": 1.723288864469213,
       "beta_5_3_close_to_theory": false,
       "beta_5_3_gap_to_theory": 0.061790439197553115,
-      "reason": "For beta = 3 the approach to the asymptotic exponent 2 is only logarithmic: the local exponent is 2 - 1/(ln(1/(k_lo r)) + 2 C0), which reaches 1.9 only when ln(1/(k_lo r)) >~ 8.1, i.e. k_lo r <~ 3e-4, i.e. r >~ 3300 -- far outside any usable window at this N and band. So no window makes beta = 3 a power-law test.",
+      "reason": "For beta = 3 the approach to the asymptotic exponent 2 is only logarithmic: the local exponent is 2 - 1/(ln(1/(k_lo r)) + 2 C0). CORRECTED: the earlier text had this inequality REVERSED, saying the exponent reaches 1.9 for k_lo*r <~ 3e-4, i.e. r >~ 3300. Solving 2 - 1/L > 1.9 gives L > 10, i.e. ln(1/(k_lo r)) > 10 - 2C0 = 9.077, i.e. k_lo*r < e^-9.077 = 1.14e-4, i.e. r < 1.14e-4/0.004602 = 0.0248. So the required regime is at SMALL r -- below one sample, not beyond the domain -- and is unreachable for a different reason than first stated: it lies under the lattice spacing. Within r >= 1 the local exponent never reaches 1.9. The conclusion is unchanged (no window makes beta = 3 a power-law test) but the UV/IR direction is now right.",
       "satisfiable": true,
       "therefore": "Criterion (a) (narrow the window) is satisfiable and DOES bring beta = 2 to within 0.007 of theory, but it does NOT fix beta = 5/3: it gives 0.7285, i.e. +0.062, which is a LARGER error than GLM's window (-0.028). So the proposed gate is retracted as a recommendation -- see P2A_window_property_conclusion. It also cannot fix beta = 3 at any window. The correct handling of beta = 3 is (b): label it a reproducibility control and quote the closed form; and for beta = 5/3 the exponent must be reported together with its window and the local-exponent profile, never as a single window-free number."
     },
@@ -276,94 +276,98 @@
     "conclusion": "The measured slope moves smoothly with the window over a range far larger than any tolerance used for it, so the number is a property of the (band, window) pair and not of the spectrum alone. CONSEQUENCE FOR THE PROPOSED GATE: it is retracted as a recommendation. The interval [15,21] satisfies k_hi*r_a >= 20 and k_lo*r_b <= 0.1 but gives beta=5/3 -> 0.7285, a LARGER deviation from 2/3 than GLM's window (-0.028) gives, because the local exponent is ABOVE 2/3 at small r and below it at large r, so which side a window errs on depends on where it sits, not on how well resolved the band is. A 'resolved-band' condition alone therefore does not make a slope equal the asymptotic exponent."
   },
   "P2B_log_constant": {
-    "C0_high_precision": "0.4613932125491026360188104",
+    "C0_method": "standard library only: composite Simpson on [1,1000] plus the analytic tail 1/(2Q^2) + Q^-3 sinQ - 3Q^-4 cosQ, plus the rapidly converging series sum_{n>=2} (-1)^(n+1)/((2n)!(2n-2)). No third-party dependency.",
+    "C0_value": 0.4613921675492818,
+    "F_tail_validated_by": "Two independent routes agree to ~1e-12: (i) Simpson on [1,Q] + analytic tail for Q = 1000, 2000, 5000 (stable to ~1e-12), and (ii) F_tail = 1/2 - A_3(1) with A_3(1) = int_1^inf cos q / q^3 dq evaluated on a different grid to 2*pi*400 plus its own analytic remainder.",
+    "F_tail_value": 0.48188237801944256,
     "convergence_sweep": [
       {
-        "F_minus_half_log": "0.4616015111643470005679049",
+        "F_minus_half_log": "0.46160046616452616",
         "x": "1e-1"
       },
       {
-        "F_minus_half_log": "0.4613952958789637512635159",
+        "F_minus_half_log": "0.46139425087914293",
         "x": "1e-2"
       },
       {
-        "F_minus_half_log": "0.4613932333824356221299256",
+        "F_minus_half_log": "0.4613921883826148",
         "x": "1e-3"
       },
       {
-        "F_minus_half_log": "0.4613932127574359693174215",
+        "F_minus_half_log": "0.46139216775761516",
         "x": "1e-4"
       },
       {
-        "F_minus_half_log": "0.4613932125511859693521403",
+        "F_minus_half_log": "0.46139216755136514",
         "x": "1e-5"
       },
       {
-        "F_minus_half_log": "0.4613932125491234693521437",
+        "F_minus_half_log": "0.4613921675493026",
         "x": "1e-6"
       },
       {
-        "F_minus_half_log": "0.4613932125491028443521437",
+        "F_minus_half_log": "0.46139216754928203",
         "x": "1e-7"
       },
       {
-        "F_minus_half_log": "0.4613932125491026381021437",
+        "F_minus_half_log": "0.4613921675492818",
         "x": "1e-8"
       },
       {
-        "F_minus_half_log": "0.4613932125491026360396437",
+        "F_minus_half_log": "0.4613921675492818",
         "x": "1e-9"
       },
       {
-        "F_minus_half_log": "0.4613932125491026360190187",
+        "F_minus_half_log": "0.4613921675492818",
         "x": "1e-10"
       },
       {
-        "F_minus_half_log": "0.4613932125491026360188125",
+        "F_minus_half_log": "0.4613921675492818",
         "x": "1e-11"
       },
       {
-        "F_minus_half_log": "0.4613932125491026360188107",
+        "F_minus_half_log": "0.4613921675492818",
         "x": "1e-12"
       },
       {
-        "F_minus_half_log": "0.4613932125491026360188377",
+        "F_minus_half_log": "0.4613921675492818",
         "x": "1e-13"
       },
       {
-        "F_minus_half_log": "0.4613932125491026360241623",
+        "F_minus_half_log": "0.4613921675492818",
         "x": "1e-14"
       },
       {
-        "F_minus_half_log": "0.4613932125491026363075819",
+        "F_minus_half_log": "0.4613921675492818",
         "x": "1e-15"
       },
       {
-        "F_minus_half_log": "0.4613932125491026581337357",
+        "F_minus_half_log": "0.4613921675492818",
         "x": "1e-16"
       },
       {
-        "F_minus_half_log": "0.4613932125491002300400578",
+        "F_minus_half_log": "0.4613921675492818",
         "x": "1e-17"
       },
       {
-        "F_minus_half_log": "0.4613932125491567084422406",
+        "F_minus_half_log": "0.4613921675492818",
         "x": "1e-18"
       },
       {
-        "F_minus_half_log": "0.4613932125147419987139604",
+        "F_minus_half_log": "0.4613921675492818",
         "x": "1e-19"
       },
       {
-        "F_minus_half_log": "0.4613932077974767900420987",
+        "F_minus_half_log": "0.4613921675492818",
         "x": "1e-20"
       }
     ],
-    "first_value": "0.4616015111643470005679049",
-    "last_value": "0.4613932077974767900420987",
-    "precision_claim": "C0 = 0.46139321254910263602 is supported to the sweep's observed spread (0.000208 over x = 1e-1..1e-20), not to 5e-7. The first version printed 0.461336 from a partially converged quadrature while the report used 0.461390, a discrepancy of 5.4e-5 that its 'stable to 5e-7' claim contradicted. This value replaces both, and the sweep it advertises is the sweep performed.",
+    "correction_to_the_previous_value": "The value reported before this revision, 0.4613932125491026, was WRONG in its 6th decimal. It came from mpmath's quad(f, [1, inf]), which mishandles the oscillatory integral and returned F_tail = 0.481883428 where the two validated routes give 0.481882378 -- an error of 1.05e-6 in F_tail, and hence in C0. Reporting it to 16 digits was an unsupported precision claim on top of an undeclared dependency. The current value, 0.4613921675492818, is validated by the two routes above and uses no third-party module.",
+    "first_value": "0.46160046616452616",
+    "last_value": "0.4613921675492818",
+    "precision_claim": "C0 = 0.4613921675492818 is supported to the sweep's observed spread (0.000208 over x = 1e-1..1e-20), not to 5e-7. The first version printed 0.461336 from a partially converged quadrature while the report used 0.461390, a discrepancy of 5.4e-5 that its 'stable to 5e-7' claim contradicted. Both are replaced by this value, and the sweep it advertises is the sweep performed. The computation is standard-library only, so the advertised reproduction command runs on a clean checkout.",
     "stable_to": "0.000208",
-    "sweep_max_minus_min": "0.00020830337",
+    "sweep_max_minus_min": 0.00020829861524435112,
     "sweep_points": 20
   },
   "config": {

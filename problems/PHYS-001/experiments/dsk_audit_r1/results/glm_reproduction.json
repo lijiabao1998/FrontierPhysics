@@ -62,9 +62,13 @@
   "glm_reference": {
     "available": true,
     "exit": 1,
+    "expected_sha256_lf": "b1070ea49ec142addeda3be51092eaa92624199bcf788c78013cad0c172d5a70",
+    "hash_verified_against_pinned_value": true,
     "results_path": "C:\\Users\\Leon1\\OneDrive\\Desktop\\\u524d\u6cbfRP\\_dsk\\FrontierPhysics\\problems\\PHYS-001\\experiments\\results\\r1\\k41_baseline_results.json",
-    "seconds": 4.18,
-    "sha256": "5244be1dd4632bc8d06317abef287e17cc5b8768dfca815ad4653fb1b6e4d7db",
+    "seconds": 5.21,
+    "sha256": "b1070ea49ec142addeda3be51092eaa92624199bcf788c78013cad0c172d5a70",
+    "sha256_normalisation": "LF (CRLF-normalised, so the value is checkout-independent)",
+    "sha256_raw_bytes": "5244be1dd4632bc8d06317abef287e17cc5b8768dfca815ad4653fb1b6e4d7db",
     "stdout": "{\n  \"sf_mean_slope_pos\": 0.6384,\n  \"sf_std_pos\": 0.0,\n  \"sf_mean_slope_neg\": 1.54,\n  \"spec_mean_slope_pos\": 1.667,\n  \"spec_mean_slope_neg\": 3.0008,\n  \"energy_max_rel_residual_pos\": 4.090885079679787e-14,\n  \"checks\": {\n    \"E1_energy_budget_pos\": true,\n    \"E1_energy_budget_neg\": true,\n    \"E2_sf_2_3_band\": true,\n    \"E3_negative_control_steep\": false,\n    \"E4_spectrum_slope_pos\": true,\n    \"E4_spectrum_slope_neg\": true,\n    \"E5_cross_consistency_pos\": true,\n    \"E6_sine_rejected_by_sf\": true,\n    \"E6_amplitude_inflation_rejected_by_energy\": true\n  },\n  \"verdict\": \"BASELINE_FAIL_DO_NOT_PROCEED_TO_NOVELTY\"\n}\n"
   },
   "glm_reported": {
