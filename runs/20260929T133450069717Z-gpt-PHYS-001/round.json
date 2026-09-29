@@ -171,5 +171,13 @@
     "environment_artifact": "problems/PHYS-001/results/canonical_repair_20260929/verification.json",
     "historical_full_baseline": "NOT_RUN",
     "r2": "NOT_RUN"
-  }
+  },
+  "review_repair_addenda": [
+    {
+      "frozen_at": "2026-09-29T13:46:35.394288+00:00",
+      "reviewed_sha": "e68111cb11f2b2e777e1195e525904345f321472",
+      "scope": "Additional fail-closed software repair requested by independent GPT reviewer and GitHub review; original acceptance unchanged.",
+      "acceptance": "R5: Pure verdict helper must return NOT_REPRODUCED and exclude no implementation-error explanation whenever any of agree_k41, agree_neg, spread_is_zero_k41, spread_is_zero_neg is false; success must report actual gaps/spreads rather than hard-coded historic numbers. Exercise every single-false combination plus success. R6: reproduce pre-fix stale-deletion negative control from immutable runner/exponent e3c93deb54384c93e039cd3330602d0a0d08c604 and seven-test harness e68111cb11f2b2e777e1195e525904345f321472 using a checked-in isolated replay command; preserve original before_fix.txt and save a separate replay artifact. Expected replay outcome: 7 tests, 1 stale-deletion failure, exit 1. No full baseline or historical numerical JSON rewrite."
+    }
+  ]
 }
