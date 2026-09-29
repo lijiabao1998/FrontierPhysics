@@ -1,0 +1,62 @@
+{
+  "scope": "software repair and fixed-point finite-sum regression only",
+  "historical_scientific_evidence_regenerated": false,
+  "cutoff_rows": [
+    {
+      "r": 1,
+      "analytic_derivative": 1.9742840591548858,
+      "finite_difference": 1.9742826003629865,
+      "absolute_gap": 1.4587918992781113e-06,
+      "k_lo_r": 0.0046019423636569235,
+      "k_hi_r": 1.380582709097077,
+      "ir_gate": true,
+      "uv_gate": false
+    },
+    {
+      "r": 2,
+      "analytic_derivative": 1.911681923586341,
+      "finite_difference": 1.9116794110435542,
+      "absolute_gap": 2.5125427867145333e-06,
+      "k_lo_r": 0.009203884727313847,
+      "k_hi_r": 2.761165418194154,
+      "ir_gate": true,
+      "uv_gate": false
+    },
+    {
+      "r": 15,
+      "analytic_derivative": 1.7363808372008442,
+      "finite_difference": 1.7363767906653393,
+      "absolute_gap": 4.0465355048979745e-06,
+      "k_lo_r": 0.06902913545485385,
+      "k_hi_r": 20.708740636456156,
+      "ir_gate": true,
+      "uv_gate": true
+    },
+    {
+      "r": 21,
+      "analytic_derivative": 1.7101973048150045,
+      "finite_difference": 1.7101898543295135,
+      "absolute_gap": 7.450485491000691e-06,
+      "k_lo_r": 0.0966407896367954,
+      "k_hi_r": 28.99223689103862,
+      "ir_gate": true,
+      "uv_gate": true
+    }
+  ],
+  "regression_tests": {
+    "count": 11,
+    "failures": 0,
+    "errors": 0,
+    "passed": true
+  },
+  "environment": {
+    "python": "3.13.5 (tags/v3.13.5:6cb20a2, Jun 11 2025, 16:15:46) [MSC v.1943 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26200-SP0"
+  },
+  "original_scientific_states": {
+    "E3": "FAIL",
+    "B4": "NOT_MET_AS_FROZEN",
+    "all_criteria_passed": false,
+    "PHYS-001": "OPEN"
+  }
+}

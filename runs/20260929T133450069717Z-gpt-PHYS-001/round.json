@@ -1,0 +1,222 @@
+{
+  "round_id": "20260929T133450069717Z-gpt-PHYS-001",
+  "problem_id": "PHYS-001",
+  "agent": "gpt",
+  "branch": "gpt/PHYS-001-convergence-20260929",
+  "base_sha": "e3c93deb54384c93e039cd3330602d0a0d08c604",
+  "started_at": "2026-09-29T13:34:50.069717+00:00",
+  "state": "ADMITTED",
+  "acceptance": "FROZEN BEFORE REPAIR EXECUTION. Repair only canonical PR #4 at e3c93deb54384c93e039cd3330602d0a0d08c604. R1: refusal to remove any stale result must return unavailable with no subprocess execution and no usable results; missing/unreadable/malformed output and reference hash mismatch must never support reproduction. Scientific exit 1 with a freshly written valid result remains usable. R2: both canonical reports must apply the two cutoff conditions; fixed checks at r=1,2,15,21 compare the existing finite-difference local exponent with an independently coded analytic derivative at absolute error <= 2e-4, r=1,2 exceed 1.9 but fail the UV gate, r=15,21 satisfy UV>=20 and IR<=0.1 and have exponent in [1.70,1.75]. This software regression bound is not a replacement for E3 or B4. R3: preserve all original numerical evidence, E3 FAIL, B4 NOT_MET_AS_FROZEN, all_criteria_passed false, parent OPEN; hashes must cover every canonical artifact including the actual committed baseline result, using git blob bytes. R4: added negative tests must reproduce the stale-deletion defect before its fix and pass afterward. No new models, seeds, fitting windows, constants, research criteria, or discovery claims. Budget 120 minutes / USD 0 / at most 100 regression test cases and one bounded canonical replay only if needed; do not run r2 or Sabra in this repair.",
+  "not_done": "No new physics exploration, no r2 execution, no reclassification of historical FAIL/NOT_MET_AS_FROZEN, no full reference replay unless required, no changed research acceptance, no merge. Parent PHYS-001 remains OPEN. Source review is bounded and not a proof of global openness.",
+  "budget": {
+    "wall_minutes": 120,
+    "usd": 0,
+    "max_trials": 100
+  },
+  "preflight": {
+    "checked_at": "2026-09-29T13:36:08.754989+00:00",
+    "verdict": "PARTIAL_PROGRESS",
+    "sources_read": true,
+    "scope_compared": true,
+    "retractions_checked": true,
+    "licenses_checked": true,
+    "safety_checked": true,
+    "baseline_identified": true,
+    "acceptance_frozen": true,
+    "queries": [
+      {
+        "query": "finite Fourier spectrum structure function ultraviolet infrared cutoff k^-3 logarithmic scaling",
+        "engine": "web search",
+        "category": "general",
+        "outcome": "Broad results mostly concerned other cutoff problems; none establish this finite synthetic estimator or resolve PHYS-001."
+      },
+      {
+        "query": "site.arxiv.org turbulence structure function marginal spectrum k-3 finite range",
+        "engine": "web search",
+        "category": "discipline",
+        "outcome": "Returned turbulence spectrum/structure-function research; followed primary steep-spectrum source arXiv:1007.3805 and existing elastic-turbulence citation."
+      },
+      {
+        "query": "finite band k^-3 structure function exact logarithmic correction solved",
+        "engine": "web search",
+        "category": "solution",
+        "outcome": "No same-scope solution identified in this bounded query; this repair does not make a novelty claim."
+      },
+      {
+        "query": "structure function power law estimation finite range bias correction criticism",
+        "engine": "web search",
+        "category": "criticism",
+        "outcome": "Broad power-law estimation criticism; narrowed to the original Nichols-Pagel et al study and read its band-limited discussion."
+      },
+      {
+        "query": "\"Should Structure Functions Be Used to Estimate Power Laws in Turbulence\" correction erratum",
+        "engine": "web search",
+        "category": "criticism",
+        "outcome": "Found original author-hosted paper and author bibliography; no specific correction found in returned results, not an exhaustive retraction search."
+      },
+      {
+        "query": "site.arxiv.org \"structure function\" \"steep\" \"spectra\" 2025 2026",
+        "engine": "web search",
+        "category": "discipline",
+        "outcome": "Located Falcon et al arXiv:1007.3805; full PDF opened. Near/high spectral exponent 3 requires care in interpreting first increments."
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://staff.washington.edu/dbp/PDFFILES/struc-func.pdf",
+        "title": "Nichols-Pagel et al, Should Structure Functions Be Used to Estimate Power Laws in Turbulence? A Comparative Study",
+        "kind": "primary",
+        "supports": "Author-hosted paper, sections 2,3 and 5 read: band-limited spectra need not transfer exactly into structure-function power laws. Does not validate the numerical cutoff constants here.",
+        "read_scope": "targeted full-text sections 2,3,5; not entire paper"
+      },
+      {
+        "url": "https://arxiv.org/pdf/1007.3805",
+        "title": "Falcon, Roux and Audit, Revealing intermittency in experimental data with steep power spectra",
+        "kind": "primary",
+        "supports": "Opened original six-page preprint; steep spectra require distinctions between increment behavior and spectral exponents. No inference to a solved three-dimensional turbulence problem.",
+        "read_scope": "abstract and methodology"
+      },
+      {
+        "url": "https://docs.python.org/3.13/library/os.html#os.remove",
+        "title": "Python 3.13 os.remove reference",
+        "kind": "primary",
+        "supports": "Deletion may raise OSError; failure must be handled before claiming a subsequent output is fresh.",
+        "read_scope": "os.remove API contract"
+      },
+      {
+        "url": "https://arxiv.org/abs/2308.06997",
+        "title": "Intermittency in the not-so-smooth elastic turbulence",
+        "kind": "primary",
+        "supports": "Existing citation identity/version checked (v2 2024-04-23); abstract-only, not used as proof of any exact constant.",
+        "read_scope": "metadata and abstract only"
+      }
+    ],
+    "limitations": "Bounded six-query search. Only targeted primary-paper sections read; no claim of exhaustive novelty or retraction audit. Repair evidence is software regression and exact finite-sum checks, not empirical turbulence. No source data downloaded or republished.",
+    "scope_comparison": "The parent asks about high-Re 3D Navier-Stokes mechanisms; these sources and this repair concern estimator interpretation or software provenance. No same-scope external resolution is established and no parent status change is authorized.",
+    "baseline": "Exact canonical head e3c93deb54384c93e039cd3330602d0a0d08c604. Existing numerical artifacts retained; bug is swallowed OSError during stale-result removal, plus inconsistent companion prose."
+  },
+  "artifacts": [
+    {
+      "path": "problems/PHYS-001/experiments/canonical_evidence/CANONICAL_FACTS.md",
+      "sha256": "448fe4a0d8e93f06e89fee1c3641fb48f8e87e78a2b01e08e269912da7369a57",
+      "bytes": 10413,
+      "hash_of": "git_blob"
+    },
+    {
+      "path": "problems/PHYS-001/experiments/canonical_evidence/PHYS001_INDEPENDENT_AUDIT.md",
+      "sha256": "9e5c4ec51805d20d4a801f62aa25b1ccb24f39041ec2676da866fdfa56a936c0",
+      "bytes": 13308,
+      "hash_of": "git_blob"
+    },
+    {
+      "path": "problems/PHYS-001/experiments/canonical_evidence/scripts/replay_pre_fix_control.py",
+      "sha256": "ee1fec50a652bcd739fbabf7910a35e6944e1ed9affba49776dbb8a29354c5e1",
+      "bytes": 3368,
+      "hash_of": "git_blob"
+    },
+    {
+      "path": "problems/PHYS-001/experiments/canonical_evidence/scripts/reproduce_and_compare.py",
+      "sha256": "b778f2e5526360b0f36ea2dffe0c0245fbfe19fa81ea766e60890a35b9221cc1",
+      "bytes": 21390,
+      "hash_of": "git_blob"
+    },
+    {
+      "path": "problems/PHYS-001/experiments/canonical_evidence/scripts/test_canonical_repair.py",
+      "sha256": "801f8b3c9ac35a0dc4c5346399b1943920ebb182cace986d9971b24119584a3a",
+      "bytes": 11297,
+      "hash_of": "git_blob"
+    },
+    {
+      "path": "problems/PHYS-001/results/canonical_repair_20260929/REPAIR.md",
+      "sha256": "e4bcc3747d25d007fbdae3459076619f4a23c07902bd87f72d1a7d6d7bb41fc1",
+      "bytes": 5110,
+      "hash_of": "git_blob"
+    },
+    {
+      "path": "problems/PHYS-001/results/canonical_repair_20260929/after_fix.txt",
+      "sha256": "67b4de0e458ca2a76914d3146ad8967246a18433daa9909b76a6225e1d14e3af",
+      "bytes": 1064,
+      "hash_of": "git_blob"
+    },
+    {
+      "path": "problems/PHYS-001/results/canonical_repair_20260929/before_fix.txt",
+      "sha256": "84116f1e87c65f772a6b1b336be501e2a0690a24311e6cd39e0983ef0b4d9e2f",
+      "bytes": 4511,
+      "hash_of": "git_blob"
+    },
+    {
+      "path": "problems/PHYS-001/results/canonical_repair_20260929/pre_fix_replay.json",
+      "sha256": "ced560a7d94c9805f5b0ca7f6db2d7dd1ec67e216a3b0624c35cf4d63d189779",
+      "bytes": 1200,
+      "hash_of": "git_blob"
+    },
+    {
+      "path": "problems/PHYS-001/results/canonical_repair_20260929/pre_fix_replay.txt",
+      "sha256": "8326c3d7bfd52aabff76bfc6e2c15172b2fa69fbbd6d05044d78ca3790419811",
+      "bytes": 2233,
+      "hash_of": "git_blob"
+    },
+    {
+      "path": "problems/PHYS-001/results/canonical_repair_20260929/review_after_fix.txt",
+      "sha256": "650e750b9d5466b3a04d0bfb05842f4ca4529f9f4e2cc9cba64fb6d96f447f9b",
+      "bytes": 1629,
+      "hash_of": "git_blob"
+    },
+    {
+      "path": "problems/PHYS-001/results/canonical_repair_20260929/review_verification.json",
+      "sha256": "be85e9f9065b198a4a2e6f30f34a6422ef2617ef73dd10a6b51a2a21ba03c6cb",
+      "bytes": 1715,
+      "hash_of": "git_blob"
+    },
+    {
+      "path": "problems/PHYS-001/results/canonical_repair_20260929/verification.json",
+      "sha256": "d476f73e3d509e351e4d0102bb9e422b69f1153fbb56b9c6e0867c0dd8a856ad",
+      "bytes": 1714,
+      "hash_of": "git_blob"
+    }
+  ],
+  "result": {
+    "state": "REPAIR_IMPLEMENTED_AWAITING_INDEPENDENT_REVIEW",
+    "finished_at": "2026-09-29T13:48:51.267426+00:00",
+    "verdict": "PARTIAL_PROGRESS",
+    "repair_criteria_passed": true,
+    "historical_all_criteria_passed": false,
+    "summary": "Eleven bounded software regressions pass, including verdict fail-closed checks and mocked end-to-end failure JSON. An isolated replay from immutable subject e3c93de and seven-test harness e68111c reproduces the original stale-deletion failure (6 pass / 1 fail). Independent analytic derivative confirms both cutoff regimes. Historical E3 FAIL and B4 NOT_MET_AS_FROZEN unchanged; four original numerical artifacts byte-identical.",
+    "independent_review": "Parent GPT review at e68111c identified a false-success verdict; fixed with eleven tests. GitHub P1 at e68111c identified missing immutable pre-fix harness provenance; addressed by explicit retrospective immutable replay. Final review pending.",
+    "limitations": [
+      "No full reference baseline replay",
+      "No r2 replay or repair",
+      "No new physics or novelty claim",
+      "Old source review limitations retained",
+      "Regression CI workflow rejected by GitHub OAuth workflow-scope restriction and removed before publication; seven tests executed locally only. Existing Research records CI checks metadata."
+    ]
+  },
+  "admitted_at": "2026-09-29T13:36:08.880766+00:00",
+  "execution": {
+    "working_directory": "repository root",
+    "commands": [
+      "python problems/PHYS-001/experiments/canonical_evidence/scripts/test_canonical_repair.py",
+      "python problems/PHYS-001/experiments/canonical_evidence/scripts/test_canonical_repair.py --json problems/PHYS-001/results/canonical_repair_20260929/verification.json --log problems/PHYS-001/results/canonical_repair_20260929/after_fix.txt",
+      "python problems/PHYS-001/experiments/canonical_evidence/scripts/test_canonical_repair.py --json problems/PHYS-001/results/canonical_repair_20260929/review_verification.json --log problems/PHYS-001/results/canonical_repair_20260929/review_after_fix.txt",
+      "python problems/PHYS-001/experiments/canonical_evidence/scripts/replay_pre_fix_control.py --json problems/PHYS-001/results/canonical_repair_20260929/pre_fix_replay.json --log problems/PHYS-001/results/canonical_repair_20260929/pre_fix_replay.txt"
+    ],
+    "environment_artifact": "problems/PHYS-001/results/canonical_repair_20260929/verification.json",
+    "historical_full_baseline": "NOT_RUN",
+    "r2": "NOT_RUN",
+    "pre_fix_control": {
+      "original_capture": "before_fix.txt came from an uncommitted test harness after acceptance commit ef30455; no immutable source snapshot was made at that time. Preserved, not retrospectively relabelled.",
+      "replacement_verification": "Explicit retrospective isolated replay uses runner+exponent e3c93deb54384c93e039cd3330602d0a0d08c604 and harness e68111cb11f2b2e777e1195e525904345f321472; exact export paths and Git blob hashes in pre_fix_replay.json.",
+      "command": "python problems/PHYS-001/experiments/canonical_evidence/scripts/replay_pre_fix_control.py --json problems/PHYS-001/results/canonical_repair_20260929/pre_fix_replay.json --log problems/PHYS-001/results/canonical_repair_20260929/pre_fix_replay.txt",
+      "working_directory": "repository root",
+      "observed": "replayed tests exit 1 with only stale-deletion failure; wrapper exit 0 because that is the expected negative control"
+    }
+  },
+  "review_repair_addenda": [
+    {
+      "frozen_at": "2026-09-29T13:46:35.394288+00:00",
+      "reviewed_sha": "e68111cb11f2b2e777e1195e525904345f321472",
+      "scope": "Additional fail-closed software repair requested by independent GPT reviewer and GitHub review; original acceptance unchanged.",
+      "acceptance": "R5: Pure verdict helper must return NOT_REPRODUCED and exclude no implementation-error explanation whenever any of agree_k41, agree_neg, spread_is_zero_k41, spread_is_zero_neg is false; success must report actual gaps/spreads rather than hard-coded historic numbers. Exercise every single-false combination plus success. R6: reproduce pre-fix stale-deletion negative control from immutable runner/exponent e3c93deb54384c93e039cd3330602d0a0d08c604 and seven-test harness e68111cb11f2b2e777e1195e525904345f321472 using a checked-in isolated replay command; preserve original before_fix.txt and save a separate replay artifact. Expected replay outcome: 7 tests, 1 stale-deletion failure, exit 1. No full baseline or historical numerical JSON rewrite."
+    }
+  ]
+}
