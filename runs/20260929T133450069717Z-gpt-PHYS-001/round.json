@@ -95,7 +95,81 @@
     "scope_comparison": "The parent asks about high-Re 3D Navier-Stokes mechanisms; these sources and this repair concern estimator interpretation or software provenance. No same-scope external resolution is established and no parent status change is authorized.",
     "baseline": "Exact canonical head e3c93deb54384c93e039cd3330602d0a0d08c604. Existing numerical artifacts retained; bug is swallowed OSError during stale-result removal, plus inconsistent companion prose."
   },
-  "artifacts": [],
-  "result": null,
-  "admitted_at": "2026-09-29T13:36:08.880766+00:00"
+  "artifacts": [
+    {
+      "path": "problems/PHYS-001/experiments/canonical_evidence/CANONICAL_FACTS.md",
+      "sha256": "448fe4a0d8e93f06e89fee1c3641fb48f8e87e78a2b01e08e269912da7369a57",
+      "bytes": 10413,
+      "hash_of": "git_blob"
+    },
+    {
+      "path": "problems/PHYS-001/experiments/canonical_evidence/PHYS001_INDEPENDENT_AUDIT.md",
+      "sha256": "9e5c4ec51805d20d4a801f62aa25b1ccb24f39041ec2676da866fdfa56a936c0",
+      "bytes": 13308,
+      "hash_of": "git_blob"
+    },
+    {
+      "path": "problems/PHYS-001/experiments/canonical_evidence/scripts/reproduce_and_compare.py",
+      "sha256": "189f2eaf47b71d3a9d6c4a92b282622457202cb818366e2f0fa245c22a86b86d",
+      "bytes": 20640,
+      "hash_of": "git_blob"
+    },
+    {
+      "path": "problems/PHYS-001/experiments/canonical_evidence/scripts/test_canonical_repair.py",
+      "sha256": "5092d27a08ea17f0fe8d5a3800a5d92aeffc282950c088cf361a95da80683616",
+      "bytes": 7674,
+      "hash_of": "git_blob"
+    },
+    {
+      "path": "problems/PHYS-001/results/canonical_repair_20260929/REPAIR.md",
+      "sha256": "aa19d85c54838478cc3b6a055e80285c17f7db7ae853826b500c0a1e5d7d1f56",
+      "bytes": 2848,
+      "hash_of": "git_blob"
+    },
+    {
+      "path": "problems/PHYS-001/results/canonical_repair_20260929/after_fix.txt",
+      "sha256": "67b4de0e458ca2a76914d3146ad8967246a18433daa9909b76a6225e1d14e3af",
+      "bytes": 1064,
+      "hash_of": "git_blob"
+    },
+    {
+      "path": "problems/PHYS-001/results/canonical_repair_20260929/before_fix.txt",
+      "sha256": "84116f1e87c65f772a6b1b336be501e2a0690a24311e6cd39e0983ef0b4d9e2f",
+      "bytes": 4511,
+      "hash_of": "git_blob"
+    },
+    {
+      "path": "problems/PHYS-001/results/canonical_repair_20260929/verification.json",
+      "sha256": "d476f73e3d509e351e4d0102bb9e422b69f1153fbb56b9c6e0867c0dd8a856ad",
+      "bytes": 1714,
+      "hash_of": "git_blob"
+    }
+  ],
+  "result": {
+    "state": "REPAIR_IMPLEMENTED_AWAITING_INDEPENDENT_REVIEW",
+    "finished_at": "2026-09-29T13:39:21.508655+00:00",
+    "verdict": "PARTIAL_PROGRESS",
+    "repair_criteria_passed": true,
+    "historical_all_criteria_passed": false,
+    "summary": "Seven bounded regressions pass after demonstrating the stale-delete bug before repair. Independent analytic derivative confirms both cutoff regimes. Historical E3 FAIL and B4 NOT_MET_AS_FROZEN unchanged. No original numerical result regenerated.",
+    "independent_review": "PENDING parent GPT review; author does not self-approve or merge",
+    "limitations": [
+      "No full reference baseline replay",
+      "No r2 replay or repair",
+      "No new physics or novelty claim",
+      "Old source review limitations retained",
+      "Regression CI workflow rejected by GitHub OAuth workflow-scope restriction and removed before publication; seven tests executed locally only. Existing Research records CI checks metadata."
+    ]
+  },
+  "admitted_at": "2026-09-29T13:36:08.880766+00:00",
+  "execution": {
+    "working_directory": "repository root",
+    "commands": [
+      "python problems/PHYS-001/experiments/canonical_evidence/scripts/test_canonical_repair.py",
+      "python problems/PHYS-001/experiments/canonical_evidence/scripts/test_canonical_repair.py --json problems/PHYS-001/results/canonical_repair_20260929/verification.json --log problems/PHYS-001/results/canonical_repair_20260929/after_fix.txt"
+    ],
+    "environment_artifact": "problems/PHYS-001/results/canonical_repair_20260929/verification.json",
+    "historical_full_baseline": "NOT_RUN",
+    "r2": "NOT_RUN"
+  }
 }

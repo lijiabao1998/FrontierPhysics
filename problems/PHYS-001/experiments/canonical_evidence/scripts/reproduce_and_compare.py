@@ -168,7 +168,8 @@ def glm_reference_run() -> dict:
     if not os.path.exists(src):
         return {"available": False, "reason": "verbatim reference copy not present"}
     digest = normalized_sha256(src)
-    raw_digest = hashlib.sha256(open(src, "rb").read()).hexdigest()
+    with open(src, "rb") as source_file:
+        raw_digest = hashlib.sha256(source_file.read()).hexdigest()
     # The reference script exits 1 on its scientific FAIL, so returncode alone cannot signal
     # a usable run. Freshness is enforced instead: any pre-existing output is removed BEFORE
     # launching, so the file found afterwards can only have been produced by this invocation.
@@ -177,8 +178,14 @@ def glm_reference_run() -> dict:
     if os.path.exists(stale):
         try:
             os.remove(stale)
-        except OSError:
-            pass
+        except OSError as exc:
+            # A locked/read-only result can survive a failed launch on Windows.
+            # Refuse execution so that it can never be read as fresh evidence.
+            return {"available": False, "results": None, "results_fresh": False,
+                    "results_stale_or_missing": True,
+                    "reason": f"cannot remove stale reference output; refusing execution: {exc!r}",
+                    "results_path": stale, "sha256": digest,
+                    "sha256_raw_bytes": raw_digest}
     if digest != EXPECTED_REFERENCE_SHA256_LF:
         # Refuse to run: executing an unverified reference would make the whole
         # implementation-error exclusion meaningless.

@@ -1,0 +1,41 @@
+test_marginal_window_passes_both_gates_but_is_not_near_two (__main__.CutoffInterpretationTests.test_marginal_window_passes_both_gates_but_is_not_near_two) ... ok
+test_small_lag_near_two_fails_uv_gate (__main__.CutoffInterpretationTests.test_small_lag_near_two_fails_uv_gate) ... ok
+test_crash_without_new_output_cannot_reuse_old_json (__main__.FreshReferenceTests.test_crash_without_new_output_cannot_reuse_old_json) ... C:\Users\Leon1\OneDrive\Desktop\ǰ��RP\_gpt\phys-convergence\problems\PHYS-001\experiments\canonical_evidence\scripts\reproduce_and_compare.py:171: ResourceWarning: unclosed file <_io.BufferedReader name='C:\\Users\\Leon1\\AppData\\Local\\Temp\\tmpw1_cia8r\\canonical_evidence\\reference\\reference.py'>
+  raw_digest = hashlib.sha256(open(src, "rb").read()).hexdigest()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_failed_stale_deletion_never_launches_or_loads_old_json (__main__.FreshReferenceTests.test_failed_stale_deletion_never_launches_or_loads_old_json) ... C:\Users\Leon1\OneDrive\Desktop\ǰ��RP\_gpt\phys-convergence\problems\PHYS-001\experiments\canonical_evidence\scripts\reproduce_and_compare.py:171: ResourceWarning: unclosed file <_io.BufferedReader name='C:\\Users\\Leon1\\AppData\\Local\\Temp\\tmpog91w5co\\canonical_evidence\\reference\\reference.py'>
+  raw_digest = hashlib.sha256(open(src, "rb").read()).hexdigest()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+FAIL
+test_hash_mismatch_never_launches (__main__.FreshReferenceTests.test_hash_mismatch_never_launches) ... C:\Users\Leon1\OneDrive\Desktop\ǰ��RP\_gpt\phys-convergence\problems\PHYS-001\experiments\canonical_evidence\scripts\reproduce_and_compare.py:171: ResourceWarning: unclosed file <_io.BufferedReader name='C:\\Users\\Leon1\\AppData\\Local\\Temp\\tmps56_0iia\\canonical_evidence\\reference\\reference.py'>
+  raw_digest = hashlib.sha256(open(src, "rb").read()).hexdigest()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_malformed_new_output_is_not_fresh_evidence (__main__.FreshReferenceTests.test_malformed_new_output_is_not_fresh_evidence) ... C:\Users\Leon1\OneDrive\Desktop\ǰ��RP\_gpt\phys-convergence\problems\PHYS-001\experiments\canonical_evidence\scripts\reproduce_and_compare.py:171: ResourceWarning: unclosed file <_io.BufferedReader name='C:\\Users\\Leon1\\AppData\\Local\\Temp\\tmpw9t_8r3w\\canonical_evidence\\reference\\reference.py'>
+  raw_digest = hashlib.sha256(open(src, "rb").read()).hexdigest()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_scientific_fail_with_new_valid_output_is_usable (__main__.FreshReferenceTests.test_scientific_fail_with_new_valid_output_is_usable) ... C:\Users\Leon1\OneDrive\Desktop\ǰ��RP\_gpt\phys-convergence\problems\PHYS-001\experiments\canonical_evidence\scripts\reproduce_and_compare.py:171: ResourceWarning: unclosed file <_io.BufferedReader name='C:\\Users\\Leon1\\AppData\\Local\\Temp\\tmpl608mb9s\\canonical_evidence\\reference\\reference.py'>
+  raw_digest = hashlib.sha256(open(src, "rb").read()).hexdigest()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+
+======================================================================
+FAIL: test_failed_stale_deletion_never_launches_or_loads_old_json (__main__.FreshReferenceTests.test_failed_stale_deletion_never_launches_or_loads_old_json)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Leon1\OneDrive\Desktop\ǰ��RP\_gpt\phys-convergence\problems\PHYS-001\experiments\canonical_evidence\scripts\test_canonical_repair.py", line 42, in test_failed_stale_deletion_never_launches_or_loads_old_json
+    launch.assert_not_called()
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Leon1\AppData\Local\Programs\Python\Python313\Lib\unittest\mock.py", line 940, in assert_not_called
+    raise AssertionError(msg)
+AssertionError: Expected 'run' to not have been called. Called 1 times.
+Calls: [call(['C:\\Users\\Leon1\\AppData\\Local\\Programs\\Python\\Python313\\python.exe', 'C:\\Users\\Leon1\\AppData\\Local\\Temp\\tmpog91w5co\\canonical_evidence\\reference\\reference.py'], cwd='C:\\Users\\Leon1\\AppData\\Local\\Temp\\tmpog91w5co\\canonical_evidence\\reference', capture_output=True, text=True, timeout=5400)].
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.088s
+
+FAILED (failures=1)
+
+exit=1

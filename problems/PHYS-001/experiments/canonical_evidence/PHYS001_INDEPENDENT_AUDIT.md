@@ -22,7 +22,7 @@ effect, or **(E)** insufficient evidence?
 ## 1. (B) implementation error: excluded by exact reproduction
 
 `reproduce_and_compare.py` runs GLM's script **verbatim** (copy hash
-`5244be1dd4632bc8d06317abef287e17cc5b8768dfca815ad4653fb1b6e4d7db`, matching the file on
+`b1070ea49ec142addeda3be51092eaa92624199bcf788c78013cad0c172d5a70` over LF-normalised bytes, matching the file on
 `glm/PHYS-001-baseline-r1`) and independently reimplements its specification.
 
 Derivation used for the closed form: with `u_j = Σ_k A_k cos(2πkj/N + φ_k)` and
@@ -122,13 +122,19 @@ spectrum.** Two further consequences:
 
 - **Lag set matters too.** Over the same span, GLM's 13 geometric lags give 0.6384 while
   all 234 integers give 0.6169. Both are legitimate; neither is "the" exponent.
-- **β=3 can never be a power-law test here.** Its local exponent is
-  `2 − 1/(ln(1/(k_lo r)) + 2C₀)`. **CORRECTED (the earlier text had this inequality
-  reversed):** requiring it to exceed 1.9 gives `L > 10`, i.e. `ln(1/(k_lo r)) > 10 − 2C₀ =
-  9.077`, i.e. `k_lo r < 1.14e-4`, i.e. **`r < 0.0248`** — the required regime is at *small*
-  `r`, below one sample, not at `r ≳ 3300`. The conclusion is unchanged (no window makes β=3
-  a power-law test) but it is unreachable because it lies under the lattice spacing. So β=3 must be reported
-  as **a reproducibility control with a closed form**, never as an exponent.
+- **β=3 requires both cutoffs to be checked.** The marginal approximation
+  `2 − 1/(ln(1/(k_lo r)) + 2C₀)` requires `k_lo·r ≪ 1` **and** `k_hi·r ≫ 1`.
+  The explicit gates used here (`k_lo·r ≤ 0.1`, `k_hi·r ≥ 20`) give the integer
+  window **[15,21]**, where both conditions hold and the OLS slope is **1.7233**.
+  Requiring the approximation to exceed 1.9 gives **r < 0.0248**, but there
+  `k_hi·r < 0.035`: the UV condition fails, so that approximation cannot be used.
+  The exact finite-sum local exponent actually exceeds 1.9 at **r=1 (1.9743)**
+  and **r=2 (1.9117)**. Those small lags approach the analytic, upper-cutoff
+  `r²` regime; they do not establish marginal inertial-range scaling near 2.
+  **RETRACTED:** the earlier explanation that the sole obstruction was lattice
+  spacing, and its implication that no integer lag can exceed 1.9. See
+  `CANONICAL_FACTS.md` P3 for the matching UV/IR table. β=3 remains a
+  **reproducibility control with a closed form** in this audit.
 
 **What should replace the retracted gate** (pre-registrable, and honest about what it can
 and cannot do):
@@ -137,8 +143,9 @@ and cannot do):
 2. Pre-register the *expected* value from the closed form and the local-exponent profile,
    not from the asymptotic exponent.
 3. For β=3, pre-register the closed form and label the control as reproducibility-only.
-4. If a genuine power-law test is wanted, change `N` and the band so that a window exists
-   where the local exponent is near-constant; at `N=4096`, band `[3,900]`, none does.
+4. A future marginal-scaling test near 2 would need a separately frozen band and
+   window that satisfy both cutoffs. The present [15,21] window instead gives ≈1.72;
+   the near-2 values at r=1,2 come from the analytic UV regime.
 
 ## 4. The β=3 log constant, with a supported precision
 

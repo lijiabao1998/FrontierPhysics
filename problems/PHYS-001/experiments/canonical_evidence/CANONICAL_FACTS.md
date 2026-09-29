@@ -45,9 +45,12 @@ error budget of 1e-12 against the full-precision values; an earlier 5e-5 bound r
 LF-normalised SHA-256 equals the pinned
 `b1070ea49ec142addeda3be51092eaa92624199bcf788c78013cad0c172d5a70` — which equals both the blob
 committed here and the file on `glm/PHYS-001-baseline-r1`. A mismatch **refuses execution**
-(verified by tampering). Any pre-existing output is deleted before launch, so a stale artifact
+(verified by tampering). Any pre-existing output is deleted before launch; if deletion fails,
+the run is refused before starting the reference process. Thus a stale artifact
 cannot be mistaken for current evidence; the reference's exit code 1 is its scientific FAIL and
-is deliberately not treated as a failure of this check.
+is deliberately not treated as a failure of this check. The bounded failure-injection
+regressions are in `scripts/test_canonical_repair.py`; they do not rerun or relabel the
+historical numerical evidence.
 
 **Evidence:** `evidence/glm_reproduction.json`. **Script:** `scripts/reproduce_and_compare.py`.
 
