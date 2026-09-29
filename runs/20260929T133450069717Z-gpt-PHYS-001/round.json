@@ -1,0 +1,101 @@
+{
+  "round_id": "20260929T133450069717Z-gpt-PHYS-001",
+  "problem_id": "PHYS-001",
+  "agent": "gpt",
+  "branch": "gpt/PHYS-001-convergence-20260929",
+  "base_sha": "e3c93deb54384c93e039cd3330602d0a0d08c604",
+  "started_at": "2026-09-29T13:34:50.069717+00:00",
+  "state": "ADMITTED",
+  "acceptance": "FROZEN BEFORE REPAIR EXECUTION. Repair only canonical PR #4 at e3c93deb54384c93e039cd3330602d0a0d08c604. R1: refusal to remove any stale result must return unavailable with no subprocess execution and no usable results; missing/unreadable/malformed output and reference hash mismatch must never support reproduction. Scientific exit 1 with a freshly written valid result remains usable. R2: both canonical reports must apply the two cutoff conditions; fixed checks at r=1,2,15,21 compare the existing finite-difference local exponent with an independently coded analytic derivative at absolute error <= 2e-4, r=1,2 exceed 1.9 but fail the UV gate, r=15,21 satisfy UV>=20 and IR<=0.1 and have exponent in [1.70,1.75]. This software regression bound is not a replacement for E3 or B4. R3: preserve all original numerical evidence, E3 FAIL, B4 NOT_MET_AS_FROZEN, all_criteria_passed false, parent OPEN; hashes must cover every canonical artifact including the actual committed baseline result, using git blob bytes. R4: added negative tests must reproduce the stale-deletion defect before its fix and pass afterward. No new models, seeds, fitting windows, constants, research criteria, or discovery claims. Budget 120 minutes / USD 0 / at most 100 regression test cases and one bounded canonical replay only if needed; do not run r2 or Sabra in this repair.",
+  "not_done": "No new physics exploration, no r2 execution, no reclassification of historical FAIL/NOT_MET_AS_FROZEN, no full reference replay unless required, no changed research acceptance, no merge. Parent PHYS-001 remains OPEN. Source review is bounded and not a proof of global openness.",
+  "budget": {
+    "wall_minutes": 120,
+    "usd": 0,
+    "max_trials": 100
+  },
+  "preflight": {
+    "checked_at": "2026-09-29T13:36:08.754989+00:00",
+    "verdict": "PARTIAL_PROGRESS",
+    "sources_read": true,
+    "scope_compared": true,
+    "retractions_checked": true,
+    "licenses_checked": true,
+    "safety_checked": true,
+    "baseline_identified": true,
+    "acceptance_frozen": true,
+    "queries": [
+      {
+        "query": "finite Fourier spectrum structure function ultraviolet infrared cutoff k^-3 logarithmic scaling",
+        "engine": "web search",
+        "category": "general",
+        "outcome": "Broad results mostly concerned other cutoff problems; none establish this finite synthetic estimator or resolve PHYS-001."
+      },
+      {
+        "query": "site.arxiv.org turbulence structure function marginal spectrum k-3 finite range",
+        "engine": "web search",
+        "category": "discipline",
+        "outcome": "Returned turbulence spectrum/structure-function research; followed primary steep-spectrum source arXiv:1007.3805 and existing elastic-turbulence citation."
+      },
+      {
+        "query": "finite band k^-3 structure function exact logarithmic correction solved",
+        "engine": "web search",
+        "category": "solution",
+        "outcome": "No same-scope solution identified in this bounded query; this repair does not make a novelty claim."
+      },
+      {
+        "query": "structure function power law estimation finite range bias correction criticism",
+        "engine": "web search",
+        "category": "criticism",
+        "outcome": "Broad power-law estimation criticism; narrowed to the original Nichols-Pagel et al study and read its band-limited discussion."
+      },
+      {
+        "query": "\"Should Structure Functions Be Used to Estimate Power Laws in Turbulence\" correction erratum",
+        "engine": "web search",
+        "category": "criticism",
+        "outcome": "Found original author-hosted paper and author bibliography; no specific correction found in returned results, not an exhaustive retraction search."
+      },
+      {
+        "query": "site.arxiv.org \"structure function\" \"steep\" \"spectra\" 2025 2026",
+        "engine": "web search",
+        "category": "discipline",
+        "outcome": "Located Falcon et al arXiv:1007.3805; full PDF opened. Near/high spectral exponent 3 requires care in interpreting first increments."
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://staff.washington.edu/dbp/PDFFILES/struc-func.pdf",
+        "title": "Nichols-Pagel et al, Should Structure Functions Be Used to Estimate Power Laws in Turbulence? A Comparative Study",
+        "kind": "primary",
+        "supports": "Author-hosted paper, sections 2,3 and 5 read: band-limited spectra need not transfer exactly into structure-function power laws. Does not validate the numerical cutoff constants here.",
+        "read_scope": "targeted full-text sections 2,3,5; not entire paper"
+      },
+      {
+        "url": "https://arxiv.org/pdf/1007.3805",
+        "title": "Falcon, Roux and Audit, Revealing intermittency in experimental data with steep power spectra",
+        "kind": "primary",
+        "supports": "Opened original six-page preprint; steep spectra require distinctions between increment behavior and spectral exponents. No inference to a solved three-dimensional turbulence problem.",
+        "read_scope": "abstract and methodology"
+      },
+      {
+        "url": "https://docs.python.org/3.13/library/os.html#os.remove",
+        "title": "Python 3.13 os.remove reference",
+        "kind": "primary",
+        "supports": "Deletion may raise OSError; failure must be handled before claiming a subsequent output is fresh.",
+        "read_scope": "os.remove API contract"
+      },
+      {
+        "url": "https://arxiv.org/abs/2308.06997",
+        "title": "Intermittency in the not-so-smooth elastic turbulence",
+        "kind": "primary",
+        "supports": "Existing citation identity/version checked (v2 2024-04-23); abstract-only, not used as proof of any exact constant.",
+        "read_scope": "metadata and abstract only"
+      }
+    ],
+    "limitations": "Bounded six-query search. Only targeted primary-paper sections read; no claim of exhaustive novelty or retraction audit. Repair evidence is software regression and exact finite-sum checks, not empirical turbulence. No source data downloaded or republished.",
+    "scope_comparison": "The parent asks about high-Re 3D Navier-Stokes mechanisms; these sources and this repair concern estimator interpretation or software provenance. No same-scope external resolution is established and no parent status change is authorized.",
+    "baseline": "Exact canonical head e3c93deb54384c93e039cd3330602d0a0d08c604. Existing numerical artifacts retained; bug is swallowed OSError during stale-result removal, plus inconsistent companion prose."
+  },
+  "artifacts": [],
+  "result": null,
+  "admitted_at": "2026-09-29T13:36:08.880766+00:00"
+}
