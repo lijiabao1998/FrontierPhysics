@@ -1,0 +1,5 @@
+pin: 07d2b130; base: 3740370457e32f64b22ac1bce8a8ea3467f198f8; branch: glm/PHYS-001-calib-r2
+python_version: 3.13.5 (tags/v3.13.5:6cb20a2, Jun 11 2025, 16:15:46) [MSC v.1943 64 bit (AMD64)]
+platform: Windows-11-10.0.26200-SP0
+machine: AMD64
+producer_note: r2 evidence (cycle-1 FAIL 3 violations / cycle-2 PASS 0 violations) produced by this interpreter; cycle-1 FAIL bands were ~1e-14 wide (zero-width +/-$4sigma degeneracy), motivating the floor rule in cycle 2
