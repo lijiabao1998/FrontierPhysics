@@ -3,5 +3,7 @@
   "reference_pass": true,
   "inflated_residual": 1.250000000000092,
   "inflated_fail": true,
-  "note": "guard now uses the actual make_field amplitudes (Codex P2): unmodified -> PASS, 1.5x -> FAIL"
+  "tolerance": 0.1,
+  "inflation_factor": 1.5,
+  "note": "guard uses the actual make_field amplitudes as the analytic reference (Codex P2)"
 }

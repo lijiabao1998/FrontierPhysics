@@ -120,7 +120,8 @@
       {
         "purpose": "amplitude guard teeth check",
         "cwd": "problems/PHYS-001",
-        "command": "python (inline: k41_baseline.make_field + energy_budget on reference and 1.5x field; results/r2/amplitude_guard_check.json)"
+        "command": "python experiments/r2_calibration/amplitude_guard.py",
+        "note": "committed script (Codex P2: replaced inline prose with runnable invocation)"
       },
       {
         "purpose": "K41 r1 baseline evaluator suite",
@@ -132,7 +133,12 @@
         "cwd": "problems/PHYS-001",
         "command": "python experiments/r2_calibration/verify_manifest.py"
       }
-    ]
+    ],
+    "remediation_v3": {
+      "n_sensitivity_scaled_lags": "N=2048 rows regenerated with lags scaled by N/4096 (physical interval held fixed); W3 already geometric",
+      "b3_floor_removed": "cycle-1 B3 now exactly <=2x Stage A max (1e-10 unadmitted floor removed); recorded FAIL verdicts unchanged in meaning",
+      "amplitude_guard_script": "experiments/r2_calibration/amplitude_guard.py committed"
+    }
   },
   "admitted_at": "2026-09-27T19:30:10.980490+00:00"
 }

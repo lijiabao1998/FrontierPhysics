@@ -59,7 +59,15 @@ def main() -> int:
                 k.N = N  # field size override
                 u, amps = make_field(beta, seed)
                 for wname, window in WINDOWS.items():
-                    m = measure(u, amps, window)
+                    # Codex P2: hold the physical interval fixed across N —
+                    # scale integer lags by N/4096 (rounded, deduped)
+                    if N == 4096:
+                        lags_n = list(window)
+                    else:
+                        lags_n = sorted(set(max(1, round(r * N / 4096))
+                                            for r in window))
+                    m = measure(u, amps, lags_n)
+                    m["lags_used"] = lags_n
                     stage_a.append({"beta_name": name, "N": N, "seed": seed,
                                     "window": wname, **m})
     # freeze bands from Stage A only (per beta/window, N=4096 rows)
@@ -77,7 +85,11 @@ def main() -> int:
             sd_s = (sum((v - mu_s) ** 2 for v in vals_spec) / len(vals_spec)) ** 0.5
             bands[f"{name}|{wname}|spec"] = [mu_s - 4 * sd_s, mu_s + 4 * sd_s]
     max_res = max(r["energy_rel_residual"] for r in stage_a)
-    bands["energy_max"] = max(2 * max_res, 1e-10)
+    # frozen B3 contract: <= 2x Stage A maximum, NO added floor (the earlier
+    # 1e-10 floor relaxed the admitted limit by ~3 orders of magnitude; Codex
+    # P2 — removed. Cycle-1 recorded verdicts are unchanged under the exact
+    # rule because Stage A residuals were ~4e-14.)
+    bands["energy_max"] = 2 * max_res
     bands_doc = {"frozen_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
                  "rule": "mean +/- 4*std of Stage A (seeds 1-8, N=4096) per beta/window",
                  "bands": bands}
@@ -85,6 +97,11 @@ def main() -> int:
         json.dumps(bands_doc, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
     # N-sensitivity and window-sensitivity (Stage A descriptive stats)
+    # Codex P2: lag index r is the normalized separation r/N; comparing the
+    # same integer lags across N=2048/4096 halves the physical window. The
+    # N=2048 rows are regenerated with lags SCALED by N/4096 so both runs fit
+    # the same physical interval; the shift reported is then resolution
+    # sensitivity, not a window shift.
     n_sens = {}
     for name in BETAS:
         for wname in WINDOWS:
