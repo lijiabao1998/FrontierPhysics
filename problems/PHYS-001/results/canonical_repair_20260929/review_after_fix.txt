@@ -1,0 +1,16 @@
+test_marginal_window_passes_both_gates_but_is_not_near_two (__main__.CutoffInterpretationTests.test_marginal_window_passes_both_gates_but_is_not_near_two) ... ok
+test_small_lag_near_two_fails_uv_gate (__main__.CutoffInterpretationTests.test_small_lag_near_two_fails_uv_gate) ... ok
+test_crash_without_new_output_cannot_reuse_old_json (__main__.FreshReferenceTests.test_crash_without_new_output_cannot_reuse_old_json) ... ok
+test_failed_stale_deletion_never_launches_or_loads_old_json (__main__.FreshReferenceTests.test_failed_stale_deletion_never_launches_or_loads_old_json) ... ok
+test_hash_mismatch_never_launches (__main__.FreshReferenceTests.test_hash_mismatch_never_launches) ... ok
+test_malformed_new_output_is_not_fresh_evidence (__main__.FreshReferenceTests.test_malformed_new_output_is_not_fresh_evidence) ... ok
+test_scientific_fail_with_new_valid_output_is_usable (__main__.FreshReferenceTests.test_scientific_fail_with_new_valid_output_is_usable) ... ok
+test_any_single_failed_check_forbids_success_claim (__main__.VerdictTests.test_any_single_failed_check_forbids_success_claim) ... ok
+test_main_persists_failure_claim_when_comparison_fails (__main__.VerdictTests.test_main_persists_failure_claim_when_comparison_fails) ... ok
+test_missing_check_and_nonfinite_measurement_fail_closed (__main__.VerdictTests.test_missing_check_and_nonfinite_measurement_fail_closed) ... ok
+test_success_uses_actual_values_not_historical_constants (__main__.VerdictTests.test_success_uses_actual_values_not_historical_constants) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.092s
+
+OK

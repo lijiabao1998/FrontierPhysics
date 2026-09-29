@@ -175,8 +175,8 @@
     },
     {
       "path": "problems/PHYS-001/experiments/canonical_evidence/scripts/reproduce_and_compare.py",
-      "sha256": "189f2eaf47b71d3a9d6c4a92b282622457202cb818366e2f0fa245c22a86b86d",
-      "bytes": 20640,
+      "sha256": "b778f2e5526360b0f36ea2dffe0c0245fbfe19fa81ea766e60890a35b9221cc1",
+      "bytes": 21390,
       "hash_of": "git_blob"
     },
     {

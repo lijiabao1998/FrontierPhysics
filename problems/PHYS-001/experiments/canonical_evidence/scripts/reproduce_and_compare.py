@@ -229,6 +229,32 @@ def glm_reference_run() -> dict:
     return out
 
 
+def comparison_outcome(*, checks: dict[str, bool], gap_k41: float | None,
+                       gap_steep: float | None, spread_k41: float,
+                       spread_steep: float, bound: float, spread_bound: float) -> dict:
+    """Build the claim and exit decision from the same measured checks."""
+    required = ("agree_k41", "agree_neg", "spread_is_zero_k41", "spread_is_zero_neg")
+    failed = [name for name in required if checks.get(name) is not True]
+    measurements = (gap_k41, gap_steep, spread_k41, spread_steep)
+    if any(value is None or not math.isfinite(value) for value in measurements):
+        failed.append("finite_measurements")
+    detail = (f"measured gaps beta=5/3 {gap_k41!r}, beta=3 {gap_steep!r}; "
+              f"measured spreads beta=5/3 {spread_k41!r}, beta=3 {spread_steep!r}; "
+              f"gap bound {bound!r}, spread bound {spread_bound!r}")
+    if failed:
+        return {"status": "NOT_REPRODUCED", "passed": False,
+                "implementation_error_excluded": False, "failed_checks": failed,
+                "verdict": ("NOT_REPRODUCED: failed checks " + ", ".join(failed)
+                            + "; " + detail + ". Implementation error (B) is not excluded.")}
+    return {"status": "REPRODUCED_WITHIN_FLOAT_BOUND", "passed": True,
+            "implementation_error_excluded": True, "failed_checks": [],
+            "verdict": ("REPRODUCED_WITHIN_FLOAT_BOUND: " + detail
+                        + ". The measured structure-function slopes match the reference "
+                        "on its own lag set within the stated floating-point bounds. "
+                        "Implementation error (B) is excluded only for this tested slope "
+                        "comparison within those bounds; no turbulence claim is made.")}
+
+
 def main(argv: Sequence[str] | None = None) -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--json", default=None)
@@ -245,10 +271,11 @@ def main(argv: Sequence[str] | None = None) -> int:
     if not ref.get("available") or not ref.get("results"):
         print(f"   REFERENCE NOT USABLE: {ref.get('reason') or ref.get('results_note')}")
         rep["comparison"] = {
-            "verdict": ("The reference script could not be verified against its pinned hash, so "
-                        "it was NOT executed and no reproduction claim is made. This is "
-                        "fail-closed by design: running an unverified reference would make the "
-                        "implementation-error exclusion meaningless."),
+            "status": "NOT_REPRODUCED",
+            "implementation_error_excluded": False,
+            "verdict": ("NOT_REPRODUCED: the reference is unusable. No reproduction claim "
+                        "is made and implementation error (B) is not excluded; see "
+                        "reference_reason for the hash, execution or output failure."),
             "reference_usable": False,
             "reference_reason": ref.get("reason") or ref.get("results_note"),
         }
@@ -357,34 +384,26 @@ def main(argv: Sequence[str] | None = None) -> int:
         "gap_steep_vs_published": tol_neg,
         "reproduced_within_float_bound_k41": bool(agree_k41),
         "reproduced_within_float_bound_steep": bool(agree_neg),
-        "own_reimplementation_internal_agreement": ("per-seed slopes are identical to 10 "
-                                                    "decimal places; the independent "
-                                                    "generator implementation agrees with "
-                                                    "the closed form to ~5e-15"),
+        "own_reimplementation_internal_agreement": {
+            "max_relative_gap_vs_closed_form": max(
+                row["max_rel_gap_vs_closed_form"] for row in per_seed),
+            "scope": "measured residuals, not a hard-coded historical agreement claim",
+        },
         "spread_zero_band": SPREAD_ZERO_BAND,
         "realisation_noise_is_zero": bool(spread_is_zero_k41 and spread_is_zero_neg),
-        "realisation_noise_note": ("per-seed slopes agree to ~1e-15, i.e. floating-point "
-                                   "summation order. The estimator carries no seed-dependent "
-                                   "signal, so no 0.049 gap can be attributed to noise."),
-        "verdict": None,
+        "realisation_noise_note": (
+            "Both measured per-seed spreads are within the recorded floating-point bound."
+            if spread_is_zero_k41 and spread_is_zero_neg else
+            "The numerical spread check failed; seed-independence is not established by this run."),
     }
-    rep["comparison"]["verdict"] = (
-        "GLM's structure-function slope is reproduced by an independent implementation of "
-        "GLM's own specification, on GLM's own 13 geometric lags, to a gap of 1.1e-14 (beta=5/3) "
-        "and 1.3e-14 (beta=3) against GLM's FULL-PRECISION stored values -- i.e. ordinary "
-        "double-precision rounding, not a tolerance. My own generator agrees with the closed "
-        "form to ~5e-15. The "
-        "estimator is seed-independent: the per-seed spread is exactly 0.0, as GLM's own "
-        "sf_std reports, because the j-average of the squared increment is phase-independent. "
-        "Implementation error (B) is therefore excluded ON GLM'S OWN TERMS, by exact "
-        "reproduction rather than by a tolerance. "
-        "CORRECTION TO THE FIRST AUDIT: its 1.4911 was the slope of the same function over "
-        "all 234 integers in [16,249] instead of GLM's 13 geometric lags, so the 0.0489 gap it "
-        "reported was a LAG-SET (sampling) difference, not realisation noise -- and it could "
-        "not have been noise, because the spread is exactly zero. The first audit's comparison "
-        "was therefore between two different quantities, and its '3% apart, consistent with "
-        "realisation noise' wording is retracted."
-    )
+    outcome = comparison_outcome(
+        checks={"agree_k41": agree_k41, "agree_neg": agree_neg,
+                "spread_is_zero_k41": spread_is_zero_k41,
+                "spread_is_zero_neg": spread_is_zero_neg},
+        gap_k41=tol_k41, gap_steep=tol_neg,
+        spread_k41=spread_k41, spread_steep=spread_neg,
+        bound=ROUND_BOUND, spread_bound=SPREAD_ZERO_BAND)
+    rep["comparison"].update(outcome)
     print("   " + rep["comparison"]["verdict"])
 
     if args.json:
@@ -392,7 +411,7 @@ def main(argv: Sequence[str] | None = None) -> int:
         with open(args.json, "w", encoding="utf-8") as fh:
             json.dump(rep, fh, indent=2, sort_keys=True)
         print(f"[written] {args.json}")
-    return 0 if (agree_k41 and agree_neg and spread_is_zero_k41 and spread_is_zero_neg) else 1
+    return 0 if outcome["passed"] else 1
 
 
 if __name__ == "__main__":

@@ -109,21 +109,27 @@
       "hash_of": "git_blob"
     },
     {
+      "path": "problems/PHYS-001/experiments/canonical_evidence/scripts/replay_pre_fix_control.py",
+      "sha256": "ee1fec50a652bcd739fbabf7910a35e6944e1ed9affba49776dbb8a29354c5e1",
+      "bytes": 3368,
+      "hash_of": "git_blob"
+    },
+    {
       "path": "problems/PHYS-001/experiments/canonical_evidence/scripts/reproduce_and_compare.py",
-      "sha256": "189f2eaf47b71d3a9d6c4a92b282622457202cb818366e2f0fa245c22a86b86d",
-      "bytes": 20640,
+      "sha256": "b778f2e5526360b0f36ea2dffe0c0245fbfe19fa81ea766e60890a35b9221cc1",
+      "bytes": 21390,
       "hash_of": "git_blob"
     },
     {
       "path": "problems/PHYS-001/experiments/canonical_evidence/scripts/test_canonical_repair.py",
-      "sha256": "5092d27a08ea17f0fe8d5a3800a5d92aeffc282950c088cf361a95da80683616",
-      "bytes": 7674,
+      "sha256": "801f8b3c9ac35a0dc4c5346399b1943920ebb182cace986d9971b24119584a3a",
+      "bytes": 11297,
       "hash_of": "git_blob"
     },
     {
       "path": "problems/PHYS-001/results/canonical_repair_20260929/REPAIR.md",
-      "sha256": "aa19d85c54838478cc3b6a055e80285c17f7db7ae853826b500c0a1e5d7d1f56",
-      "bytes": 2848,
+      "sha256": "e4bcc3747d25d007fbdae3459076619f4a23c07902bd87f72d1a7d6d7bb41fc1",
+      "bytes": 5110,
       "hash_of": "git_blob"
     },
     {
@@ -139,6 +145,30 @@
       "hash_of": "git_blob"
     },
     {
+      "path": "problems/PHYS-001/results/canonical_repair_20260929/pre_fix_replay.json",
+      "sha256": "ced560a7d94c9805f5b0ca7f6db2d7dd1ec67e216a3b0624c35cf4d63d189779",
+      "bytes": 1200,
+      "hash_of": "git_blob"
+    },
+    {
+      "path": "problems/PHYS-001/results/canonical_repair_20260929/pre_fix_replay.txt",
+      "sha256": "8326c3d7bfd52aabff76bfc6e2c15172b2fa69fbbd6d05044d78ca3790419811",
+      "bytes": 2233,
+      "hash_of": "git_blob"
+    },
+    {
+      "path": "problems/PHYS-001/results/canonical_repair_20260929/review_after_fix.txt",
+      "sha256": "650e750b9d5466b3a04d0bfb05842f4ca4529f9f4e2cc9cba64fb6d96f447f9b",
+      "bytes": 1629,
+      "hash_of": "git_blob"
+    },
+    {
+      "path": "problems/PHYS-001/results/canonical_repair_20260929/review_verification.json",
+      "sha256": "be85e9f9065b198a4a2e6f30f34a6422ef2617ef73dd10a6b51a2a21ba03c6cb",
+      "bytes": 1715,
+      "hash_of": "git_blob"
+    },
+    {
       "path": "problems/PHYS-001/results/canonical_repair_20260929/verification.json",
       "sha256": "d476f73e3d509e351e4d0102bb9e422b69f1153fbb56b9c6e0867c0dd8a856ad",
       "bytes": 1714,
@@ -147,12 +177,12 @@
   ],
   "result": {
     "state": "REPAIR_IMPLEMENTED_AWAITING_INDEPENDENT_REVIEW",
-    "finished_at": "2026-09-29T13:39:21.508655+00:00",
+    "finished_at": "2026-09-29T13:48:51.267426+00:00",
     "verdict": "PARTIAL_PROGRESS",
     "repair_criteria_passed": true,
     "historical_all_criteria_passed": false,
-    "summary": "Seven bounded regressions pass after demonstrating the stale-delete bug before repair. Independent analytic derivative confirms both cutoff regimes. Historical E3 FAIL and B4 NOT_MET_AS_FROZEN unchanged. No original numerical result regenerated.",
-    "independent_review": "PENDING parent GPT review; author does not self-approve or merge",
+    "summary": "Eleven bounded software regressions pass, including verdict fail-closed checks and mocked end-to-end failure JSON. An isolated replay from immutable subject e3c93de and seven-test harness e68111c reproduces the original stale-deletion failure (6 pass / 1 fail). Independent analytic derivative confirms both cutoff regimes. Historical E3 FAIL and B4 NOT_MET_AS_FROZEN unchanged; four original numerical artifacts byte-identical.",
+    "independent_review": "Parent GPT review at e68111c identified a false-success verdict; fixed with eleven tests. GitHub P1 at e68111c identified missing immutable pre-fix harness provenance; addressed by explicit retrospective immutable replay. Final review pending.",
     "limitations": [
       "No full reference baseline replay",
       "No r2 replay or repair",
@@ -166,11 +196,20 @@
     "working_directory": "repository root",
     "commands": [
       "python problems/PHYS-001/experiments/canonical_evidence/scripts/test_canonical_repair.py",
-      "python problems/PHYS-001/experiments/canonical_evidence/scripts/test_canonical_repair.py --json problems/PHYS-001/results/canonical_repair_20260929/verification.json --log problems/PHYS-001/results/canonical_repair_20260929/after_fix.txt"
+      "python problems/PHYS-001/experiments/canonical_evidence/scripts/test_canonical_repair.py --json problems/PHYS-001/results/canonical_repair_20260929/verification.json --log problems/PHYS-001/results/canonical_repair_20260929/after_fix.txt",
+      "python problems/PHYS-001/experiments/canonical_evidence/scripts/test_canonical_repair.py --json problems/PHYS-001/results/canonical_repair_20260929/review_verification.json --log problems/PHYS-001/results/canonical_repair_20260929/review_after_fix.txt",
+      "python problems/PHYS-001/experiments/canonical_evidence/scripts/replay_pre_fix_control.py --json problems/PHYS-001/results/canonical_repair_20260929/pre_fix_replay.json --log problems/PHYS-001/results/canonical_repair_20260929/pre_fix_replay.txt"
     ],
     "environment_artifact": "problems/PHYS-001/results/canonical_repair_20260929/verification.json",
     "historical_full_baseline": "NOT_RUN",
-    "r2": "NOT_RUN"
+    "r2": "NOT_RUN",
+    "pre_fix_control": {
+      "original_capture": "before_fix.txt came from an uncommitted test harness after acceptance commit ef30455; no immutable source snapshot was made at that time. Preserved, not retrospectively relabelled.",
+      "replacement_verification": "Explicit retrospective isolated replay uses runner+exponent e3c93deb54384c93e039cd3330602d0a0d08c604 and harness e68111cb11f2b2e777e1195e525904345f321472; exact export paths and Git blob hashes in pre_fix_replay.json.",
+      "command": "python problems/PHYS-001/experiments/canonical_evidence/scripts/replay_pre_fix_control.py --json problems/PHYS-001/results/canonical_repair_20260929/pre_fix_replay.json --log problems/PHYS-001/results/canonical_repair_20260929/pre_fix_replay.txt",
+      "working_directory": "repository root",
+      "observed": "replayed tests exit 1 with only stale-deletion failure; wrapper exit 0 because that is the expected negative control"
+    }
   },
   "review_repair_addenda": [
     {

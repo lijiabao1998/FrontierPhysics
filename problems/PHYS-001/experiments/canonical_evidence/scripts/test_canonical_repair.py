@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import hashlib
 import argparse
+import contextlib
 import io
 import json
 import math
@@ -117,6 +118,67 @@ class CutoffInterpretationTests(unittest.TestCase):
                 self.assertGreater(exact, 1.70)
                 self.assertLess(exact, 1.75)
                 self.assertLess(abs(exponent.local_exponent(r, 3)-exact), 2e-4)
+
+
+class VerdictTests(unittest.TestCase):
+    CHECKS = ('agree_k41', 'agree_neg', 'spread_is_zero_k41', 'spread_is_zero_neg')
+
+    def outcome(self, checks, **changes):
+        values = dict(gap_k41=2.3e-15, gap_steep=4.6e-15,
+                      spread_k41=1.2e-15, spread_steep=3.4e-15,
+                      bound=1e-12, spread_bound=1e-12)
+        values.update(changes)
+        return reproduction.comparison_outcome(checks=checks, **values)
+
+    def test_any_single_failed_check_forbids_success_claim(self):
+        for failed in self.CHECKS:
+            with self.subTest(failed=failed):
+                checks = {name: name != failed for name in self.CHECKS}
+                outcome = self.outcome(checks)
+                self.assertFalse(outcome['passed'])
+                self.assertFalse(outcome['implementation_error_excluded'])
+                self.assertEqual(outcome['status'], 'NOT_REPRODUCED')
+                self.assertIn(failed, outcome['failed_checks'])
+                self.assertIn('Implementation error (B) is not excluded', outcome['verdict'])
+                self.assertNotIn('REPRODUCED_WITHIN_FLOAT_BOUND', outcome['verdict'])
+                self.assertNotIn('slopes match', outcome['verdict'])
+
+    def test_success_uses_actual_values_not_historical_constants(self):
+        outcome = self.outcome({name: True for name in self.CHECKS})
+        self.assertTrue(outcome['passed'])
+        for value in ('2.3e-15', '4.6e-15', '1.2e-15', '3.4e-15'):
+            self.assertIn(value, outcome['verdict'])
+        self.assertNotIn('1.1e-14', outcome['verdict'])
+        self.assertNotIn('1.3e-14', outcome['verdict'])
+
+    def test_missing_check_and_nonfinite_measurement_fail_closed(self):
+        self.assertFalse(self.outcome({})['passed'])
+        checks = {name: True for name in self.CHECKS}
+        self.assertFalse(self.outcome(checks, gap_k41=None)['passed'])
+        self.assertFalse(self.outcome(checks, spread_steep=float('nan'))['passed'])
+
+    def test_main_persists_failure_claim_when_comparison_fails(self):
+        reference = {'available': True, 'sha256': 'fixture', 'exit': 1, 'seconds': 0,
+                     'results': {'verdict': 'FAIL', 'cases': [
+                         {'beta_name': name, 'sf_mean_slope': 1.0,
+                          'sf_std': 0.0, 'spec_mean_slope': 1.0}
+                         for name in ('K41_positive', 'steep_negative')]}}
+        with tempfile.TemporaryDirectory() as directory:
+            destination = Path(directory) / 'comparison.json'
+            with mock.patch.object(reproduction, 'glm_reference_run', return_value=reference), \
+                 mock.patch.object(reproduction, 'make_field_own', return_value=[1.0]), \
+                 mock.patch.object(reproduction, 's2_own', return_value=1.0), \
+                 mock.patch.object(reproduction, 's2_glm_exact', return_value=1.0), \
+                 mock.patch.object(reproduction, 'ols', return_value=0.0), \
+                 mock.patch.object(reproduction, 'slope_over', return_value=0.0), \
+                 contextlib.redirect_stdout(io.StringIO()) as stdout:
+                status = reproduction.main(['--json', str(destination)])
+            comparison = json.loads(destination.read_text(encoding='utf-8'))['comparison']
+        self.assertEqual(status, 1)
+        self.assertEqual(comparison['status'], 'NOT_REPRODUCED')
+        self.assertFalse(comparison['implementation_error_excluded'])
+        self.assertNotIn('REPRODUCED_WITHIN_FLOAT_BOUND:', stdout.getvalue())
+        self.assertIn('Implementation error (B) is not excluded', stdout.getvalue())
 
 
 if __name__ == '__main__':
