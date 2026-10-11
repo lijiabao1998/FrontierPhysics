@@ -1,0 +1,86 @@
+{
+  "searched_after_start": true,
+  "search_window_utc": "2026-10-11T18:08:48Z to 2026-10-11T18:20:00Z",
+  "queries": [
+    {
+      "category": "general",
+      "query": "three dimensional turbulence intermittency anomalous scaling complete theory 2026",
+      "engine": "web.run search index (batched)",
+      "outcome": "Retrieved model/partial theory sources; no independently confirmed scope-wide closure."
+    },
+    {
+      "category": "discipline",
+      "query": "site.arxiv.org turbulence intermittency anomalous scaling Mukherjee 2607.26896",
+      "engine": "web.run search index (batched)",
+      "outcome": "Primary 2607.26896 was opened directly; abstract and v1 history checked."
+    },
+    {
+      "category": "solution",
+      "query": "three dimensional turbulence intermittency solved resolved complete theory 2026",
+      "engine": "web.run search index (batched)",
+      "outcome": "No verified complete theory found in this bounded search; finite signal component verification is separate from parent problem."
+    },
+    {
+      "category": "criticism",
+      "query": "Disentangling intermittent flow structure contributions anomalous scaling multifractality turbulence correction erratum retraction 2607.26896",
+      "engine": "web.run search index (batched)",
+      "outcome": "No matching correction located in bounded results; visible primary version history has v1 only; absence is not proof."
+    },
+    {
+      "category": "solution",
+      "query": "turbulence intermittency anomalous scaling complete theory solved resolved",
+      "engine": "web.run search index (batched)",
+      "outcome": "Undated query returned model/partial-result sources. No independent broad resolution verified."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Mukherjee and Mukherjee, Disentangling intermittent flow structure contributions to anomalous scaling and multifractality in turbulence",
+      "url": "https://arxiv.org/abs/2607.26896",
+      "kind": "primary",
+      "version": "v1, 2026-07-29",
+      "read_scope": "abstract and version history only",
+      "supports": "Filtering studies give scoped physical results and the abstract identifies an incomplete theory. This round only checks finite synthetic DFT/energy components."
+    },
+    {
+      "title": "FFTW manual, The 1d Discrete Fourier Transform",
+      "url": "https://www.fftw.org/fftw3_doc/The-1d-Discrete-Fourier-Transform-_0028DFT_0029.html",
+      "kind": "primary",
+      "version": "manual 3.3.11 at read date",
+      "read_scope": "complete short transform-definition page",
+      "supports": "Forward sign is negative; forward transform is unnormalized; backward composition multiplies input by N."
+    },
+    {
+      "title": "NumPy manual, Discrete Fourier Transform",
+      "url": "https://numpy.org/doc/stable/reference/routines.fft.html",
+      "kind": "primary",
+      "version": "manual 2.5 at read date",
+      "read_scope": "implementation and normalization sections; no NumPy runtime used",
+      "supports": "Explicit forward/inverse formulas, signed output ordering, DC/Nyquist conventions and normalization."
+    }
+  ],
+  "receipts": [
+    {
+      "key": "math_search",
+      "response_retained_in_tool_history": true
+    },
+    {
+      "key": "physics_search",
+      "response_retained_in_tool_history": true
+    },
+    {
+      "key": "undated_search",
+      "response_retained_in_tool_history": true
+    },
+    {
+      "key": "sources_open",
+      "response_retained_in_tool_history": true
+    },
+    {
+      "key": "source_details",
+      "response_retained_in_tool_history": true
+    }
+  ],
+  "ownership": "Continuation of parent-owned component-audit scope from https://github.com/lijiabao1998/FrontierPhysics/pull/1#issuecomment-6095854301. Other PR4/6 scope and retractions inspected; DFT/energy explicitly excluded there. No new external write made.",
+  "limitations": "Bounded search, not an exhaustive proof audit. No general-solution or physical-novelty claim. Only own paraphrases stored; no copied full articles or external datasets."
+}

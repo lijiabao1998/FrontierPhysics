@@ -1,0 +1,50 @@
+[
+  {
+    "source_commit": "3740370457e32f64b22ac1bce8a8ea3467f198f8",
+    "source_path": "problems/PHYS-001/experiments/baseline_r1/k41_baseline.py",
+    "git_blob": "5f36384c1f14858d8e020302ec6e86bbaa76f9aa",
+    "snapshot": "reference/r1.py",
+    "sha256": "b1070ea49ec142addeda3be51092eaa92624199bcf788c78013cad0c172d5a70",
+    "bytes": 8706
+  },
+  {
+    "source_commit": "3740370457e32f64b22ac1bce8a8ea3467f198f8",
+    "source_path": "problems/PHYS-001/results/r1/k41_baseline_results.json",
+    "git_blob": "3e193890981a7c066b90a947cfbadfdf94d9b263",
+    "snapshot": "reference/inherited-r1.json",
+    "sha256": "bd9e81424b567ae93f451197f84542dcd07ed6b50e5ed4cc70a8ee4f0e9a3acb",
+    "bytes": 3463
+  },
+  {
+    "source_commit": "3740370457e32f64b22ac1bce8a8ea3467f198f8",
+    "source_path": "problems/PHYS-001/results/r1/hashes.txt",
+    "git_blob": "7335d0a670f5aa54bdd87d7b0b67f06fa155bbef",
+    "snapshot": "reference/inherited-r1-hashes.txt",
+    "sha256": "6d4debc45a72fd10326a7679c66417aaa5045facb132c705b6ec7d8e141cc6f1",
+    "bytes": 209
+  },
+  {
+    "source_commit": "51107b50e4c1a855c13ec1eb87381f480713f547",
+    "source_path": "problems/PHYS-001/experiments/baseline_r1/k41_baseline.py",
+    "git_blob": "aca233c86d3058a72dc5df52f4786af40f2439a3",
+    "snapshot": "reference/r2.py",
+    "sha256": "c9692b8574f4e55fc79ea0c61077fbde45756673c281fb9e332ad9196c259998",
+    "bytes": 9104
+  },
+  {
+    "source_commit": "51107b50e4c1a855c13ec1eb87381f480713f547",
+    "source_path": "problems/PHYS-001/experiments/r2_calibration/amplitude_guard.py",
+    "git_blob": "92729b64548469146767b8b5d154751d22a9cf1f",
+    "snapshot": "reference/r2-guard.py",
+    "sha256": "e8dd295bdb392fcfd4442d732dc14aafaaf2d0002cf3b91a1d26eb232db4c9d2",
+    "bytes": 1457
+  },
+  {
+    "source_commit": "51107b50e4c1a855c13ec1eb87381f480713f547",
+    "source_path": "problems/PHYS-001/results/r2/amplitude_guard_check.json",
+    "git_blob": "b6b0bb8059e410831d9f91091cda9247baf69bb4",
+    "snapshot": "reference/inherited-r2-guard.json",
+    "sha256": "6b70ee3f21c97321e2da4522abf7553f6e5739a94b044823dcdbf80816bbd416",
+    "bytes": 293
+  }
+]
