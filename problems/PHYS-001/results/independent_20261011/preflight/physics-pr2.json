@@ -1,0 +1,47 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "Action completed."
+    }
+  ],
+  "structuredContent": {
+    "url": "https://github.com/lijiabao1998/FrontierPhysics/pull/2",
+    "number": 2,
+    "state": "open",
+    "merged": false,
+    "mergeable": true,
+    "draft": false,
+    "body": "PHYS-001 r2: two-stage calibration, cycle1 FAIL recorded (zero-width bands), cycle2 PASS (90 measurements, 0 violations, frozen bands2.json); details in runs/20260927T192740433960Z-glm-PHYS-001/ROUND_REPORT.md; owner merge approval required.\n",
+    "title": "PHYS-001 r2 (glm): two-stage calibration (cycle2 PASS: floor-augmented frozen bands, 0/90 violations) + sensitivity quantification",
+    "base": "main",
+    "base_sha": "bca6b6c16efc5d2e04ff95cdfda5bea522160371",
+    "head": "glm/PHYS-001-calib-r2",
+    "head_sha": "51107b50e4c1a855c13ec1eb87381f480713f547",
+    "head_repo_id": 1391007263,
+    "head_repo_full_name": "lijiabao1998/FrontierPhysics",
+    "merge_commit_sha": "61e58bbfafa0498ada9fff4589336684f5b71630",
+    "user": {
+      "login": "lijiabao1998",
+      "name": "lijiabao1998",
+      "email": null,
+      "avatar_url": "https://avatars.githubusercontent.com/u/332928950?v=4",
+      "id": 332928950
+    },
+    "requested_reviewers": null,
+    "requested_team_reviewers": null,
+    "diff": null,
+    "comments": null,
+    "created_at": "2026-09-27T19:35:05Z",
+    "updated_at": "2026-09-29T15:34:55Z",
+    "closed_at": null,
+    "merged_at": null,
+    "commits": 11,
+    "changed_files": 44,
+    "additions": 3291,
+    "deletions": 217,
+    "display_url": "https://github.com/lijiabao1998/FrontierPhysics/pull/2",
+    "display_title": "PHYS-001 r2 (glm): two-stage calibration (cycle2 PASS: floor-augmented frozen bands, 0/90 violations) + sensitivity quantification"
+  },
+  "isError": false
+}

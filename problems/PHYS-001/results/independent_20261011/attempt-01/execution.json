@@ -1,0 +1,10 @@
+{
+  "finished_at": "2026-10-11T18:23:51.845470+00:00",
+  "wall_seconds": 0.17169540000031702,
+  "child_exit_code": 0,
+  "timed_out": false,
+  "result_present": true,
+  "execution_status": "COMPLETED",
+  "scientific_all_criteria_passed": true,
+  "result_verdict": "SYNTHETIC_COMPONENT_AUDIT_PASS"
+}

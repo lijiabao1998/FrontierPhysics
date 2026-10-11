@@ -1,0 +1,10 @@
+{
+  "source_commit": "3740370457e32f64b22ac1bce8a8ea3467f198f8",
+  "source_path": "problems/PHYS-001/results/r1/k41_baseline_results.json",
+  "classification": "INHERITED_HASH_MISMATCH_NOT_REPAIRED",
+  "recorded_sha256": "88dd5b1938cb83eefbc12afd48a0a044cdae63df44ea5d9d71c9eace8115c221",
+  "actual_git_blob_sha256": "bd9e81424b567ae93f451197f84542dcd07ed6b50e5ed4cc70a8ee4f0e9a3acb",
+  "match": false,
+  "original_result_or_manifest_modified": false,
+  "whole_original_round_rerun": false
+}

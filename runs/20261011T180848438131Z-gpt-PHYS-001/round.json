@@ -5,7 +5,7 @@
   "branch": "gpt/PHYS-001-dft-parseval-audit-20261011",
   "base_sha": "3740370457e32f64b22ac1bce8a8ea3467f198f8",
   "started_at": "2026-10-11T18:08:48.438131+00:00",
-  "state": "ADMITTED",
+  "state": "ROUND_FINISHED",
   "acceptance": "Frozen PROTOCOL.json: independent reference and original evaluator contract are separate; all required checks must exist and be true for total success. Exact finite counts/integer predicates for MATH, absolute DFT/Parseval error <=1e-10 and original energy tolerance 0.10 for PHYS; do not alter inherited criteria.",
   "not_done": "N=4096 baseline or r2 calibration; original amplitude_guard.main; structure-function/window/finite-band reanalysis; real DNS or Navier-Stokes solver; statistical independence or convergence claims; evaluator repair; remote writes, merge or deployment",
   "budget": {
@@ -86,8 +86,65 @@
     "scope_comparison": "Parent problem unchanged and OPEN. This is bounded independent replication/component audit, not a new general solution. Older unadjudicated proof claims do not supply a verified general resolution and are not a novelty target in this round.",
     "baseline": "Pinned r1/r2 inherited results and thresholds; originals unchanged. Mathematics m<=4 known counts; Physics finite periodic analytic coefficients and Parseval; inherited E3 FAIL preserved."
   },
-  "artifacts": [],
-  "result": null,
+  "artifacts": [
+    "problems/PHYS-001/results/independent_20261011/.gitattributes",
+    "problems/PHYS-001/results/independent_20261011/attempt-01/data/result.json",
+    "problems/PHYS-001/results/independent_20261011/attempt-01/data/samples.json",
+    "problems/PHYS-001/results/independent_20261011/attempt-01/execution.json",
+    "problems/PHYS-001/results/independent_20261011/attempt-01/launch.json",
+    "problems/PHYS-001/results/independent_20261011/attempt-01/stderr.txt",
+    "problems/PHYS-001/results/independent_20261011/attempt-01/stdout.txt",
+    "problems/PHYS-001/results/independent_20261011/BYTE_PRESERVATION.json",
+    "problems/PHYS-001/results/independent_20261011/INDEPENDENT_REVIEW.md",
+    "problems/PHYS-001/results/independent_20261011/INHERITED_INTEGRITY.json",
+    "problems/PHYS-001/results/independent_20261011/launch-console.txt",
+    "problems/PHYS-001/results/independent_20261011/preflight/freeze-records.txt",
+    "problems/PHYS-001/results/independent_20261011/preflight/governance-checkout.txt",
+    "problems/PHYS-001/results/independent_20261011/preflight/governance-clone.txt",
+    "problems/PHYS-001/results/independent_20261011/preflight/physics-admit.txt",
+    "problems/PHYS-001/results/independent_20261011/preflight/physics-checkout.txt",
+    "problems/PHYS-001/results/independent_20261011/preflight/physics-clone.txt",
+    "problems/PHYS-001/results/independent_20261011/preflight/physics-freeze-commit.txt",
+    "problems/PHYS-001/results/independent_20261011/preflight/physics-pr1.json",
+    "problems/PHYS-001/results/independent_20261011/preflight/physics-pr2.json",
+    "problems/PHYS-001/results/independent_20261011/preflight/physics-r2-reference.txt",
+    "problems/PHYS-001/results/independent_20261011/preflight/physics-refs.txt",
+    "problems/PHYS-001/results/independent_20261011/preflight/physics-start.txt",
+    "problems/PHYS-001/results/independent_20261011/preflight/physics-validate-inherited.txt",
+    "problems/PHYS-001/results/independent_20261011/preflight/pr1-comments.json",
+    "problems/PHYS-001/results/independent_20261011/preflight/pr1-info.json",
+    "problems/PHYS-001/results/independent_20261011/preflight/pr2-comments.json",
+    "problems/PHYS-001/results/independent_20261011/preflight/pr2-info.json",
+    "problems/PHYS-001/results/independent_20261011/preflight/source-export.txt",
+    "problems/PHYS-001/results/independent_20261011/PRESERVATION.json",
+    "problems/PHYS-001/results/independent_20261011/ROUND_REPORT.md",
+    "problems/PHYS-001/results/independent_20261011/ARTIFACT_MANIFEST.json"
+  ],
+  "result": {
+    "verdict": "SYNTHETIC_COMPONENT_AUDIT_PASS",
+    "exit_code": 0,
+    "all_checks_passed": true,
+    "checks": {
+      "case_budget_pass": true,
+      "components_and_mutations_pass": true,
+      "historical_FAIL_preserved": true
+    },
+    "named_case_count": 42,
+    "named_case_passed": 42,
+    "compute_wall_seconds": 0.17169540000031702,
+    "cpu_seconds": 0.03125,
+    "usd_spent": 0,
+    "timeout": false,
+    "parent_problem_closed": false,
+    "independent_review": "static/artifact audit completed; independent experimental rerun NOT_RUN",
+    "source_of_full_result": "problems/PHYS-001/results/independent_20261011/attempt-01/data/result.json",
+    "limits": "N=4096 baseline or r2 calibration; original amplitude_guard.main; structure-function/window/finite-band reanalysis; real DNS or Navier-Stokes solver; statistical independence or convergence claims; evaluator repair; remote writes, merge or deployment",
+    "max_errors": {
+      "analytic_energy_error": 2.220446049250313e-16,
+      "coefficient_error": 1.3116551764792642e-12,
+      "parseval_error": 4.218847493575595e-15
+    }
+  },
   "source_head": "3740370457e32f64b22ac1bce8a8ea3467f198f8",
   "remote_main_sha": "bca6b6c16efc5d2e04ff95cdfda5bea522160371",
   "governance_pin": "07d2b13051b83215182e411e1612f92f1912d8fb",
@@ -125,5 +182,9 @@
       ]
     }
   ],
-  "admitted_at": "2026-10-11T18:22:19.996026+00:00"
+  "admitted_at": "2026-10-11T18:22:19.996026+00:00",
+  "finished_at": "2026-10-11T18:23:51.845470+00:00",
+  "reviewed_at": "2026-10-11T18:33:10.435164+00:00",
+  "protocol_commit": "897adeb6abe4a3a45775496cf5cc3ab4ef351a15",
+  "artifact_manifest_sha256": "3cbedca702f6bde9a0baba3bf858b9df1adeace70f4692eba13aa4194a354195"
 }
