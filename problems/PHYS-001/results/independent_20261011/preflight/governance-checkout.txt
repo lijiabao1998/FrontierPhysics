@@ -1,0 +1,1 @@
+HEAD is now at 07d2b13 Bootstrap research governance: per-round literature gate, evidence policy, multi-agent PR workflow and negative tests

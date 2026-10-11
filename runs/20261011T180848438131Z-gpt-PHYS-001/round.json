@@ -1,0 +1,190 @@
+{
+  "round_id": "20261011T180848438131Z-gpt-PHYS-001",
+  "problem_id": "PHYS-001",
+  "agent": "gpt",
+  "branch": "gpt/PHYS-001-dft-parseval-audit-20261011",
+  "base_sha": "3740370457e32f64b22ac1bce8a8ea3467f198f8",
+  "started_at": "2026-10-11T18:08:48.438131+00:00",
+  "state": "ROUND_FINISHED",
+  "acceptance": "Frozen PROTOCOL.json: independent reference and original evaluator contract are separate; all required checks must exist and be true for total success. Exact finite counts/integer predicates for MATH, absolute DFT/Parseval error <=1e-10 and original energy tolerance 0.10 for PHYS; do not alter inherited criteria.",
+  "not_done": "N=4096 baseline or r2 calibration; original amplitude_guard.main; structure-function/window/finite-band reanalysis; real DNS or Navier-Stokes solver; statistical independence or convergence claims; evaluator repair; remote writes, merge or deployment",
+  "budget": {
+    "wall_minutes": 30,
+    "usd": 0,
+    "max_trials": 100,
+    "cpu_affinity_count": 1
+  },
+  "preflight": {
+    "checked_at": "2026-10-11T18:21:44.771530+00:00",
+    "verdict": "PARTIAL_PROGRESS",
+    "queries": [
+      {
+        "category": "general",
+        "query": "three dimensional turbulence intermittency anomalous scaling complete theory 2026",
+        "engine": "web.run search index (batched)",
+        "outcome": "Retrieved model/partial theory sources; no independently confirmed scope-wide closure."
+      },
+      {
+        "category": "discipline",
+        "query": "site.arxiv.org turbulence intermittency anomalous scaling Mukherjee 2607.26896",
+        "engine": "web.run search index (batched)",
+        "outcome": "Primary 2607.26896 was opened directly; abstract and v1 history checked."
+      },
+      {
+        "category": "solution",
+        "query": "three dimensional turbulence intermittency solved resolved complete theory 2026",
+        "engine": "web.run search index (batched)",
+        "outcome": "No verified complete theory found in this bounded search; finite signal component verification is separate from parent problem."
+      },
+      {
+        "category": "criticism",
+        "query": "Disentangling intermittent flow structure contributions anomalous scaling multifractality turbulence correction erratum retraction 2607.26896",
+        "engine": "web.run search index (batched)",
+        "outcome": "No matching correction located in bounded results; visible primary version history has v1 only; absence is not proof."
+      },
+      {
+        "category": "solution",
+        "query": "turbulence intermittency anomalous scaling complete theory solved resolved",
+        "engine": "web.run search index (batched)",
+        "outcome": "Undated query returned model/partial-result sources. No independent broad resolution verified."
+      }
+    ],
+    "sources": [
+      {
+        "title": "Mukherjee and Mukherjee, Disentangling intermittent flow structure contributions to anomalous scaling and multifractality in turbulence",
+        "url": "https://arxiv.org/abs/2607.26896",
+        "kind": "primary",
+        "version": "v1, 2026-07-29",
+        "read_scope": "abstract and version history only",
+        "supports": "Filtering studies give scoped physical results and the abstract identifies an incomplete theory. This round only checks finite synthetic DFT/energy components."
+      },
+      {
+        "title": "FFTW manual, The 1d Discrete Fourier Transform",
+        "url": "https://www.fftw.org/fftw3_doc/The-1d-Discrete-Fourier-Transform-_0028DFT_0029.html",
+        "kind": "primary",
+        "version": "manual 3.3.11 at read date",
+        "read_scope": "complete short transform-definition page",
+        "supports": "Forward sign is negative; forward transform is unnormalized; backward composition multiplies input by N."
+      },
+      {
+        "title": "NumPy manual, Discrete Fourier Transform",
+        "url": "https://numpy.org/doc/stable/reference/routines.fft.html",
+        "kind": "primary",
+        "version": "manual 2.5 at read date",
+        "read_scope": "implementation and normalization sections; no NumPy runtime used",
+        "supports": "Explicit forward/inverse formulas, signed output ordering, DC/Nyquist conventions and normalization."
+      }
+    ],
+    "sources_read": true,
+    "scope_compared": true,
+    "retractions_checked": true,
+    "licenses_checked": true,
+    "safety_checked": true,
+    "baseline_identified": true,
+    "acceptance_frozen": true,
+    "limitations": "Bounded search, not an exhaustive proof audit. No general-solution or physical-novelty claim. Only own paraphrases stored; no copied full articles or external datasets. No experimental data downloaded. Public repository source has no inspected explicit redistribution license; immutable snapshots are local owner-directed review evidence. Python startup warning is retained; no software installed.",
+    "scope_comparison": "Parent problem unchanged and OPEN. This is bounded independent replication/component audit, not a new general solution. Older unadjudicated proof claims do not supply a verified general resolution and are not a novelty target in this round.",
+    "baseline": "Pinned r1/r2 inherited results and thresholds; originals unchanged. Mathematics m<=4 known counts; Physics finite periodic analytic coefficients and Parseval; inherited E3 FAIL preserved."
+  },
+  "artifacts": [
+    "problems/PHYS-001/results/independent_20261011/.gitattributes",
+    "problems/PHYS-001/results/independent_20261011/attempt-01/data/result.json",
+    "problems/PHYS-001/results/independent_20261011/attempt-01/data/samples.json",
+    "problems/PHYS-001/results/independent_20261011/attempt-01/execution.json",
+    "problems/PHYS-001/results/independent_20261011/attempt-01/launch.json",
+    "problems/PHYS-001/results/independent_20261011/attempt-01/stderr.txt",
+    "problems/PHYS-001/results/independent_20261011/attempt-01/stdout.txt",
+    "problems/PHYS-001/results/independent_20261011/BYTE_PRESERVATION.json",
+    "problems/PHYS-001/results/independent_20261011/INDEPENDENT_REVIEW.md",
+    "problems/PHYS-001/results/independent_20261011/INHERITED_INTEGRITY.json",
+    "problems/PHYS-001/results/independent_20261011/launch-console.txt",
+    "problems/PHYS-001/results/independent_20261011/preflight/freeze-records.txt",
+    "problems/PHYS-001/results/independent_20261011/preflight/governance-checkout.txt",
+    "problems/PHYS-001/results/independent_20261011/preflight/governance-clone.txt",
+    "problems/PHYS-001/results/independent_20261011/preflight/physics-admit.txt",
+    "problems/PHYS-001/results/independent_20261011/preflight/physics-checkout.txt",
+    "problems/PHYS-001/results/independent_20261011/preflight/physics-clone.txt",
+    "problems/PHYS-001/results/independent_20261011/preflight/physics-freeze-commit.txt",
+    "problems/PHYS-001/results/independent_20261011/preflight/physics-pr1.json",
+    "problems/PHYS-001/results/independent_20261011/preflight/physics-pr2.json",
+    "problems/PHYS-001/results/independent_20261011/preflight/physics-r2-reference.txt",
+    "problems/PHYS-001/results/independent_20261011/preflight/physics-refs.txt",
+    "problems/PHYS-001/results/independent_20261011/preflight/physics-start.txt",
+    "problems/PHYS-001/results/independent_20261011/preflight/physics-validate-inherited.txt",
+    "problems/PHYS-001/results/independent_20261011/preflight/pr1-comments.json",
+    "problems/PHYS-001/results/independent_20261011/preflight/pr1-info.json",
+    "problems/PHYS-001/results/independent_20261011/preflight/pr2-comments.json",
+    "problems/PHYS-001/results/independent_20261011/preflight/pr2-info.json",
+    "problems/PHYS-001/results/independent_20261011/preflight/source-export.txt",
+    "problems/PHYS-001/results/independent_20261011/PRESERVATION.json",
+    "problems/PHYS-001/results/independent_20261011/ROUND_REPORT.md",
+    "problems/PHYS-001/results/independent_20261011/ARTIFACT_MANIFEST.json"
+  ],
+  "result": {
+    "verdict": "SYNTHETIC_COMPONENT_AUDIT_PASS",
+    "exit_code": 0,
+    "all_checks_passed": true,
+    "checks": {
+      "case_budget_pass": true,
+      "components_and_mutations_pass": true,
+      "historical_FAIL_preserved": true
+    },
+    "named_case_count": 42,
+    "named_case_passed": 42,
+    "compute_wall_seconds": 0.17169540000031702,
+    "cpu_seconds": 0.03125,
+    "usd_spent": 0,
+    "timeout": false,
+    "parent_problem_closed": false,
+    "independent_review": "static/artifact audit completed; independent experimental rerun NOT_RUN",
+    "source_of_full_result": "problems/PHYS-001/results/independent_20261011/attempt-01/data/result.json",
+    "limits": "N=4096 baseline or r2 calibration; original amplitude_guard.main; structure-function/window/finite-band reanalysis; real DNS or Navier-Stokes solver; statistical independence or convergence claims; evaluator repair; remote writes, merge or deployment",
+    "max_errors": {
+      "analytic_energy_error": 2.220446049250313e-16,
+      "coefficient_error": 1.3116551764792642e-12,
+      "parseval_error": 4.218847493575595e-15
+    }
+  },
+  "source_head": "3740370457e32f64b22ac1bce8a8ea3467f198f8",
+  "remote_main_sha": "bca6b6c16efc5d2e04ff95cdfda5bea522160371",
+  "governance_pin": "07d2b13051b83215182e411e1612f92f1912d8fb",
+  "protocol_sha256": "92928d4943e4b6cf59c2b63a3279ecdf528af2f42342fbc1fa15b52c7e6e8c81",
+  "execution_inputs_sha256": {
+    "problems/PHYS-001/experiments/independent_20261011/PROTOCOL.json": "92928d4943e4b6cf59c2b63a3279ecdf528af2f42342fbc1fa15b52c7e6e8c81",
+    "problems/PHYS-001/experiments/independent_20261011/PROTOCOL_REVIEW.md": "b69046ea48c2452de7e854201f1dcca08c8a62fcc6cddd34478350b8f6161a3c",
+    "problems/PHYS-001/experiments/independent_20261011/reference/inherited-r1-hashes.txt": "6d4debc45a72fd10326a7679c66417aaa5045facb132c705b6ec7d8e141cc6f1",
+    "problems/PHYS-001/experiments/independent_20261011/reference/inherited-r1.json": "bd9e81424b567ae93f451197f84542dcd07ed6b50e5ed4cc70a8ee4f0e9a3acb",
+    "problems/PHYS-001/experiments/independent_20261011/reference/inherited-r2-guard.json": "6b70ee3f21c97321e2da4522abf7553f6e5739a94b044823dcdbf80816bbd416",
+    "problems/PHYS-001/experiments/independent_20261011/reference/r1.py": "b1070ea49ec142addeda3be51092eaa92624199bcf788c78013cad0c172d5a70",
+    "problems/PHYS-001/experiments/independent_20261011/reference/r2-guard.py": "e8dd295bdb392fcfd4442d732dc14aafaaf2d0002cf3b91a1d26eb232db4c9d2",
+    "problems/PHYS-001/experiments/independent_20261011/reference/r2.py": "c9692b8574f4e55fc79ea0c61077fbde45756673c281fb9e332ad9196c259998",
+    "problems/PHYS-001/experiments/independent_20261011/run_bounded.py": "6523868a0b0a415eddee32814616c9d56ce94fdd4ce612538a38ee6f942262ba",
+    "problems/PHYS-001/experiments/independent_20261011/SOURCE_MANIFEST.json": "df3a2eca1567aa6bbc5e96d03f4efd2c11c36cf2b9667223ad00cafcbd56f9e0",
+    "problems/PHYS-001/experiments/independent_20261011/SOURCES.json": "71b11a1eddb2826bb3b47232116a3ee674c442ac70ac9232f9d9bab8c04d83c7",
+    "problems/PHYS-001/experiments/independent_20261011/verify.py": "0a3e17858611d77847cd5d8fba058b12e7f7697bab8ae2e6906dbe5abd0a77c1"
+  },
+  "frozen_at": "2026-10-11T18:21:44.774850+00:00",
+  "ownership_registration": "Continuation of parent-owned component-audit scope from https://github.com/lijiabao1998/FrontierPhysics/pull/1#issuecomment-6095854301. Other PR4/6 scope and retractions inspected; DFT/energy explicitly excluded there. No new external write made.",
+  "authorization": "Human user at 2026-10-11 18:02 UTC approved local retry with low concurrency, isolated workspaces, no merge/deploy; delegated continuation from thread 01a1257c-cd31-723e-b379-a721dcdb5025.",
+  "independent_protocol_review": "Separate read-only Verifier/Skeptic session independent_review: initial protocol comments incorporated before freeze; final confirmation preserved in PROTOCOL_REVIEW.md.",
+  "execution_commands": [
+    {
+      "cwd": "C:\\Users\\Leon1\\Documents\\Codex\\2026-10-12\\task\\first-batch-independent-20261011\\FrontierPhysics",
+      "command": [
+        "python",
+        "-X",
+        "utf8",
+        "C:\\Users\\Leon1\\Documents\\Codex\\2026-10-12\\task\\first-batch-independent-20261011\\FrontierPhysics\\problems\\PHYS-001\\experiments\\independent_20261011\\run_bounded.py",
+        "--round",
+        "C:\\Users\\Leon1\\Documents\\Codex\\2026-10-12\\task\\first-batch-independent-20261011\\FrontierPhysics\\runs\\20261011T180848438131Z-gpt-PHYS-001\\round.json",
+        "--tag",
+        "attempt-01"
+      ]
+    }
+  ],
+  "admitted_at": "2026-10-11T18:22:19.996026+00:00",
+  "finished_at": "2026-10-11T18:23:51.845470+00:00",
+  "reviewed_at": "2026-10-11T18:33:10.435164+00:00",
+  "protocol_commit": "897adeb6abe4a3a45775496cf5cc3ab4ef351a15",
+  "artifact_manifest_sha256": "3cbedca702f6bde9a0baba3bf858b9df1adeace70f4692eba13aa4194a354195"
+}

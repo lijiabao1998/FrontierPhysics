@@ -1,0 +1,15 @@
+[gpt/PHYS-001-dft-parseval-audit-20261011 897adeb] Freeze small-N PHYS-001 independent DFT and energy audit protocol
+ 13 files changed, 1329 insertions(+)
+ create mode 100644 problems/PHYS-001/experiments/independent_20261011/PROTOCOL.json
+ create mode 100644 problems/PHYS-001/experiments/independent_20261011/PROTOCOL_REVIEW.md
+ create mode 100644 problems/PHYS-001/experiments/independent_20261011/SOURCES.json
+ create mode 100644 problems/PHYS-001/experiments/independent_20261011/SOURCE_MANIFEST.json
+ create mode 100644 problems/PHYS-001/experiments/independent_20261011/reference/inherited-r1-hashes.txt
+ create mode 100644 problems/PHYS-001/experiments/independent_20261011/reference/inherited-r1.json
+ create mode 100644 problems/PHYS-001/experiments/independent_20261011/reference/inherited-r2-guard.json
+ create mode 100644 problems/PHYS-001/experiments/independent_20261011/reference/r1.py
+ create mode 100644 problems/PHYS-001/experiments/independent_20261011/reference/r2-guard.py
+ create mode 100644 problems/PHYS-001/experiments/independent_20261011/reference/r2.py
+ create mode 100644 problems/PHYS-001/experiments/independent_20261011/run_bounded.py
+ create mode 100644 problems/PHYS-001/experiments/independent_20261011/verify.py
+ create mode 100644 runs/20261011T180848438131Z-gpt-PHYS-001/round.json

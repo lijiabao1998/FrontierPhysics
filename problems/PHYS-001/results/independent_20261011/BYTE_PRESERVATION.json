@@ -1,0 +1,23 @@
+{
+  "initial_protocol_commit": "897adeb",
+  "initial_git_text_conversion_mismatches": [
+    {
+      "path": "problems/PHYS-001/experiments/independent_20261011/reference/inherited-r2-guard.json",
+      "frozen_working_sha256": "6b70ee3f21c97321e2da4522abf7553f6e5739a94b044823dcdbf80816bbd416",
+      "initial_commit_blob_sha256": "5433e02bdbfd0a758d26ab950cabe6b2445c6544c3bb1e059f7ff95140241c44"
+    },
+    {
+      "path": "problems/PHYS-001/experiments/independent_20261011/reference/r2.py",
+      "frozen_working_sha256": "c9692b8574f4e55fc79ea0c61077fbde45756673c281fb9e332ad9196c259998",
+      "initial_commit_blob_sha256": "095967aebcb38d6f0cc403660218ad690567c1b590b05226bdf332beb76ae3ca"
+    },
+    {
+      "path": "problems/PHYS-001/experiments/independent_20261011/SOURCE_MANIFEST.json",
+      "frozen_working_sha256": "df3a2eca1567aa6bbc5e96d03f4efd2c11c36cf2b9667223ad00cafcbd56f9e0",
+      "initial_commit_blob_sha256": "766415f709bc2bd41e5aac21b0e237067f796119abd1d3018c5d53fc064cc2aa"
+    }
+  ],
+  "remediation": "Added * -text attributes only to this round experiment/result directories; scope-limited Git renormalize re-adds exact executed bytes. Original protocol/harness/result bytes unchanged; final blob audit must match all execution input hashes.",
+  "evaluator_or_threshold_change": false,
+  "research_rerun": false
+}

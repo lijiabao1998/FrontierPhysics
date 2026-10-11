@@ -1,0 +1,175 @@
+{
+  "format": "sha256-raw-bytes-v1",
+  "files": [
+    {
+      "path": "problems/PHYS-001/results/independent_20261011/.gitattributes",
+      "sha256": "705fd4d6451a31d36b3df7de96f83f30ac976c9b4a6d1e51671d8e2f33e2d0da",
+      "bytes": 8
+    },
+    {
+      "path": "problems/PHYS-001/results/independent_20261011/attempt-01/data/result.json",
+      "sha256": "1a177b3660e05789348bb29137274c85220d61c956c57dbfb8748bce9d79bccf",
+      "bytes": 15145
+    },
+    {
+      "path": "problems/PHYS-001/results/independent_20261011/attempt-01/data/samples.json",
+      "sha256": "35ca63855ab8b8ab77ae8ecf51a099920c00f6ccdac1b82643f2d02e571d4b3d",
+      "bytes": 384616
+    },
+    {
+      "path": "problems/PHYS-001/results/independent_20261011/attempt-01/execution.json",
+      "sha256": "e9fdeae07fe93a688601fceea620395333c7bb6b4b1b45cf60741fc2521e13e9",
+      "bytes": 308
+    },
+    {
+      "path": "problems/PHYS-001/results/independent_20261011/attempt-01/launch.json",
+      "sha256": "25ddcb921e5ce573d8b4c772ed45094e57505cb7ad28a931b9ade75c541aa44b",
+      "bytes": 1292
+    },
+    {
+      "path": "problems/PHYS-001/results/independent_20261011/attempt-01/stderr.txt",
+      "sha256": "8531d820d22f5cdadd3f00c00d592e13c211ecf2ec0fe113c1931848a5ccc97d",
+      "bytes": 98
+    },
+    {
+      "path": "problems/PHYS-001/results/independent_20261011/attempt-01/stdout.txt",
+      "sha256": "ad194ba40f9039c30f0aa0de67ce54e44d35628fb03c161a9be8f00a6debe80a",
+      "bytes": 10611
+    },
+    {
+      "path": "problems/PHYS-001/results/independent_20261011/BYTE_PRESERVATION.json",
+      "sha256": "a9268263bffcd2907e424a976e3445e93175ffc306b3cfce57be2d687be89fcb",
+      "bytes": 1366
+    },
+    {
+      "path": "problems/PHYS-001/results/independent_20261011/INDEPENDENT_REVIEW.md",
+      "sha256": "00557a4ebf6fe97d3c856594ee10fa3666eb5fefc6f4c5f0187c738e3acb68af",
+      "bytes": 1712
+    },
+    {
+      "path": "problems/PHYS-001/results/independent_20261011/INHERITED_INTEGRITY.json",
+      "sha256": "d999bcf72a5df252c1808877d67e83400733bf6d1868229c3c7f270486329fdb",
+      "bytes": 492
+    },
+    {
+      "path": "problems/PHYS-001/results/independent_20261011/launch-console.txt",
+      "sha256": "d96c25d246d9f9cea13210040fc431274c26dac672f065128c1ccddbe5a597a5",
+      "bytes": 1581
+    },
+    {
+      "path": "problems/PHYS-001/results/independent_20261011/preflight/freeze-records.txt",
+      "sha256": "6ba63a31465695e67f2d758a8137b18455dacef94a1c6e03f718161e08c9bc07",
+      "bytes": 654
+    },
+    {
+      "path": "problems/PHYS-001/results/independent_20261011/preflight/governance-checkout.txt",
+      "sha256": "9ebf70cb6c158a467ef35c184d520c45e011b237a1f27aea7ecd4157f8a0fbd5",
+      "bytes": 142
+    },
+    {
+      "path": "problems/PHYS-001/results/independent_20261011/preflight/governance-clone.txt",
+      "sha256": "954fed12aa5815e4f276dd260788055637e468f79838ad01228a2f9bc958fb0f",
+      "bytes": 71
+    },
+    {
+      "path": "problems/PHYS-001/results/independent_20261011/preflight/physics-admit.txt",
+      "sha256": "0d9c58d33183f10c6e3f35b54fd380c7d939901488d73a5d695b1fbf30537a0d",
+      "bytes": 197
+    },
+    {
+      "path": "problems/PHYS-001/results/independent_20261011/preflight/physics-checkout.txt",
+      "sha256": "3dadc121a615f86bf747c8d34956e8f6f72a6aea60fbe4c1393697a0a068abcb",
+      "bytes": 69
+    },
+    {
+      "path": "problems/PHYS-001/results/independent_20261011/preflight/physics-clone.txt",
+      "sha256": "de78682a252fe61ca5fc0523f88994a9c221c5021629d920160e91e7786c1089",
+      "bytes": 68
+    },
+    {
+      "path": "problems/PHYS-001/results/independent_20261011/preflight/physics-freeze-commit.txt",
+      "sha256": "4684b425fc593600134686632eb00c28bbaadfb073793b6c604852924a7b9c95",
+      "bytes": 1336
+    },
+    {
+      "path": "problems/PHYS-001/results/independent_20261011/preflight/physics-pr1.json",
+      "sha256": "f489ef7a743b0a71ba043f0f7b59a645ec9c154f67f62b80bc14bd19769942e2",
+      "bytes": 3697
+    },
+    {
+      "path": "problems/PHYS-001/results/independent_20261011/preflight/physics-pr2.json",
+      "sha256": "a4ad8a46d6d712ffd4016f11d92664cb27ec1e35aeee9e9ba70a2a2222fc6aac",
+      "bytes": 1817
+    },
+    {
+      "path": "problems/PHYS-001/results/independent_20261011/preflight/physics-r2-reference.txt",
+      "sha256": "f3d210b32f75341f2b513042184604b3d4612305c93bdf1af66a4aacd023e873",
+      "bytes": 1665
+    },
+    {
+      "path": "problems/PHYS-001/results/independent_20261011/preflight/physics-refs.txt",
+      "sha256": "af0143609d8eaed27cf7902951f3d0b0ae6b5e378624ab90ddf2a32897a24780",
+      "bytes": 84
+    },
+    {
+      "path": "problems/PHYS-001/results/independent_20261011/preflight/physics-start.txt",
+      "sha256": "fb5a86287c24fd6e179a999a2d9cf261edb8ad81f2b1d2cec4a780f4e5b28276",
+      "bytes": 316
+    },
+    {
+      "path": "problems/PHYS-001/results/independent_20261011/preflight/physics-validate-inherited.txt",
+      "sha256": "eb943947fc7cad12d4d82b201a2fb9b10caa4435f0e28a4d123bd42bf98c661a",
+      "bytes": 184
+    },
+    {
+      "path": "problems/PHYS-001/results/independent_20261011/preflight/pr1-comments.json",
+      "sha256": "09dde51a9dfb6d40b6e15f38c4f6ec3e28cf60959b4448dba6f278aff0b43cd6",
+      "bytes": 37316
+    },
+    {
+      "path": "problems/PHYS-001/results/independent_20261011/preflight/pr1-info.json",
+      "sha256": "f489ef7a743b0a71ba043f0f7b59a645ec9c154f67f62b80bc14bd19769942e2",
+      "bytes": 3697
+    },
+    {
+      "path": "problems/PHYS-001/results/independent_20261011/preflight/pr2-comments.json",
+      "sha256": "77fdd29a6f6982770e89bcff20b406776e7ac64b6508cb5b02cfd69ef37fa19f",
+      "bytes": 129551
+    },
+    {
+      "path": "problems/PHYS-001/results/independent_20261011/preflight/pr2-info.json",
+      "sha256": "a4ad8a46d6d712ffd4016f11d92664cb27ec1e35aeee9e9ba70a2a2222fc6aac",
+      "bytes": 1817
+    },
+    {
+      "path": "problems/PHYS-001/results/independent_20261011/preflight/source-export.txt",
+      "sha256": "e56b82d9a07ecd22d51e2137266be5258bd3aa32a52255aa30b33607cc2050b1",
+      "bytes": 597
+    },
+    {
+      "path": "problems/PHYS-001/results/independent_20261011/PRESERVATION.json",
+      "sha256": "5f90616372d79ca0667e0d4c2015e17f14eee03a3aebe4005966c5d88d7456d5",
+      "bytes": 535
+    },
+    {
+      "path": "problems/PHYS-001/results/independent_20261011/ROUND_REPORT.md",
+      "sha256": "79301e2e2f4ed08ed8205e8f112ab3dc643376333771f4340a61049fab57e3f6",
+      "bytes": 5811
+    }
+  ],
+  "frozen_execution_inputs": {
+    "problems/PHYS-001/experiments/independent_20261011/PROTOCOL.json": "92928d4943e4b6cf59c2b63a3279ecdf528af2f42342fbc1fa15b52c7e6e8c81",
+    "problems/PHYS-001/experiments/independent_20261011/PROTOCOL_REVIEW.md": "b69046ea48c2452de7e854201f1dcca08c8a62fcc6cddd34478350b8f6161a3c",
+    "problems/PHYS-001/experiments/independent_20261011/reference/inherited-r1-hashes.txt": "6d4debc45a72fd10326a7679c66417aaa5045facb132c705b6ec7d8e141cc6f1",
+    "problems/PHYS-001/experiments/independent_20261011/reference/inherited-r1.json": "bd9e81424b567ae93f451197f84542dcd07ed6b50e5ed4cc70a8ee4f0e9a3acb",
+    "problems/PHYS-001/experiments/independent_20261011/reference/inherited-r2-guard.json": "6b70ee3f21c97321e2da4522abf7553f6e5739a94b044823dcdbf80816bbd416",
+    "problems/PHYS-001/experiments/independent_20261011/reference/r1.py": "b1070ea49ec142addeda3be51092eaa92624199bcf788c78013cad0c172d5a70",
+    "problems/PHYS-001/experiments/independent_20261011/reference/r2-guard.py": "e8dd295bdb392fcfd4442d732dc14aafaaf2d0002cf3b91a1d26eb232db4c9d2",
+    "problems/PHYS-001/experiments/independent_20261011/reference/r2.py": "c9692b8574f4e55fc79ea0c61077fbde45756673c281fb9e332ad9196c259998",
+    "problems/PHYS-001/experiments/independent_20261011/run_bounded.py": "6523868a0b0a415eddee32814616c9d56ce94fdd4ce612538a38ee6f942262ba",
+    "problems/PHYS-001/experiments/independent_20261011/SOURCE_MANIFEST.json": "df3a2eca1567aa6bbc5e96d03f4efd2c11c36cf2b9667223ad00cafcbd56f9e0",
+    "problems/PHYS-001/experiments/independent_20261011/SOURCES.json": "71b11a1eddb2826bb3b47232116a3ee674c442ac70ac9232f9d9bab8c04d83c7",
+    "problems/PHYS-001/experiments/independent_20261011/verify.py": "0a3e17858611d77847cd5d8fba058b12e7f7697bab8ae2e6906dbe5abd0a77c1"
+  },
+  "excludes": "This manifest itself and mutable round metadata; no circular hashes."
+}

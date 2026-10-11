@@ -1,0 +1,179 @@
+{
+  "schema_version": 1,
+  "problem_id": "PHYS-001",
+  "classification": "BOUNDED_INDEPENDENT_SYNTHETIC_COMPONENT_VERIFICATION",
+  "source_head": "3740370457e32f64b22ac1bce8a8ea3467f198f8",
+  "r2_reference_head": "51107b50e4c1a855c13ec1eb87381f480713f547",
+  "remote_main": "bca6b6c16efc5d2e04ff95cdfda5bea522160371",
+  "governance_pin": "07d2b13051b83215182e411e1612f92f1912d8fb",
+  "budget": {
+    "wall_minutes": 30,
+    "usd": 0,
+    "cpu_affinity_count": 1,
+    "max_named_cases": 100
+  },
+  "signal": {
+    "N": [
+      32,
+      64,
+      128
+    ],
+    "units": "dimensionless sample and amplitude; period=1; j=0..N-1; no PDE/no time evolution",
+    "fixtures": [
+      "zero",
+      "dc_0.25",
+      "cos_k3_A1.25_phase0",
+      "sin_k5_A0.75",
+      "nyquist_A0.5",
+      "mixed"
+    ],
+    "mixed": {
+      "dc": 0.25,
+      "nyquist": 0.5,
+      "modes": [
+        {
+          "k": 3,
+          "amplitude": 1.25,
+          "phase_radians": 0.3
+        },
+        {
+          "k": 5,
+          "amplitude": 0.75,
+          "phase_radians": -0.7
+        },
+        {
+          "k": 7,
+          "amplitude": 0.4,
+          "phase_radians": 1.1
+        }
+      ]
+    },
+    "seed": "NONE: fully deterministic fixed coefficients",
+    "formula": "u[j]=dc+nyquist*(-1)^j+sum_(k,A,phi) A*cos(2*pi*k*j/N+phi); energy-only fixture sets dc=nyquist=0 and uses exact mixed interior modes",
+    "fixture_table": {
+      "zero": {
+        "dc": 0,
+        "nyquist": 0,
+        "modes": []
+      },
+      "dc_0_25": {
+        "dc": 0.25,
+        "nyquist": 0,
+        "modes": []
+      },
+      "cos_k3_A1_25_phase0": {
+        "dc": 0,
+        "nyquist": 0,
+        "modes": [
+          {
+            "k": 3,
+            "amplitude": 1.25,
+            "phase_radians": 0
+          }
+        ]
+      },
+      "sin_k5_A0_75": {
+        "formula": "0.75*sin(2*pi*5*j/N)",
+        "positive_coefficient": "-i*N*0.75/2",
+        "negative_coefficient": "+i*N*0.75/2"
+      },
+      "nyquist_A0_5": {
+        "dc": 0,
+        "nyquist": 0.5,
+        "modes": []
+      },
+      "mixed": {
+        "dc": 0.25,
+        "nyquist": 0.5,
+        "modes": [
+          {
+            "k": 3,
+            "amplitude": 1.25,
+            "phase_radians": 0.3
+          },
+          {
+            "k": 5,
+            "amplitude": 0.75,
+            "phase_radians": -0.7
+          },
+          {
+            "k": 7,
+            "amplitude": 0.4,
+            "phase_radians": 1.1
+          }
+        ]
+      }
+    }
+  },
+  "DFT": {
+    "formula": "X[k]=sum_j u[j]*(cos(2*pi*j*k/N)-i*sin(2*pi*j*k/N))",
+    "method": "independent O(N^2) summation using math.fsum; no FFT library",
+    "normalization": "forward unnormalized; inverse /N",
+    "parseval": "mean(u^2)=sum_k |X[k]|^2/N^2",
+    "analytic_coefficients": "DC=N*dc; Nyquist=N*nyquist; positive interior mode=N*A/2*exp(i*phase), negative=conjugate",
+    "analytic_energy": "dc^2+nyquist^2+sum_interior(A^2/2)"
+  },
+  "tolerances": {
+    "max_absolute_complex_coefficient_error": 1e-10,
+    "absolute_energy_and_parseval_error": 1e-10,
+    "original_relative_energy_tolerance": 0.1
+  },
+  "energy_component": {
+    "fixture": "zero DC, no Nyquist, mixed three interior modes with actual amplitudes",
+    "clean": "PASS at original relative energy tolerance",
+    "inflated": "1.5*u with unchanged actual reference amplitudes must FAIL; ideal relative residual=1.25",
+    "original_component": "load only reviewed fft and energy_budget functions; bind module N=fixture N locally"
+  },
+  "mutations": [
+    "positive_exponent_conjugation",
+    "forward_divide_by_N",
+    "Parseval_divide_by_N_instead_of_N_squared",
+    "Parseval_divide_by_N_cubed",
+    "inflated_reference_amplitudes_1.5",
+    "wrong_single_amplitude_reference_[1.0]"
+  ],
+  "reference_separation": {
+    "r2_historical": "read frozen amplitude_guard_check.json; 4.090885079679787e-14 clean and 1.250000000000092 inflated are inherited evidence, not a new run",
+    "r1_guard": "inspect original [1.0] reference and dynamically demonstrate on small-N fixture; do not rerun original 4096-field",
+    "E3": "retain stored 1.5400285073651272<1.7 and original BASELINE_FAIL_DO_NOT_PROCEED_TO_NOVELTY"
+  },
+  "acceptance": "every clean coefficient/energy identity must pass and each named mutation must be rejected; summary rejects missing/failed checks; separate current component validation from inherited r1/r2 round verdicts",
+  "not_run": [
+    "N=4096 baseline or r2 calibration",
+    "original amplitude_guard.main",
+    "structure-function/window/finite-band reanalysis",
+    "real DNS or Navier-Stokes solver",
+    "statistical independence or convergence claims",
+    "evaluator repair",
+    "remote writes, merge or deployment"
+  ],
+  "limitations": "Finite deterministic periodic signals only; direct DFT is numerically independent of radix-2 algorithm but the author has read source (not a blinded verification); no physical novelty.",
+  "mutation_expectations": {
+    "positive_exponent_conjugation": {
+      "fixture": "mixed including nonzero phases/sine",
+      "rejection": "max absolute signed coefficient error >1e-10; Parseval alone cannot reject conjugation"
+    },
+    "forward_divide_by_N": {
+      "fixture": "mixed",
+      "rejection": "max absolute coefficient error >1e-10"
+    },
+    "Parseval_divide_by_N_instead_of_N_squared": {
+      "fixture": "mixed",
+      "rejection": "absolute mean-square mismatch >1e-10"
+    },
+    "Parseval_divide_by_N_cubed": {
+      "fixture": "mixed",
+      "rejection": "absolute mean-square mismatch >1e-10"
+    },
+    "inflated_reference_amplitudes_1_5": {
+      "fixture": "1.5*energy-only input and 1.5*actual amplitudes",
+      "rejection": "mutation's inflated negative-control detection must fail; validator must detect this failure"
+    },
+    "wrong_single_amplitude_reference": {
+      "fixture": "clean energy-only input",
+      "rejection": "clean reference PASS must fail; do not count inflated-only rejection as a valid guard"
+    }
+  },
+  "execution_source_policy": "compile only reviewed fft and energy_budget AST definitions from pinned sources with math and fixture-specific N; no original module top-level/main/make_field execution",
+  "runtime_errors": "any exception/source/protocol hash failure must preserve stderr and produce nonzero status; no success result can be reused; missing named checks false"
+}
