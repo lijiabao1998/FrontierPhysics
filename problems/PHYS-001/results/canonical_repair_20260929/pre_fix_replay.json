@@ -1,0 +1,28 @@
+{
+  "subject_sha": "e3c93deb54384c93e039cd3330602d0a0d08c604",
+  "harness_sha": "e68111cb11f2b2e777e1195e525904345f321472",
+  "exports": [
+    {
+      "path": "problems/PHYS-001/experiments/canonical_evidence/scripts/reproduce_and_compare.py",
+      "commit": "e3c93deb54384c93e039cd3330602d0a0d08c604",
+      "sha256_git_blob": "5873a3dabfb43f374d0ca0f3cd8973e759ccebd239505a4a950e95321698021c"
+    },
+    {
+      "path": "problems/PHYS-001/experiments/canonical_evidence/scripts/s2_local_exponent.py",
+      "commit": "e3c93deb54384c93e039cd3330602d0a0d08c604",
+      "sha256_git_blob": "3784ccd8e0cc7f1ed0c5b13101602eca79886537c36ad8321eff9622e5d38ecc"
+    },
+    {
+      "path": "problems/PHYS-001/experiments/canonical_evidence/scripts/test_canonical_repair.py",
+      "commit": "e68111cb11f2b2e777e1195e525904345f321472",
+      "sha256_git_blob": "5092d27a08ea17f0fe8d5a3800a5d92aeffc282950c088cf361a95da80683616"
+    }
+  ],
+  "command": [
+    "C:\\Users\\Leon1\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
+    "test_canonical_repair.py"
+  ],
+  "working_directory": "isolated export under repository scratch/",
+  "observed_exit": 1,
+  "expected_negative_control_observed": true
+}

@@ -1,0 +1,196 @@
+{
+  "round_id": "20260928T035326002008Z-dsk-PHYS-001",
+  "problem_id": "PHYS-001",
+  "agent": "dsk",
+  "branch": "dsk/PHYS-001-independent-audit-r1",
+  "base_sha": "bca6b6c16efc5d2e04ff95cdfda5bea522160371",
+  "started_at": "2026-09-28T03:53:26.002008+00:00",
+  "state": "ADMITTED",
+  "acceptance": "FROZEN BEFORE THE RE-RUN. This round re-executes, from the current reproducible state, the independent audit of the PHYS-001 r1 E3 failure, which was previously done as pre-admission exploratory work (the earlier exploratory record has been deleted rather than retconned; see the PR description). Acceptance criteria, fixed now: (B1) EXCLUDE OR FAIL TO EXCLUDE an implementation error in GLM's beta=3 structure-function slope BY EXACT REPRODUCTION, not by a tolerance: run GLM's script verbatim with its SHA-256 recorded, and independently reimplement its generator and estimator; require agreement between the independent reimplementation and GLM's published per-case values, and report the residual as an explicit error bound. A tolerance-based 'consistent' claim is NOT acceptable evidence and must be retracted if the reproduction fails; (B2) compute the LOCAL exponent d ln S2 / d ln r of the exact discrete mode sum at r = 16, 32, 64, 128, 217, 249 and state whether asymptotic saturation is established at the window's edge; if it is not, the saturation/plateau language must be retracted and replaced by an accurate description of where the window sits; (B3) derive from the exact local-exponent profile which windows satisfy the previously proposed resolved-band conditions, VALIDATE any such window (sample count, stability under perturbation, discretisation, and whether beta=5/3 and beta=2 approach theory), and retract the recommendation if it does not do what it claims; do not tune a window to reproduce a desired exponent; (B4) report the beta=3 log constant C0 with a precision the numerics actually support: high-precision evaluation plus an explicit sweep over the advertised x range with a saved convergence table; delete any unsupported precision claim; (B5) re-run the CNF-style regression discipline on the physics side by re-running both audit scripts and requiring their JSON to be regenerated inside this round, and record the verdict on the E3 FAIL as one of (A) threshold, (B) implementation, (C) physics, (D) finite-window, (E) insufficient evidence, with the evidence for whichever is chosen. FAILURE HANDLING, fixed now: any criterion that fails is recorded as a failure; no acceptance criterion may be relaxed after the run; if (B1) cannot be achieved the implementation-error exclusion must be downgraded rather than asserted.",
+  "not_done": "No claim about real three-dimensional Navier-Stokes turbulence: the entire round concerns an estimator applied to a synthetic spectrum, which is what the control was. GLM's r2 branch code was not executed, so its '90 measurements, 0 violations' remains a documented claim, not an independent reproduction. GLM's FFT periodogram estimator and energy-budget identity were NOT independently reimplemented. No S3/4-5 law check, no shell model, no real DNS or experimental data. The synthetic field is studied in closed form rather than by reproducing random-phase realisations (justified by the estimator's exact phase-independence, which this round establishes). ACTUAL ELAPSED TIME exceeded the declared budget.",
+  "budget": {
+    "wall_minutes": 120,
+    "usd": 0,
+    "max_trials": 100
+  },
+  "preflight": {
+    "checked_at": "2026-09-28T03:53:51+00:00",
+    "verdict": "NO_RESOLUTION_FOUND",
+    "sources_read": true,
+    "scope_compared": true,
+    "retractions_checked": true,
+    "licenses_checked": true,
+    "safety_checked": true,
+    "baseline_identified": true,
+    "acceptance_frozen": true,
+    "queries": [
+      {
+        "query": "turbulence intermittency anomalous scaling structure function 2026 open problem review",
+        "engine": "zcode-websearch(web_search_prime)",
+        "category": "general",
+        "outcome": "found Buaria & Pumir, J. Fluid Mech. 1034 (2026), a review of small-scale intermittency: prevailing intermittency theories fail to describe observed longitudinal/transverse and strain/vorticity asymmetries, and a complete theory would need to unify statistical scaling frameworks with gradient-amplification dynamics. Confirms PHYS-001 is open and that no closed-form S_q(r) exists for q != 3"
+      },
+      {
+        "query": "second order structure function scaling exponent k^-3 spectrum marginal logarithmic correction turbulence",
+        "engine": "zcode-websearch",
+        "category": "solution",
+        "outcome": "found arXiv:2308.06997 on the MARGINAL spectral case: for E(k) ~ k^-xi with xi > 3 the analytic r^2 contribution dominates the naive r^(xi-1), and the authors extract the hidden subleading exponent with a second-difference technique. Also found the 2D enstrophy cascade form E(k) ~ k^-3 (chi_n + ln(l_0/r))^(2n/3), i.e. an explicit marginal logarithmic correction. This LITERATURE-CORROBORATES the r^2 log behaviour found analytically in this round for beta=3, and confirms k^-3 is the boundary case"
+      },
+      {
+        "query": "differentiable structure function estimator finite fitting window bias power law exponent error turbulence measurement",
+        "engine": "zcode-websearch",
+        "category": "criticism",
+        "outcome": "found 'Should Structure Functions Be Used to Estimate Power Laws in Turbulence? A Comparative Study', which states that the structure function lacks a tractable sampling theory so confidence intervals cannot be computed, that its smoothness masks variability and inflates R^2, and that regressions over the nearly linear region agree only approximately with prescribed values. This is direct literature support for the finite-window conclusion of this round. No erratum or retraction was found for the card's primary"
+      },
+      {
+        "query": "Mukherjee 2026 disentangling intermittent flow structure anomalous scaling multifractality turbulence arXiv",
+        "engine": "zcode-websearch",
+        "category": "discipline",
+        "outcome": "confirms the card's primary arXiv:2607.26896v1 (R. Mukherjee and S. Mukherjee, July 2026): DNS of 3D incompressible Navier-Stokes on a 512^3 periodic box at Re_lambda ~ 200, filtering vorticity and inverting Biot-Savart; as extreme vorticity is filtered the energy-spectrum scaling persists while structure-function scalings tend toward their Kolmogorov values. A method advance, not a resolution of the anomalous-scaling problem"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2607.26896",
+        "title": "R. Mukherjee and S. Mukherjee, Disentangling intermittent flow structure contributions to anomalous scaling and multifractality in turbulence (July 2026)",
+        "kind": "primary",
+        "supports": "the card's primary; a filtering-based method advance; contains no closed-form anomalous exponents, so PHYS-001 remains open"
+      },
+      {
+        "url": "https://staff.washington.edu/dbp/PDFFILES/struc-func.pdf",
+        "title": "Should Structure Functions Be Used to Estimate Power Laws in Turbulence? A Comparative Study",
+        "kind": "primary",
+        "supports": "structure functions lack a tractable sampling theory (no computable confidence intervals), their smoothness masks exponent variability, and window regressions agree only approximately with prescribed values. Supports the finite-window conclusion and the refusal to treat a single fitted slope as an exponent"
+      },
+      {
+        "url": "https://arxiv.org/abs/2308.06997",
+        "title": "Marginal spectra and subleading scaling (arXiv:2308.06997)",
+        "kind": "primary",
+        "supports": "the k^-3 boundary case: for xi > 3 the analytic r^2 term dominates and the naive exponent is hidden; independent confirmation that k^-3 is marginal and that log/marginal corrections appear there. Read at abstract level"
+      },
+      {
+        "url": "https://github.com/lijiabao1998/FrontierPhysics",
+        "title": "FrontierPhysics PHYS-001 r1 and r2 round records (glm/PHYS-001-baseline-r1, glm/PHYS-001-calib-r2)",
+        "kind": "secondary",
+        "supports": "the frozen band [3,900] at N=4096, the 13 geometric lags 16..249, the 5-seed protocol and the frozen E3 threshold >= 1.7 audited here; read as reports, code not modified"
+      }
+    ],
+    "limitations": "Bounded search: 4 queries spanning the four categories plus direct reading of the card's primary and of GLM's round records. The two supporting papers (the structure-function critique and arXiv:2308.06997) were read at abstract/summary level, not in full. No paid literature was consulted. GLM's r2 code was not executed. A search returning nothing would not be a proof of openness. The audit's own claims are limited to the synthetic estimator; nothing here bears on physical turbulence.",
+    "scope_comparison": "Card scope: a falsifiable intermittency mechanism and anomalous-exponent description for high-Reynolds-number nearly-isotropic incompressible 3D turbulence, with quantified validity limits. No same-scope resolution exists; the 2026 review and the card's primary both leave the complete theory open. Explicitly NOT answers: (a) a synthetic spectrum is not a Navier-Stokes solution; (b) a successful power-law fit over a finite range is not a general proof -- and this round quantifies exactly how window-dependent such a fit is; (c) a beta=3 control tests the ESTIMATOR, not the physics; (d) the marginal-log literature is about spectra, not about D(n)-style discrete questions.",
+    "baseline": "Baseline = GLM's r1 configuration reproduced exactly (N=4096, band [3,900], 13 geometric lags 16..249, seeds 1..5, threshold 1.7) and an independent implementation of the definition S2(r) = sum_k k^-beta (1 - cos(2*pi*k*r/N)) with no FFT and no estimator, cross-checked against (i) GLM's script run verbatim with a recorded hash and (ii) the closed form for beta=3. Zero-perturbation controls: beta=2 must reproduce r^1 and beta=5/3 the 2/3 law, at least within their windows' demonstrated spread."
+  },
+  "result": {
+    "state": "ROUND_FINISHED",
+    "verdict": "NO_RESOLUTION_FOUND",
+    "all_criteria_passed": false,
+    "summary": "See canonical_evidence/CANONICAL_FACTS.md and PHYS001_INDEPENDENT_AUDIT.md for the claims and their retractions; this record points at them rather than duplicating numbers that could drift. In brief: GLM's structure-function slope is reproduced to 1.1e-14/1.3e-14 against their full-precision values, so implementation error is excluded by exact reproduction rather than by a tolerance; the exact local exponent at beta=3 falls from 1.7324 at r=16 to 1.0723 at r=249, so asymptotic saturation is NOT reached and the plateau language is retracted; the frozen threshold 1.7 is the window's lower-edge local exponent; the measured slope is a (band, window, lag set) property; C0 = 0.4613921675492818 standard-library-only, with three earlier values retracted. VERDICT on the E3 FAIL: (D) finite-window effect with (A) proximate, NOT (B), (C) incomplete rather than wrong, and the FAIL is KEPT. PHYS-001 remains OPEN; nothing here is a claim about real turbulence.",
+    "wall_minutes_used_approx": 120,
+    "criteria": {
+      "B1_exact_reproduction": {
+        "passed": true,
+        "detail": "gaps 1.1e-14 and 1.3e-14 against GLM's full-precision values; no tolerance"
+      },
+      "B2_local_exponent": {
+        "passed": true,
+        "detail": "exact local exponent 1.7324 -> 1.0723; saturation NOT reached; plateau language retracted"
+      },
+      "B3_window_gate": {
+        "passed": true,
+        "detail": "the proposed [4,20] gate and its replacement are both retracted; see CANONICAL_FACTS.md P3/P4"
+      },
+      "B4_log_constant_precision_supported": {
+        "passed": false,
+        "criterion_as_frozen": "high-precision evaluation plus the sweep over x = 1e-1..1e-20",
+        "frozen_criterion_literal_met": false,
+        "criterion_status": "NOT_MET_AS_FROZEN",
+        "criterion_explanation": "The frozen B4 wording required a HIGH-PRECISION evaluation. The committed implementation is ordinary double precision (standard-library Simpson plus a series), ignores --dps, and no multiprecision check is reproduced by any committed command. Marking all_criteria_passed true would silently relax the criterion after execution, so B4 is recorded as NOT MET against its frozen wording. What IS established, and what the C0 claim needs: two independently executed quadrature routes agree to 1.1e-12, eight orders of magnitude better than the 2.1e-4 sweep spread that dominates the claim's supported precision. The reviewer's alternative -- preserve and run a reproducible high-precision check -- would mean adding a multiprecision dependency, which the owner's freeze excludes from this unit.",
+        "C0_value": 0.4613921675492818,
+        "routes_agree_to": 1.1e-12,
+        "sweep_spread": 0.00021
+      },
+      "B5_verdict_on_the_E3_fail": {
+        "passed": true,
+        "detail": "(D) finite-window with (A) proximate; NOT (B); (C) incomplete rather than wrong; FAIL kept"
+      }
+    },
+    "criteria_with_scope_deviations": [
+      "B4"
+    ]
+  },
+  "admitted_at": "2026-09-28T08:00:38.309654+00:00",
+  "artifact_regeneration_note": "Historical numerical artifacts are retained byte-for-byte from e3c93deb54384c93e039cd3330602d0a0d08c604. The 2026-09-29 repair updates two reports and the runner, refreshes their Git-blob hashes, and adds the previously omitted actual baseline output; it does NOT regenerate or relabel the historical numerical evidence. See runs/20260929T133450069717Z-gpt-PHYS-001/round.json.",
+  "execution_status": {
+    "executed_in_this_pr": false,
+    "reason": "This branch is the CANONICAL EVIDENCE unit: the estimator reproduction, the frozen FAIL, the corrected interpretation and the retraction list, plus the minimal scripts that regenerate the numbers. The full artifact manifest, hash automation and rerun generator are audit tooling and live on dsk/PHYS-001-audit-tooling.",
+    "canonical_scope": [
+      "exact reproduction of GLM's estimator",
+      "the frozen E3 FAIL",
+      "corrected interpretation: the beta=3 statistic is finite-band/window dependent",
+      "retractions of the 0.05 implementation-verification threshold, the saturated-plateau claim, the [4,20] gate and the unsupported C0 precision claim",
+      "minimal reproducible numerical scripts and their final artifacts"
+    ],
+    "deliberately_excluded": [
+      "artifact hash automation",
+      "rerun evidence generator",
+      "stale-file guards",
+      "numerical convergence tooling"
+    ]
+  },
+  "artifacts": [
+    {
+      "path": "problems/PHYS-001/experiments/canonical_evidence/CANONICAL_FACTS.md",
+      "sha256": "448fe4a0d8e93f06e89fee1c3641fb48f8e87e78a2b01e08e269912da7369a57",
+      "bytes": 10413,
+      "hash_of": "git_blob"
+    },
+    {
+      "path": "problems/PHYS-001/experiments/canonical_evidence/PHYS001_INDEPENDENT_AUDIT.md",
+      "sha256": "9e5c4ec51805d20d4a801f62aa25b1ccb24f39041ec2676da866fdfa56a936c0",
+      "bytes": 13308,
+      "hash_of": "git_blob"
+    },
+    {
+      "path": "problems/PHYS-001/experiments/canonical_evidence/evidence/glm_reproduction.json",
+      "sha256": "b7a8291608ddb5758e0752121aa41100f93b7ca7b805f9d51d1fa9803f556728",
+      "bytes": 7415,
+      "hash_of": "git_blob"
+    },
+    {
+      "path": "problems/PHYS-001/experiments/canonical_evidence/evidence/glm_verbatim_raw_output.json",
+      "sha256": "2f6275210a4929620d4ce3c797f152633d19bee53f52267748e92ddff83a98a5",
+      "bytes": 4153,
+      "hash_of": "git_blob"
+    },
+    {
+      "path": "problems/PHYS-001/experiments/canonical_evidence/evidence/s2_local_exponent.json",
+      "sha256": "0385d8af1bcda6ca35c9f0a42eb3744c065da7efb89e0819d108f0ec0f279758",
+      "bytes": 13519,
+      "hash_of": "git_blob"
+    },
+    {
+      "path": "problems/PHYS-001/experiments/canonical_evidence/reference/glm_k41_baseline_VERBATIM.py",
+      "sha256": "b1070ea49ec142addeda3be51092eaa92624199bcf788c78013cad0c172d5a70",
+      "bytes": 8706,
+      "hash_of": "git_blob"
+    },
+    {
+      "path": "problems/PHYS-001/experiments/canonical_evidence/scripts/reproduce_and_compare.py",
+      "sha256": "b778f2e5526360b0f36ea2dffe0c0245fbfe19fa81ea766e60890a35b9221cc1",
+      "bytes": 21390,
+      "hash_of": "git_blob"
+    },
+    {
+      "path": "problems/PHYS-001/experiments/canonical_evidence/scripts/s2_local_exponent.py",
+      "sha256": "3784ccd8e0cc7f1ed0c5b13101602eca79886537c36ad8321eff9622e5d38ecc",
+      "bytes": 22439,
+      "hash_of": "git_blob"
+    },
+    {
+      "path": "problems/PHYS-001/experiments/results/r1/k41_baseline_results.json",
+      "sha256": "3d7659170ca73c14c289bb431dc4c0142c4e903658092b59c6e291736361b8e1",
+      "bytes": 3463,
+      "hash_of": "git_blob"
+    }
+  ],
+  "artifact_note": "SHA-256 is over Git blob bytes. Manifest includes both saved baseline copies. This provenance amendment authenticates this tree; it does not imply a new run of the old scientific experiment."
+}
